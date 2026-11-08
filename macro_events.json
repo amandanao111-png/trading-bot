@@ -1,0 +1,45 @@
+{
+  "_comment": "High-impact US macro events that move the open. Times are US/Eastern on the RELEASE date. The guard blocks NEW ENTRIES around these; protective exits are never blocked. Update this file when the calendar is refreshed - it is read at every entry decision, so no restart is needed.",
+  "events": [
+    {
+      "name": "CPI (Oct)",
+      "date": "2026-11-10",
+      "time_et": "08:30",
+      "impact": "high",
+      "block_before_min": 30,
+      "block_after_min": 0,
+      "block_first_open_min": 45,
+      "note": "m/m only (Oct-2025 shutdown gap). nowcast +0.24% headline / +0.21% core. Released 08:30 ET, one hour BEFORE the 09:30 open, so the reaction lands at the open - that is the trade this guard exists to prevent."
+    },
+    {
+      "name": "PPI (Oct)",
+      "date": "2026-11-13",
+      "time_et": "08:30",
+      "impact": "high",
+      "block_before_min": 30,
+      "block_after_min": 0,
+      "block_first_open_min": 45,
+      "note": "Also feeds the Dec FOMC hike odds."
+    },
+    {
+      "name": "NFP (Nov)",
+      "date": "2026-12-04",
+      "time_et": "08:30",
+      "impact": "high",
+      "block_before_min": 30,
+      "block_after_min": 0,
+      "block_first_open_min": 45,
+      "note": "First Friday of the month by convention - VERIFY against the official release calendar before relying on it."
+    },
+    {
+      "name": "FOMC decision",
+      "date": "2026-12-09",
+      "time_et": "14:00",
+      "impact": "high",
+      "block_before_min": 60,
+      "block_after_min": 30,
+      "block_first_open_min": 0,
+      "note": "Mid-session release. Also sits inside the existing 14:00-16:00 kill zone, so this guard mainly adds the pre-release hour. Dec hike odds 76.8-78% after hot Oct NFP (+165k, 4.1% U)."
+    }
+  ]
+}

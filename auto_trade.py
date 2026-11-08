@@ -38,6 +38,15 @@ load_dotenv()
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from learning import record_trade, analyze_performance, get_optimal_confidence, get_weekly_report, load_stats, load_journal
 
+# Event guard — blocks or halves NEW entries around CPI/PPI/FOMC.
+# Imports are wrapped: a guard that cannot load must degrade to "no event
+# filtering", never take the trading loop down with it.
+try:
+    from event_guard import event_guard_state, entry_size_multiplier
+except Exception:  # pragma: no cover
+    event_guard_state = None
+    entry_size_multiplier = None
+
 # API Keys - MUST BE SET VIA ENVIRONMENT VARIABLES
 # Set these before running: 
 #   export ALPACA_API_KEY="your_key"
@@ -178,6 +187,15 @@ CLOSE_DANGER_MINUTES = 30   # Skip entries last 30 min
 # === NEW: SECTOR COOLDOWN ===
 SECTOR_COOLDOWN_HOURS = 24     # Wait 24h after STOP_LOSS in sector
 _sector_cooldown = {}          # Internal: tracks cooldown end times
+
+# === EVENT GUARD (CPI / PPI / FOMC) ===
+# The bot's other risk gates are all intraday-SHAPE gates (danger zone, kill
+# zone, cooldown, daily loss). None of them knew about the CALENDAR, so the
+# bot was structurally willing to open a fresh position straight into a CPI
+# print -- exactly where the rate path this book trades on gets repriced.
+# Governs NEW ENTRIES ONLY. Protective exits are never gated by this: a
+# stop-loss that cannot fire because CPI is tomorrow would be a disaster.
+EVENT_GUARD_ENABLED = True
 
 def check_sector_cooldown(symbol):
     """Check if sector is in cooldown after STOP_LOSS"""
@@ -649,6 +667,14 @@ def execute_mean_reversion_entries(mr_signals, positions, account, portfolio,
             continue
         if time_info.get("is_kill_zone", False):
             print(f"   → {symbol} MR: kill zone")
+            continue
+        # === EVENT GUARD: CPI/PPI/FOMC + earnings ===
+        _guard = time_info.get('event_guard') or {}
+        if _guard.get('block_entries'):
+            print(f"   → {symbol} MR: blocked by event guard ({_guard.get('reason')})")
+            continue
+        if symbol and str(symbol).upper() in (_guard.get('block_symbols') or set()):
+            print(f"   → {symbol} MR: earnings today — blocked")
             continue
         if symbol in auto_blacklist:
             print(f"   → {symbol} MR: auto-blacklisted")
@@ -1541,6 +1567,27 @@ def do_trading_cycle():
     time_info = get_current_time_info()
     print(f"⏰ Time: {time_info['time_str']}")
 
+    # === EVENT GUARD: compute ONCE per cycle ===
+    # The guard governs NEW ENTRIES only. Protective exits are never gated by
+    # it: a stop-loss that cannot fire because CPI is tomorrow would be far
+    # worse than a missed trade.
+    if EVENT_GUARD_ENABLED and event_guard_state is not None:
+        try:
+            time_info['event_guard'] = event_guard_state()
+            _g = time_info['event_guard']
+            if _g.get('block_entries'):
+                print(f"🗓️  Event guard: BLOCKING new entries — {_g.get('reason')}")
+            elif _g.get('soft_events'):
+                _names = ", ".join(e.get('name', '?') for e in _g['soft_events'])
+                print(f"🗓️  Event guard: half size — {_names} approaching")
+            for _note in (_g.get('notes') or []):
+                print(f"⚠️  Event guard: {_note}")
+        except Exception as _ge:
+            print(f"⚠️ Event guard unavailable ({_ge}) — entries unaffected")
+            time_info['event_guard'] = {}
+    else:
+        time_info['event_guard'] = {}
+
     if not time_info['is_market_open']:
         print("⚠️ Market closed - skipping")
         return
@@ -1796,6 +1843,27 @@ def do_trading_cycle():
             if time_info.get('is_kill_zone', False):
                 print(f"   → Skipped: kill zone (14-16h EST)")
                 continue
+
+            # === EVENT GUARD (CPI/PPI/FOMC) ===
+            # Blocks or halves NEW entries around high-impact macro
+            # releases. Exits are NOT gated here — protective exits must
+            # always be able to fire.
+            _guard = time_info.get('event_guard') or {}
+            if _guard.get('block_entries'):
+                print(f"   → Skipped: event guard — {_guard.get('reason')}")
+                continue
+            if symbol and str(symbol).upper() in (_guard.get('block_symbols') or set()):
+                print(f"   → Skipped: {symbol} reports earnings today")
+                continue
+            event_mult = 1.0
+            if entry_size_multiplier is not None:
+                try:
+                    event_mult = entry_size_multiplier(symbol, state=_guard)
+                except Exception:
+                    event_mult = 1.0
+            if event_mult < 1.0:
+                _sn = ", ".join(e.get('name', '?') for e in (_guard.get('soft_events') or []))
+                print(f"   → Event guard: half size ({_sn} approaching)")
             
             # NEW: Whitelist check (if whitelist not empty, symbol must be in it)
             if SYMBOL_WHITELIST and symbol not in SYMBOL_WHITELIST:
@@ -1825,7 +1893,7 @@ def do_trading_cycle():
             tier_letter = get_symbol_tier(symbol)
             print(f"   📐 {symbol}: tier={tier_letter}  tier_mult={tier_mult}x  vol={vol_adj:.2f}  sym={symbol_mult:.2f}  sig={signal_mult:.2f}")
 
-            actual_position = min(kelly_position_pct(symbol) * vol_adj * signal_mult * symbol_mult * tier_mult, 0.05)  # Cap at 5%
+            actual_position = min(kelly_position_pct(symbol) * vol_adj * signal_mult * symbol_mult * tier_mult * event_mult, 0.05)  # Cap at 5%
             
             # Calculate qty based on available buying power
             available_bp = float(account.get('buying_power', portfolio * 0.5))
