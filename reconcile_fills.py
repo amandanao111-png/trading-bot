@@ -357,6 +357,29 @@ def _find_missing(events, journal, v7_events):
     return missing
 
 
+def _notify(lines):
+    """Send a Telegram note ONLY when there is something to say.
+
+    Uses the same message-send pattern as scripts/automation_health.py. The
+    nightly job must stay silent on the many days it finds nothing to do,
+    or it becomes noise the user learns to ignore. Nothing is sent unless
+    the journal was actually changed.
+    """
+    if not lines:
+        return False
+    import subprocess
+    try:
+        subprocess.run(
+            ["openclaw", "message", "send",
+             "--channel", "telegram",
+             "--target", "8250061141",
+             "--message", "\n".join(lines)],
+            capture_output=True, text=True, timeout=30)
+        return True
+    except Exception:
+        return False
+
+
 def _repair(missing, days):
     """Write missing recent exits through learning.record_trade().
 
@@ -369,7 +392,7 @@ def _repair(missing, days):
     todo = [e for e in missing if e["time"] >= cutoff]
     skipped = [e for e in missing if e["time"] < cutoff]
     if not todo:
-        return [], skipped
+        return [], skipped, []
 
     import learning
     stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
@@ -378,19 +401,38 @@ def _repair(missing, days):
     import shutil
     shutil.copy2(JOURNAL_FILE, backup)
 
+    journal = _load_journal()
+    open_buys = defaultdict(int)
+    for r in journal:
+        if ((r.get("type") or "").upper() == "BUY"
+                and (r.get("symbol") or "").upper() in {e["symbol"] for e in todo}
+                and not r.get("closed", False)):
+            open_buys[(r.get("symbol") or "").upper()] += 1
+
     written = []
+    no_open_buy = []
     for e in todo:
+        symbol = e["symbol"]
+        # learning.record_trade('SELL') closes the OLDEST OPEN BUY row for the
+        # symbol. If there is no open BUY, it would close some OTHER lot and
+        # mis-attribute the P&L to the wrong trade. In that case the correct
+        # action is to adopt the position from Alpaca (what
+        # fix_stale_journal.py does), not to guess. Report it instead.
+        if open_buys.get(symbol, 0) <= 0:
+            no_open_buy.append(e)
+            continue
         signal = "RECONCILED"
         reasons = ["RECONCILED", f"RECONCILE_{datetime.now().strftime('%Y-%m-%d')}"]
         qty = int(round(e["qty"])) if float(e["qty"]).is_integer() else e["qty"]
-        learning.record_trade("SELL", e["symbol"], qty, round(e["price"], 6),
+        learning.record_trade("SELL", symbol, qty, round(e["price"], 6),
                               signal, 0, reasons, round(e["pnl"], 2))
+        open_buys[symbol] -= 1
         written.append({
-            "symbol": e["symbol"], "qty": qty,
+            "symbol": symbol, "qty": qty,
             "price": round(e["price"], 6), "pnl": round(e["pnl"], 2),
             "exit_time": e["time"].isoformat(),
         })
-    return written, skipped
+    return written, skipped, no_open_buy
 
 
 def main():
@@ -449,12 +491,37 @@ def main():
         print("\n--repair requested but nothing is missing — no write performed.")
         return 0
 
-    written, skipped = _repair(missing, days)
+    written, skipped, no_open_buy = _repair(missing, days)
     print(f"\nbackup written      : {os.path.join(BACKUP_DIR, 'trade_journal.json.bak.reconcile-*')}")
     print(f"appended {len(written)} row(s):")
     for w in written:
         print(f"  + {w['exit_time']} {w['symbol']:6s} qty={w['qty']:<9} "
               f"px={w['price']:<10} pnl={w['pnl']}")
+
+    # Notify ONLY if the journal actually changed. A nightly job that sends a
+    # message every night regardless is noise, and the dedupe logic in
+    # automation_health.py exists for exactly this reason.
+    if written:
+        _notify([
+            "🔧 Trading journal reconciled",
+            f"{datetime.now().strftime('%Y-%m-%d %H:%M')} — {len(written)} exit(s) "
+            f"were missing from the journal and have been repaired.",
+            "",
+            *[f"• {w['symbol']} qty={w['qty']} px={w['price']} pnl={w['pnl']} "
+              f"({w['exit_time']})" for w in written[:10]],
+            *(["• ..."] if len(written) > 10 else []),
+            "",
+            "The learning loop can now see these trades again. Evolution will",
+            "pick them up on its next pass.",
+        ])
+    if no_open_buy:
+        print(f"\n{len(no_open_buy)} exit(s) have NO open BUY row to close:")
+        for e in no_open_buy:
+            print(f"  - {e['time'].isoformat()} {e['symbol']:6s} qty={e['qty']:<9} pnl={e['pnl']:<9.2f}")
+        print("  These are NOT repaired: learning.record_trade closes the oldest open")
+        print("  BUY for a symbol, and with none open it would attach the P&L to an")
+        print("  unrelated lot. Adopting them needs a position-aware reconciliation,")
+        print("  not a guessed write.")
     if skipped:
         print(f"\n{len(skipped)} HISTORICAL exit(s) left unrepaired on purpose "
               f"(older than {days} days). They are reported above. Backfilling "
