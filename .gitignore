@@ -41,3 +41,6 @@ mining/report.md
 rebalancing_report.json
 rebalancing_report.json.bak.*
 trading_analysis.md
+
+# Per-cycle equity snapshot - rewritten on every trading cycle (runtime state)
+equity_curve_v6.json
