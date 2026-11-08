@@ -1,0 +1,43 @@
+# Secrets — NEVER commit. .env holds live Alpaca API keys.
+.env
+.env.*
+!.env.example
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Runtime logs and lock files (regenerated every run)
+*.log
+*.err.log
+*.out.log
+*.log.*
+*.pid
+*.lock
+
+# Editor / OS noise
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Local scratch + backup copies produced by the fix scripts
+*.bak
+*.bak.*
+auto_trade.py.bak.*
+*.tmp
+*.swp
+
+# Backups directory (snapshots of the working tree)
+backups/
+
+# Generated reports / analysis artifacts (regenerable)
+mining/report.md
+rebalancing_report.json
+rebalancing_report.json.bak.*
+trading_analysis.md

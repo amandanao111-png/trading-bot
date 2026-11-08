@@ -1,0 +1,6002 @@
+[
+  {
+    "timestamp": "2026-09-16T01:53:11.892929",
+    "portfolio": 116299.62,
+    "open_positions": 0,
+    "daily_pl_pct": -0.58
+  },
+  {
+    "timestamp": "2026-09-16T02:23:12.324891",
+    "portfolio": 116105.44,
+    "open_positions": 0,
+    "daily_pl_pct": -0.7482
+  },
+  {
+    "timestamp": "2026-09-16T02:53:12.748107",
+    "portfolio": 116279.18,
+    "open_positions": 0,
+    "daily_pl_pct": -0.5977
+  },
+  {
+    "timestamp": "2026-09-16T03:23:13.244655",
+    "portfolio": 116085.0,
+    "open_positions": 0,
+    "daily_pl_pct": -0.7659
+  },
+  {
+    "timestamp": "2026-09-16T03:53:13.701195",
+    "portfolio": 115533.12,
+    "open_positions": 0,
+    "daily_pl_pct": -1.2473
+  },
+  {
+    "timestamp": "2026-09-16T04:23:14.044441",
+    "portfolio": 115277.62,
+    "open_positions": 0,
+    "daily_pl_pct": -1.4717
+  },
+  {
+    "timestamp": "2026-09-16T04:53:14.413588",
+    "portfolio": 115482.02,
+    "open_positions": 0,
+    "daily_pl_pct": -1.2921
+  },
+  {
+    "timestamp": "2026-09-16T05:23:14.869034",
+    "portfolio": 115430.92,
+    "open_positions": 0,
+    "daily_pl_pct": -1.3369
+  },
+  {
+    "timestamp": "2026-09-16T05:53:15.330099",
+    "portfolio": 115492.24,
+    "open_positions": 0,
+    "daily_pl_pct": -1.2831
+  },
+  {
+    "timestamp": "2026-09-16T06:23:15.702489",
+    "portfolio": 115441.14,
+    "open_positions": 0,
+    "daily_pl_pct": -1.3279
+  },
+  {
+    "timestamp": "2026-09-16T06:53:16.049624",
+    "portfolio": 115369.6,
+    "open_positions": 0,
+    "daily_pl_pct": -1.3908
+  },
+  {
+    "timestamp": "2026-09-16T07:23:16.554500",
+    "portfolio": 115441.14,
+    "open_positions": 0,
+    "daily_pl_pct": -1.3279
+  },
+  {
+    "timestamp": "2026-09-16T07:53:17.075348",
+    "portfolio": 115390.04,
+    "open_positions": 0,
+    "daily_pl_pct": -1.3728
+  },
+  {
+    "timestamp": "2026-09-16T08:23:17.577224",
+    "portfolio": 115257.18,
+    "open_positions": 0,
+    "daily_pl_pct": -1.4897
+  },
+  {
+    "timestamp": "2026-09-16T08:53:18.108429",
+    "portfolio": 115369.6,
+    "open_positions": 0,
+    "daily_pl_pct": -0.7795
+  },
+  {
+    "timestamp": "2026-09-16T09:23:18.606261",
+    "portfolio": 115471.8,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6904
+  },
+  {
+    "timestamp": "2026-09-16T09:53:19.029324",
+    "portfolio": 115522.9,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6458
+  },
+  {
+    "timestamp": "2026-09-16T10:23:19.496547",
+    "portfolio": 115583.2,
+    "open_positions": 0,
+    "daily_pl_pct": -0.5933
+  },
+  {
+    "timestamp": "2026-09-16T10:53:20.042170",
+    "portfolio": 115512.68,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6547
+  },
+  {
+    "timestamp": "2026-09-16T11:23:20.530741",
+    "portfolio": 115471.8,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6904
+  },
+  {
+    "timestamp": "2026-09-16T11:53:20.962550",
+    "portfolio": 115390.04,
+    "open_positions": 0,
+    "daily_pl_pct": -0.7617
+  },
+  {
+    "timestamp": "2026-09-16T12:23:21.389954",
+    "portfolio": 115298.06,
+    "open_positions": 0,
+    "daily_pl_pct": -0.8421
+  },
+  {
+    "timestamp": "2026-09-16T12:53:21.861513",
+    "portfolio": 115165.2,
+    "open_positions": 0,
+    "daily_pl_pct": -0.9584
+  },
+  {
+    "timestamp": "2026-09-16T13:23:22.287507",
+    "portfolio": 115471.8,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6904
+  },
+  {
+    "timestamp": "2026-09-16T13:53:22.737615",
+    "portfolio": 115430.92,
+    "open_positions": 0,
+    "daily_pl_pct": -0.726
+  },
+  {
+    "timestamp": "2026-09-16T14:23:23.139586",
+    "portfolio": 115482.02,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6814
+  },
+  {
+    "timestamp": "2026-09-16T14:53:34.098636",
+    "portfolio": 115619.99,
+    "open_positions": 0,
+    "daily_pl_pct": -0.5613
+  },
+  {
+    "timestamp": "2026-09-16T15:23:44.969376",
+    "portfolio": 115757.96,
+    "open_positions": 0,
+    "daily_pl_pct": -0.4414
+  },
+  {
+    "timestamp": "2026-09-16T15:53:55.612506",
+    "portfolio": 115482.02,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6814
+  },
+  {
+    "timestamp": "2026-09-16T16:24:06.397479",
+    "portfolio": 115364.49,
+    "open_positions": 0,
+    "daily_pl_pct": -0.784
+  },
+  {
+    "timestamp": "2026-09-16T16:54:17.148068",
+    "portfolio": 115446.25,
+    "open_positions": 0,
+    "daily_pl_pct": -0.7126
+  },
+  {
+    "timestamp": "2026-09-16T17:24:27.971844",
+    "portfolio": 115456.47,
+    "open_positions": 0,
+    "daily_pl_pct": -0.7037
+  },
+  {
+    "timestamp": "2026-09-16T17:54:38.425617",
+    "portfolio": 115558.67,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6147
+  },
+  {
+    "timestamp": "2026-09-16T18:24:49.288440",
+    "portfolio": 115599.55,
+    "open_positions": 0,
+    "daily_pl_pct": -0.5791
+  },
+  {
+    "timestamp": "2026-09-16T18:55:00.007368",
+    "portfolio": 115604.66,
+    "open_positions": 0,
+    "daily_pl_pct": -0.5746
+  },
+  {
+    "timestamp": "2026-09-16T19:25:11.277786",
+    "portfolio": 116197.42,
+    "open_positions": 0,
+    "daily_pl_pct": -0.0616
+  },
+  {
+    "timestamp": "2026-09-16T19:55:22.381890",
+    "portfolio": 116687.98,
+    "open_positions": 0,
+    "daily_pl_pct": 0.3591
+  },
+  {
+    "timestamp": "2026-09-16T20:25:22.871721",
+    "portfolio": 117168.32,
+    "open_positions": 0,
+    "daily_pl_pct": 0.7676
+  },
+  {
+    "timestamp": "2026-09-16T20:55:23.393048",
+    "portfolio": 116759.52,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4201
+  },
+  {
+    "timestamp": "2026-09-16T21:25:23.767454",
+    "portfolio": 116953.9,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5856
+  },
+  {
+    "timestamp": "2026-09-16T21:55:24.270244",
+    "portfolio": 116943.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5768
+  },
+  {
+    "timestamp": "2026-09-16T22:25:24.717550",
+    "portfolio": 116892.38,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5333
+  },
+  {
+    "timestamp": "2026-09-16T22:55:25.188739",
+    "portfolio": 116933.26,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5681
+  },
+  {
+    "timestamp": "2026-09-16T23:25:25.654499",
+    "portfolio": 116945.42,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5784
+  },
+  {
+    "timestamp": "2026-09-16T23:55:26.085996",
+    "portfolio": 116963.92,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5942
+  },
+  {
+    "timestamp": "2026-09-17T00:25:26.631351",
+    "portfolio": 116774.44,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4329
+  },
+  {
+    "timestamp": "2026-09-17T00:55:27.115911",
+    "portfolio": 116667.54,
+    "open_positions": 0,
+    "daily_pl_pct": 0.3416
+  },
+  {
+    "timestamp": "2026-09-17T01:25:27.557797",
+    "portfolio": 116606.22,
+    "open_positions": 0,
+    "daily_pl_pct": 0.2892
+  },
+  {
+    "timestamp": "2026-09-17T01:55:27.944000",
+    "portfolio": 116718.64,
+    "open_positions": 0,
+    "daily_pl_pct": 0.3853
+  },
+  {
+    "timestamp": "2026-09-17T02:25:28.328336",
+    "portfolio": 116003.24,
+    "open_positions": 0,
+    "daily_pl_pct": -0.2291
+  },
+  {
+    "timestamp": "2026-09-17T02:55:28.723913",
+    "portfolio": 116309.84,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0351
+  },
+  {
+    "timestamp": "2026-09-17T03:25:29.238916",
+    "portfolio": 116636.88,
+    "open_positions": 0,
+    "daily_pl_pct": 0.3154
+  },
+  {
+    "timestamp": "2026-09-17T03:55:29.752480",
+    "portfolio": 116759.52,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4201
+  },
+  {
+    "timestamp": "2026-09-17T04:25:30.263510",
+    "portfolio": 116504.02,
+    "open_positions": 0,
+    "daily_pl_pct": 0.2018
+  },
+  {
+    "timestamp": "2026-09-17T04:55:30.770827",
+    "portfolio": 116289.4,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0176
+  },
+  {
+    "timestamp": "2026-09-17T05:25:31.301091",
+    "portfolio": 116309.84,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0351
+  },
+  {
+    "timestamp": "2026-09-17T05:55:31.749252",
+    "portfolio": 116197.42,
+    "open_positions": 0,
+    "daily_pl_pct": -0.0616
+  },
+  {
+    "timestamp": "2026-09-17T06:25:32.193603",
+    "portfolio": 116401.82,
+    "open_positions": 0,
+    "daily_pl_pct": 0.1141
+  },
+  {
+    "timestamp": "2026-09-17T06:55:32.687685",
+    "portfolio": 116228.08,
+    "open_positions": 0,
+    "daily_pl_pct": -0.0352
+  },
+  {
+    "timestamp": "2026-09-17T07:25:33.098396",
+    "portfolio": 116197.42,
+    "open_positions": 0,
+    "daily_pl_pct": -0.0616
+  },
+  {
+    "timestamp": "2026-09-17T07:55:33.579432",
+    "portfolio": 116146.32,
+    "open_positions": 0,
+    "daily_pl_pct": -0.1056
+  },
+  {
+    "timestamp": "2026-09-17T08:25:33.992439",
+    "portfolio": 115931.7,
+    "open_positions": 0,
+    "daily_pl_pct": -0.2909
+  },
+  {
+    "timestamp": "2026-09-17T08:55:34.449170",
+    "portfolio": 115737.52,
+    "open_positions": 0,
+    "daily_pl_pct": -0.883
+  },
+  {
+    "timestamp": "2026-09-17T09:25:34.842750",
+    "portfolio": 115921.48,
+    "open_positions": 0,
+    "daily_pl_pct": -0.7229
+  },
+  {
+    "timestamp": "2026-09-17T09:55:35.185398",
+    "portfolio": 116105.44,
+    "open_positions": 0,
+    "daily_pl_pct": -0.5634
+  },
+  {
+    "timestamp": "2026-09-17T10:25:35.715834",
+    "portfolio": 116003.24,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6519
+  },
+  {
+    "timestamp": "2026-09-17T10:55:36.187864",
+    "portfolio": 115993.02,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6608
+  },
+  {
+    "timestamp": "2026-09-17T11:25:36.588964",
+    "portfolio": 116033.9,
+    "open_positions": 0,
+    "daily_pl_pct": -0.6254
+  },
+  {
+    "timestamp": "2026-09-17T11:55:37.008059",
+    "portfolio": 115919.23,
+    "open_positions": 0,
+    "daily_pl_pct": -0.7249
+  },
+  {
+    "timestamp": "2026-09-17T12:25:37.489257",
+    "portfolio": 115768.18,
+    "open_positions": 0,
+    "daily_pl_pct": -0.8563
+  },
+  {
+    "timestamp": "2026-09-17T12:55:37.977024",
+    "portfolio": 115563.78,
+    "open_positions": 0,
+    "daily_pl_pct": -1.0347
+  },
+  {
+    "timestamp": "2026-09-17T13:25:38.394351",
+    "portfolio": 114725.74,
+    "open_positions": 0,
+    "daily_pl_pct": -1.7727
+  },
+  {
+    "timestamp": "2026-09-17T13:55:38.894270",
+    "portfolio": 114654.2,
+    "open_positions": 0,
+    "daily_pl_pct": -1.8362
+  },
+  {
+    "timestamp": "2026-09-17T14:25:39.282742",
+    "portfolio": 114643.98,
+    "open_positions": 0,
+    "daily_pl_pct": -1.8453
+  },
+  {
+    "timestamp": "2026-09-17T14:55:50.977870",
+    "portfolio": 114398.7,
+    "open_positions": 0,
+    "daily_pl_pct": -2.0637
+  },
+  {
+    "timestamp": "2026-09-17T15:26:02.013572",
+    "portfolio": 114163.64,
+    "open_positions": 0,
+    "daily_pl_pct": -2.2738
+  },
+  {
+    "timestamp": "2026-09-17T15:56:12.839622",
+    "portfolio": 114587.77,
+    "open_positions": 0,
+    "daily_pl_pct": -1.8953
+  },
+  {
+    "timestamp": "2026-09-17T16:26:23.635198",
+    "portfolio": 114361.7,
+    "open_positions": 0,
+    "daily_pl_pct": -2.0967
+  },
+  {
+    "timestamp": "2026-09-17T16:56:34.335451",
+    "portfolio": 114296.5,
+    "open_positions": 0,
+    "daily_pl_pct": -2.1549
+  },
+  {
+    "timestamp": "2026-09-17T17:26:45.475104",
+    "portfolio": 114393.59,
+    "open_positions": 0,
+    "daily_pl_pct": -2.0682
+  },
+  {
+    "timestamp": "2026-09-17T17:56:55.932645",
+    "portfolio": 114511.12,
+    "open_positions": 0,
+    "daily_pl_pct": -1.9635
+  },
+  {
+    "timestamp": "2026-09-17T18:27:07.237894",
+    "portfolio": 114511.12,
+    "open_positions": 0,
+    "daily_pl_pct": -1.9635
+  },
+  {
+    "timestamp": "2026-09-17T18:57:20.165613",
+    "portfolio": 114531.56,
+    "open_positions": 0,
+    "daily_pl_pct": -1.9453
+  },
+  {
+    "timestamp": "2026-09-17T19:27:31.105979",
+    "portfolio": 114557.11,
+    "open_positions": 0,
+    "daily_pl_pct": -1.9225
+  },
+  {
+    "timestamp": "2026-09-17T19:57:41.726091",
+    "portfolio": 114750.98,
+    "open_positions": 0,
+    "daily_pl_pct": -1.7503
+  },
+  {
+    "timestamp": "2026-09-17T20:27:42.105027",
+    "portfolio": 114822.83,
+    "open_positions": 0,
+    "daily_pl_pct": -1.6867
+  },
+  {
+    "timestamp": "2026-09-17T20:57:42.654714",
+    "portfolio": 114771.73,
+    "open_positions": 0,
+    "daily_pl_pct": -1.732
+  },
+  {
+    "timestamp": "2026-09-17T21:27:43.176715",
+    "portfolio": 114838.16,
+    "open_positions": 0,
+    "daily_pl_pct": -1.6731
+  },
+  {
+    "timestamp": "2026-09-17T21:57:43.671252",
+    "portfolio": 114848.38,
+    "open_positions": 0,
+    "daily_pl_pct": -1.6641
+  },
+  {
+    "timestamp": "2026-09-17T22:27:44.098931",
+    "portfolio": 114970.92,
+    "open_positions": 0,
+    "daily_pl_pct": -1.5557
+  },
+  {
+    "timestamp": "2026-09-17T22:57:44.596907",
+    "portfolio": 114838.16,
+    "open_positions": 0,
+    "daily_pl_pct": -1.6731
+  },
+  {
+    "timestamp": "2026-09-17T23:27:45.084259",
+    "portfolio": 114766.62,
+    "open_positions": 0,
+    "daily_pl_pct": -1.7365
+  },
+  {
+    "timestamp": "2026-09-17T23:57:45.517156",
+    "portfolio": 114776.84,
+    "open_positions": 0,
+    "daily_pl_pct": -1.7274
+  },
+  {
+    "timestamp": "2026-09-18T00:27:46.001184",
+    "portfolio": 114700.39,
+    "open_positions": 0,
+    "daily_pl_pct": -1.7952
+  },
+  {
+    "timestamp": "2026-09-18T00:57:46.425233",
+    "portfolio": 114654.2,
+    "open_positions": 0,
+    "daily_pl_pct": -1.8362
+  },
+  {
+    "timestamp": "2026-09-18T01:27:46.956047",
+    "portfolio": 114490.68,
+    "open_positions": 0,
+    "daily_pl_pct": -1.9817
+  },
+  {
+    "timestamp": "2026-09-18T01:57:47.512202",
+    "portfolio": 114388.48,
+    "open_positions": 0,
+    "daily_pl_pct": -2.0728
+  },
+  {
+    "timestamp": "2026-09-18T02:27:48.022114",
+    "portfolio": 114255.62,
+    "open_positions": 0,
+    "daily_pl_pct": -2.1915
+  },
+  {
+    "timestamp": "2026-09-18T02:57:48.451676",
+    "portfolio": 114378.26,
+    "open_positions": 0,
+    "daily_pl_pct": -2.0819
+  },
+  {
+    "timestamp": "2026-09-18T03:27:48.956835",
+    "portfolio": 114327.16,
+    "open_positions": 0,
+    "daily_pl_pct": -2.1275
+  },
+  {
+    "timestamp": "2026-09-18T03:57:49.406113",
+    "portfolio": 114408.92,
+    "open_positions": 0,
+    "daily_pl_pct": -2.0546
+  },
+  {
+    "timestamp": "2026-09-18T04:27:49.926107",
+    "portfolio": 114439.58,
+    "open_positions": 0,
+    "daily_pl_pct": -2.0272
+  },
+  {
+    "timestamp": "2026-09-18T04:57:50.385529",
+    "portfolio": 114051.22,
+    "open_positions": 0,
+    "daily_pl_pct": -2.3746
+  },
+  {
+    "timestamp": "2026-09-18T05:27:50.825395",
+    "portfolio": 114235.18,
+    "open_positions": 0,
+    "daily_pl_pct": -2.2098
+  },
+  {
+    "timestamp": "2026-09-18T05:57:51.237326",
+    "portfolio": 114051.22,
+    "open_positions": 0,
+    "daily_pl_pct": -2.3746
+  },
+  {
+    "timestamp": "2026-09-18T06:27:51.737743",
+    "portfolio": 113887.7,
+    "open_positions": 0,
+    "daily_pl_pct": -2.5216
+  },
+  {
+    "timestamp": "2026-09-18T06:57:52.218071",
+    "portfolio": 113642.42,
+    "open_positions": 0,
+    "daily_pl_pct": -2.7429
+  },
+  {
+    "timestamp": "2026-09-18T07:27:53.188029",
+    "portfolio": 113458.46,
+    "open_positions": 0,
+    "daily_pl_pct": -2.9095
+  },
+  {
+    "timestamp": "2026-09-18T07:57:53.819620",
+    "portfolio": 113489.12,
+    "open_positions": 0,
+    "daily_pl_pct": -2.8817
+  },
+  {
+    "timestamp": "2026-09-18T08:27:54.271785",
+    "portfolio": 113305.16,
+    "open_positions": 0,
+    "daily_pl_pct": -3.0487
+  },
+  {
+    "timestamp": "2026-09-18T08:37:31.726625",
+    "portfolio": 113233.62,
+    "open_positions": 0,
+    "daily_pl_pct": -3.1138
+  },
+  {
+    "timestamp": "2026-09-18T08:38:26.574246",
+    "portfolio": 113233.62,
+    "open_positions": 0,
+    "daily_pl_pct": -3.1138
+  },
+  {
+    "timestamp": "2026-09-18T08:39:04.922201",
+    "portfolio": 113233.62,
+    "open_positions": 0,
+    "daily_pl_pct": -3.1138
+  },
+  {
+    "timestamp": "2026-09-18T09:09:05.422090",
+    "portfolio": 113202.96,
+    "open_positions": 0,
+    "daily_pl_pct": -1.4084
+  },
+  {
+    "timestamp": "2026-09-18T09:39:05.901980",
+    "portfolio": 113223.4,
+    "open_positions": 0,
+    "daily_pl_pct": -1.3901
+  },
+  {
+    "timestamp": "2026-09-18T10:09:06.401185",
+    "portfolio": 112927.02,
+    "open_positions": 0,
+    "daily_pl_pct": -1.6562
+  },
+  {
+    "timestamp": "2026-09-18T10:39:06.912498",
+    "portfolio": 113202.96,
+    "open_positions": 0,
+    "daily_pl_pct": -1.4084
+  },
+  {
+    "timestamp": "2026-09-18T11:09:07.300966",
+    "portfolio": 113213.18,
+    "open_positions": 0,
+    "daily_pl_pct": -1.3992
+  },
+  {
+    "timestamp": "2026-09-18T11:39:07.889184",
+    "portfolio": 113254.37,
+    "open_positions": 0,
+    "daily_pl_pct": -1.3623
+  },
+  {
+    "timestamp": "2026-09-18T12:09:08.346930",
+    "portfolio": 113161.98,
+    "open_positions": 0,
+    "daily_pl_pct": -1.4451
+  },
+  {
+    "timestamp": "2026-09-18T12:39:08.791608",
+    "portfolio": 113213.28,
+    "open_positions": 0,
+    "daily_pl_pct": -1.3991
+  },
+  {
+    "timestamp": "2026-09-18T13:09:09.286655",
+    "portfolio": 113550.44,
+    "open_positions": 0,
+    "daily_pl_pct": -1.098
+  },
+  {
+    "timestamp": "2026-09-18T13:39:09.658855",
+    "portfolio": 113489.12,
+    "open_positions": 0,
+    "daily_pl_pct": -1.1527
+  },
+  {
+    "timestamp": "2026-09-18T14:09:10.565439",
+    "portfolio": 113499.34,
+    "open_positions": 0,
+    "daily_pl_pct": -1.1436
+  },
+  {
+    "timestamp": "2026-10-09T22:25:19.148775",
+    "portfolio": 0,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-09T22:55:19.594093",
+    "portfolio": 118477.5,
+    "open_positions": 0,
+    "daily_pl_pct": -1.2594
+  },
+  {
+    "timestamp": "2026-10-09T23:25:19.983333",
+    "portfolio": 118508.16,
+    "open_positions": 0,
+    "daily_pl_pct": -1.2332
+  },
+  {
+    "timestamp": "2026-10-09T23:55:20.500999",
+    "portfolio": 118538.82,
+    "open_positions": 0,
+    "daily_pl_pct": -1.207
+  },
+  {
+    "timestamp": "2026-10-10T00:25:20.989064",
+    "portfolio": 118508.16,
+    "open_positions": 0,
+    "daily_pl_pct": -1.2332
+  },
+  {
+    "timestamp": "2026-10-10T00:55:21.361590",
+    "portfolio": 118508.06,
+    "open_positions": 0,
+    "daily_pl_pct": -1.2333
+  },
+  {
+    "timestamp": "2026-10-10T01:25:21.792721",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T01:55:22.220106",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T02:25:22.649516",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T02:55:23.184276",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T03:25:23.553560",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T03:55:23.932195",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T04:25:24.298352",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T04:55:24.777270",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T05:25:25.239365",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T05:55:25.721284",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T06:25:26.201840",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T06:55:26.550395",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T07:25:26.926004",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T07:55:27.349306",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T08:25:27.820400",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": -1.146
+  },
+  {
+    "timestamp": "2026-10-10T08:55:28.295166",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T09:25:28.743317",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T09:55:29.136199",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T10:25:29.488253",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T10:55:29.927984",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T11:25:30.289601",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T11:55:30.798873",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T12:25:31.279755",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T12:55:31.779213",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T13:25:32.073060",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T13:55:32.503788",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-10T14:25:32.885334",
+    "portfolio": 118610.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-21T13:36:22.510323",
+    "portfolio": 121686.58,
+    "open_positions": 0,
+    "daily_pl_pct": 0.294
+  },
+  {
+    "timestamp": "2026-10-21T14:06:22.964668",
+    "portfolio": 121267.56,
+    "open_positions": 0,
+    "daily_pl_pct": -0.0506
+  },
+  {
+    "timestamp": "2026-10-21T14:36:33.067953",
+    "portfolio": 121543.5,
+    "open_positions": 0,
+    "daily_pl_pct": 0.1766
+  },
+  {
+    "timestamp": "2026-10-21T15:06:44.372974",
+    "portfolio": 121635.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.2521
+  },
+  {
+    "timestamp": "2026-10-21T15:36:55.419924",
+    "portfolio": 121533.28,
+    "open_positions": 0,
+    "daily_pl_pct": 0.1682
+  },
+  {
+    "timestamp": "2026-10-21T16:07:06.461196",
+    "portfolio": 121574.16,
+    "open_positions": 0,
+    "daily_pl_pct": 0.2018
+  },
+  {
+    "timestamp": "2026-10-21T16:37:18.304995",
+    "portfolio": 121379.98,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0421
+  },
+  {
+    "timestamp": "2026-10-21T17:07:28.544818",
+    "portfolio": 121569.05,
+    "open_positions": 0,
+    "daily_pl_pct": 0.1976
+  },
+  {
+    "timestamp": "2026-10-21T17:37:38.575101",
+    "portfolio": 121594.6,
+    "open_positions": 0,
+    "daily_pl_pct": 0.2185
+  },
+  {
+    "timestamp": "2026-10-21T18:07:48.726584",
+    "portfolio": 121482.18,
+    "open_positions": 0,
+    "daily_pl_pct": 0.1262
+  },
+  {
+    "timestamp": "2026-10-21T18:37:59.172148",
+    "portfolio": 121471.96,
+    "open_positions": 0,
+    "daily_pl_pct": 0.1178
+  },
+  {
+    "timestamp": "2026-10-21T19:08:10.626121",
+    "portfolio": 121344.21,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0126
+  },
+  {
+    "timestamp": "2026-10-21T19:38:21.553699",
+    "portfolio": 121272.67,
+    "open_positions": 0,
+    "daily_pl_pct": -0.0464
+  },
+  {
+    "timestamp": "2026-10-21T20:08:22.102902",
+    "portfolio": 121707.02,
+    "open_positions": 0,
+    "daily_pl_pct": 0.3107
+  },
+  {
+    "timestamp": "2026-10-21T20:38:22.640994",
+    "portfolio": 121260.81,
+    "open_positions": 0,
+    "daily_pl_pct": -0.0561
+  },
+  {
+    "timestamp": "2026-10-21T21:08:23.142244",
+    "portfolio": 121155.14,
+    "open_positions": 0,
+    "daily_pl_pct": -0.1434
+  },
+  {
+    "timestamp": "2026-10-21T21:38:23.625645",
+    "portfolio": 121247.12,
+    "open_positions": 0,
+    "daily_pl_pct": -0.0674
+  },
+  {
+    "timestamp": "2026-10-21T22:08:24.175036",
+    "portfolio": 121267.56,
+    "open_positions": 0,
+    "daily_pl_pct": -0.0506
+  },
+  {
+    "timestamp": "2026-10-21T22:38:24.676733",
+    "portfolio": 121144.92,
+    "open_positions": 0,
+    "daily_pl_pct": -0.1519
+  },
+  {
+    "timestamp": "2026-10-21T23:08:25.155831",
+    "portfolio": 121228.11,
+    "open_positions": 0,
+    "daily_pl_pct": -0.0831
+  },
+  {
+    "timestamp": "2026-10-21T23:38:25.651453",
+    "portfolio": 121349.32,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0168
+  },
+  {
+    "timestamp": "2026-10-22T00:08:26.211648",
+    "portfolio": 121451.52,
+    "open_positions": 0,
+    "daily_pl_pct": 0.101
+  },
+  {
+    "timestamp": "2026-10-22T00:38:26.708786",
+    "portfolio": 121500.27,
+    "open_positions": 0,
+    "daily_pl_pct": 0.1411
+  },
+  {
+    "timestamp": "2026-10-22T01:08:27.077598",
+    "portfolio": 121533.28,
+    "open_positions": 0,
+    "daily_pl_pct": 0.1682
+  },
+  {
+    "timestamp": "2026-10-22T01:38:27.562140",
+    "portfolio": 121666.14,
+    "open_positions": 0,
+    "daily_pl_pct": 0.2772
+  },
+  {
+    "timestamp": "2026-10-22T02:08:28.017834",
+    "portfolio": 121758.12,
+    "open_positions": 0,
+    "daily_pl_pct": 0.3525
+  },
+  {
+    "timestamp": "2026-10-22T02:38:28.447369",
+    "portfolio": 121860.32,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4361
+  },
+  {
+    "timestamp": "2026-10-22T03:08:28.782439",
+    "portfolio": 122258.9,
+    "open_positions": 0,
+    "daily_pl_pct": 0.7607
+  },
+  {
+    "timestamp": "2026-10-22T03:38:29.329886",
+    "portfolio": 122187.36,
+    "open_positions": 0,
+    "daily_pl_pct": 0.7026
+  },
+  {
+    "timestamp": "2026-10-22T04:08:29.705168",
+    "portfolio": 122289.56,
+    "open_positions": 0,
+    "daily_pl_pct": 0.7856
+  },
+  {
+    "timestamp": "2026-10-22T04:38:30.203234",
+    "portfolio": 122555.28,
+    "open_positions": 0,
+    "daily_pl_pct": 1.0007
+  },
+  {
+    "timestamp": "2026-10-22T05:08:30.698148",
+    "portfolio": 122545.06,
+    "open_positions": 0,
+    "daily_pl_pct": 0.9924
+  },
+  {
+    "timestamp": "2026-10-22T05:38:31.101626",
+    "portfolio": 122616.6,
+    "open_positions": 0,
+    "daily_pl_pct": 1.0502
+  },
+  {
+    "timestamp": "2026-10-22T06:08:31.444127",
+    "portfolio": 122637.04,
+    "open_positions": 0,
+    "daily_pl_pct": 1.0667
+  },
+  {
+    "timestamp": "2026-10-22T06:38:31.878231",
+    "portfolio": 122739.24,
+    "open_positions": 0,
+    "daily_pl_pct": 1.1491
+  },
+  {
+    "timestamp": "2026-10-22T07:08:32.281289",
+    "portfolio": 122524.62,
+    "open_positions": 0,
+    "daily_pl_pct": 0.9759
+  },
+  {
+    "timestamp": "2026-10-22T07:38:32.722516",
+    "portfolio": 122749.46,
+    "open_positions": 0,
+    "daily_pl_pct": 1.1573
+  },
+  {
+    "timestamp": "2026-10-22T08:08:33.164139",
+    "portfolio": 122861.88,
+    "open_positions": 0,
+    "daily_pl_pct": 1.2477
+  },
+  {
+    "timestamp": "2026-10-22T08:38:33.704091",
+    "portfolio": 122964.08,
+    "open_positions": 0,
+    "daily_pl_pct": 1.3298
+  },
+  {
+    "timestamp": "2026-10-22T09:08:34.214208",
+    "portfolio": 122585.94,
+    "open_positions": 0,
+    "daily_pl_pct": 1.1422
+  },
+  {
+    "timestamp": "2026-10-22T09:38:34.642111",
+    "portfolio": 122953.86,
+    "open_positions": 0,
+    "daily_pl_pct": 1.438
+  },
+  {
+    "timestamp": "2026-10-22T10:08:35.120499",
+    "portfolio": 123066.28,
+    "open_positions": 0,
+    "daily_pl_pct": 1.528
+  },
+  {
+    "timestamp": "2026-10-22T10:38:35.675576",
+    "portfolio": 123025.4,
+    "open_positions": 0,
+    "daily_pl_pct": 1.4953
+  },
+  {
+    "timestamp": "2026-10-22T11:08:36.193053",
+    "portfolio": 122984.52,
+    "open_positions": 0,
+    "daily_pl_pct": 1.4626
+  },
+  {
+    "timestamp": "2026-10-22T11:38:36.641392",
+    "portfolio": 122892.54,
+    "open_positions": 0,
+    "daily_pl_pct": 1.3888
+  },
+  {
+    "timestamp": "2026-10-22T12:08:37.031012",
+    "portfolio": 123117.38,
+    "open_positions": 0,
+    "daily_pl_pct": 1.5689
+  },
+  {
+    "timestamp": "2026-10-22T12:38:37.438955",
+    "portfolio": 123127.6,
+    "open_positions": 0,
+    "daily_pl_pct": 1.5771
+  },
+  {
+    "timestamp": "2026-10-22T13:08:37.853868",
+    "portfolio": 123035.62,
+    "open_positions": 0,
+    "daily_pl_pct": 1.5035
+  },
+  {
+    "timestamp": "2026-10-22T13:38:38.323408",
+    "portfolio": 123086.72,
+    "open_positions": 0,
+    "daily_pl_pct": 1.5444
+  },
+  {
+    "timestamp": "2026-10-22T14:08:38.861564",
+    "portfolio": 123179.01,
+    "open_positions": 0,
+    "daily_pl_pct": 1.6181
+  },
+  {
+    "timestamp": "2026-10-22T14:38:53.457153",
+    "portfolio": 123648.82,
+    "open_positions": 0,
+    "daily_pl_pct": 1.9919
+  },
+  {
+    "timestamp": "2026-10-22T15:09:06.668551",
+    "portfolio": 123672.33,
+    "open_positions": 0,
+    "daily_pl_pct": 2.0106
+  },
+  {
+    "timestamp": "2026-10-22T15:39:17.220479",
+    "portfolio": 123689.7,
+    "open_positions": 0,
+    "daily_pl_pct": 2.0243
+  },
+  {
+    "timestamp": "2026-10-22T16:09:27.982774",
+    "portfolio": 123694.81,
+    "open_positions": 0,
+    "daily_pl_pct": 2.0284
+  },
+  {
+    "timestamp": "2026-10-22T16:39:38.230445",
+    "portfolio": 123628.38,
+    "open_positions": 0,
+    "daily_pl_pct": 1.9757
+  },
+  {
+    "timestamp": "2026-10-22T17:09:49.292777",
+    "portfolio": 123807.23,
+    "open_positions": 0,
+    "daily_pl_pct": 2.1173
+  },
+  {
+    "timestamp": "2026-10-22T17:40:00.021669",
+    "portfolio": 123940.09,
+    "open_positions": 0,
+    "daily_pl_pct": 2.2223
+  },
+  {
+    "timestamp": "2026-10-22T18:10:12.585406",
+    "portfolio": 124072.95,
+    "open_positions": 0,
+    "daily_pl_pct": 2.327
+  },
+  {
+    "timestamp": "2026-10-22T18:40:24.535398",
+    "portfolio": 123950.31,
+    "open_positions": 0,
+    "daily_pl_pct": 2.2303
+  },
+  {
+    "timestamp": "2026-10-22T19:10:36.402314",
+    "portfolio": 124057.62,
+    "open_positions": 0,
+    "daily_pl_pct": 2.3149
+  },
+  {
+    "timestamp": "2026-10-22T19:40:48.266849",
+    "portfolio": 124078.06,
+    "open_positions": 0,
+    "daily_pl_pct": 2.331
+  },
+  {
+    "timestamp": "2026-10-22T20:10:48.623687",
+    "portfolio": 124272.24,
+    "open_positions": 0,
+    "daily_pl_pct": 2.4836
+  },
+  {
+    "timestamp": "2026-10-22T20:40:49.075924",
+    "portfolio": 124297.79,
+    "open_positions": 0,
+    "daily_pl_pct": 2.5037
+  },
+  {
+    "timestamp": "2026-10-22T21:10:49.505493",
+    "portfolio": 124250.78,
+    "open_positions": 0,
+    "daily_pl_pct": 2.4668
+  },
+  {
+    "timestamp": "2026-10-22T21:40:50.007980",
+    "portfolio": 124243.83,
+    "open_positions": 0,
+    "daily_pl_pct": 2.4613
+  },
+  {
+    "timestamp": "2026-10-22T22:10:50.435320",
+    "portfolio": 124210.92,
+    "open_positions": 0,
+    "daily_pl_pct": 2.4355
+  },
+  {
+    "timestamp": "2026-10-22T22:40:50.927221",
+    "portfolio": 124210.92,
+    "open_positions": 0,
+    "daily_pl_pct": 2.4355
+  },
+  {
+    "timestamp": "2026-10-22T23:10:51.399606",
+    "portfolio": 124159.82,
+    "open_positions": 0,
+    "daily_pl_pct": 2.3953
+  },
+  {
+    "timestamp": "2026-10-22T23:40:51.830866",
+    "portfolio": 124250.06,
+    "open_positions": 0,
+    "daily_pl_pct": 2.4662
+  },
+  {
+    "timestamp": "2026-10-23T00:10:52.268493",
+    "portfolio": 124231.36,
+    "open_positions": 0,
+    "daily_pl_pct": 2.4515
+  },
+  {
+    "timestamp": "2026-10-23T00:40:52.752202",
+    "portfolio": 124327.22,
+    "open_positions": 0,
+    "daily_pl_pct": 2.5267
+  },
+  {
+    "timestamp": "2026-10-23T01:10:53.247878",
+    "portfolio": 124292.68,
+    "open_positions": 0,
+    "daily_pl_pct": 2.4996
+  },
+  {
+    "timestamp": "2026-10-23T01:40:53.727962",
+    "portfolio": 124333.56,
+    "open_positions": 0,
+    "daily_pl_pct": 2.5317
+  },
+  {
+    "timestamp": "2026-10-23T02:10:54.202707",
+    "portfolio": 124466.42,
+    "open_positions": 0,
+    "daily_pl_pct": 2.6357
+  },
+  {
+    "timestamp": "2026-10-23T02:40:54.638978",
+    "portfolio": 124742.36,
+    "open_positions": 0,
+    "daily_pl_pct": 2.8511
+  },
+  {
+    "timestamp": "2026-10-23T03:10:55.125780",
+    "portfolio": 124711.7,
+    "open_positions": 0,
+    "daily_pl_pct": 2.8272
+  },
+  {
+    "timestamp": "2026-10-23T03:40:55.578266",
+    "portfolio": 124589.06,
+    "open_positions": 0,
+    "daily_pl_pct": 2.7316
+  },
+  {
+    "timestamp": "2026-10-23T04:10:56.001312",
+    "portfolio": 124865.0,
+    "open_positions": 0,
+    "daily_pl_pct": 2.9465
+  },
+  {
+    "timestamp": "2026-10-23T04:40:56.441974",
+    "portfolio": 124783.24,
+    "open_positions": 0,
+    "daily_pl_pct": 2.883
+  },
+  {
+    "timestamp": "2026-10-23T05:10:56.965160",
+    "portfolio": 124967.2,
+    "open_positions": 0,
+    "daily_pl_pct": 3.0259
+  },
+  {
+    "timestamp": "2026-10-23T05:40:57.468850",
+    "portfolio": 125069.4,
+    "open_positions": 0,
+    "daily_pl_pct": 3.1052
+  },
+  {
+    "timestamp": "2026-10-23T06:10:57.866982",
+    "portfolio": 124793.46,
+    "open_positions": 0,
+    "daily_pl_pct": 2.8909
+  },
+  {
+    "timestamp": "2026-10-23T06:40:58.351099",
+    "portfolio": 124343.78,
+    "open_positions": 0,
+    "daily_pl_pct": 2.5397
+  },
+  {
+    "timestamp": "2026-10-23T07:10:58.900886",
+    "portfolio": 124589.06,
+    "open_positions": 0,
+    "daily_pl_pct": 2.7316
+  },
+  {
+    "timestamp": "2026-10-23T07:40:59.381408",
+    "portfolio": 124701.48,
+    "open_positions": 0,
+    "daily_pl_pct": 2.8193
+  },
+  {
+    "timestamp": "2026-10-23T08:10:59.859972",
+    "portfolio": 124752.58,
+    "open_positions": 0,
+    "daily_pl_pct": 2.8591
+  },
+  {
+    "timestamp": "2026-10-23T08:41:00.218636",
+    "portfolio": 124803.68,
+    "open_positions": 0,
+    "daily_pl_pct": 2.8989
+  },
+  {
+    "timestamp": "2026-10-23T09:11:00.654618",
+    "portfolio": 124997.86,
+    "open_positions": 0,
+    "daily_pl_pct": 3.0497
+  },
+  {
+    "timestamp": "2026-10-23T09:41:01.122261",
+    "portfolio": 124834.34,
+    "open_positions": 0,
+    "daily_pl_pct": 2.9227
+  },
+  {
+    "timestamp": "2026-10-23T10:11:01.529942",
+    "portfolio": 124732.14,
+    "open_positions": 0,
+    "daily_pl_pct": 2.8432
+  },
+  {
+    "timestamp": "2026-10-23T10:41:02.010345",
+    "portfolio": 124956.98,
+    "open_positions": 0,
+    "daily_pl_pct": 3.018
+  },
+  {
+    "timestamp": "2026-10-23T11:11:02.506970",
+    "portfolio": 124926.32,
+    "open_positions": 0,
+    "daily_pl_pct": 2.9942
+  },
+  {
+    "timestamp": "2026-10-23T11:41:03.045361",
+    "portfolio": 124895.66,
+    "open_positions": 0,
+    "daily_pl_pct": 2.9704
+  },
+  {
+    "timestamp": "2026-10-23T12:11:03.535754",
+    "portfolio": 124732.14,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4506
+  },
+  {
+    "timestamp": "2026-10-23T12:41:03.926130",
+    "portfolio": 124803.68,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-23T13:11:04.447930",
+    "portfolio": 124885.44,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5728
+  },
+  {
+    "timestamp": "2026-10-23T13:41:04.827275",
+    "portfolio": 124936.64,
+    "open_positions": 0,
+    "daily_pl_pct": 0.6136
+  },
+  {
+    "timestamp": "2026-10-23T14:11:05.360236",
+    "portfolio": 124946.96,
+    "open_positions": 0,
+    "daily_pl_pct": 0.6218
+  },
+  {
+    "timestamp": "2026-10-23T14:41:20.054819",
+    "portfolio": 124859.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5525
+  },
+  {
+    "timestamp": "2026-10-23T15:11:35.899714",
+    "portfolio": 124942.98,
+    "open_positions": 0,
+    "daily_pl_pct": 0.6186
+  },
+  {
+    "timestamp": "2026-10-23T15:41:50.059386",
+    "portfolio": 124905.88,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5891
+  },
+  {
+    "timestamp": "2026-10-23T16:12:00.996854",
+    "portfolio": 124779.56,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4885
+  },
+  {
+    "timestamp": "2026-10-23T16:42:13.615144",
+    "portfolio": 124690.75,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4176
+  },
+  {
+    "timestamp": "2026-10-23T17:12:26.074068",
+    "portfolio": 124583.95,
+    "open_positions": 0,
+    "daily_pl_pct": 0.3322
+  },
+  {
+    "timestamp": "2026-10-23T17:42:38.528190",
+    "portfolio": 124629.94,
+    "open_positions": 0,
+    "daily_pl_pct": 0.369
+  },
+  {
+    "timestamp": "2026-10-23T18:12:50.046320",
+    "portfolio": 124762.8,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4751
+  },
+  {
+    "timestamp": "2026-10-23T18:43:01.321892",
+    "portfolio": 124859.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5525
+  },
+  {
+    "timestamp": "2026-10-23T19:13:15.476997",
+    "portfolio": 124773.02,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4833
+  },
+  {
+    "timestamp": "2026-10-23T19:43:27.472065",
+    "portfolio": 124808.79,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5118
+  },
+  {
+    "timestamp": "2026-10-23T20:13:27.824955",
+    "portfolio": 124765.46,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4772
+  },
+  {
+    "timestamp": "2026-10-23T20:43:28.258711",
+    "portfolio": 124788.35,
+    "open_positions": 0,
+    "daily_pl_pct": 0.4955
+  },
+  {
+    "timestamp": "2026-10-23T21:13:28.754972",
+    "portfolio": 124847.32,
+    "open_positions": 0,
+    "daily_pl_pct": 0.5425
+  },
+  {
+    "timestamp": "2026-10-23T21:41:30.177618",
+    "portfolio": 124894.23,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5798
+  },
+  {
+    "timestamp": "2026-10-23T22:11:30.851053",
+    "portfolio": 124814.0,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5159
+  },
+  {
+    "timestamp": "2026-10-23T22:41:31.496440",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-23T23:11:32.122836",
+    "portfolio": 124804.7,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5085
+  },
+  {
+    "timestamp": "2026-10-23T23:41:32.863894",
+    "portfolio": 124824.12,
+    "open_positions": 1,
+    "daily_pl_pct": 0.524
+  },
+  {
+    "timestamp": "2026-10-24T00:11:33.717453",
+    "portfolio": 125130.72,
+    "open_positions": 1,
+    "daily_pl_pct": 0.7677
+  },
+  {
+    "timestamp": "2026-10-24T00:41:34.533276",
+    "portfolio": 125018.3,
+    "open_positions": 1,
+    "daily_pl_pct": 0.6785
+  },
+  {
+    "timestamp": "2026-10-24T01:11:35.684324",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T01:41:36.365098",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T02:11:37.058651",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T02:41:37.841599",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T03:11:38.465504",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T03:41:39.175663",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T04:11:39.911073",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T04:41:40.693372",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T05:11:41.495629",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T05:41:42.328254",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T06:11:43.056184",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T06:41:43.912056",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T07:11:44.582929",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T07:41:45.332440",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T08:11:46.085639",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T08:41:47.272925",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.5077
+  },
+  {
+    "timestamp": "2026-10-24T09:11:47.969471",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T09:41:48.661991",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T10:11:49.423205",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T10:41:50.198627",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T11:11:51.054144",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T11:41:51.831546",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T12:11:52.535955",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T12:41:53.294571",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T13:11:53.944037",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T13:41:54.727593",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T14:11:55.482851",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T22:38:52.602243",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T23:08:53.380113",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-24T23:38:54.030116",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T00:08:54.773620",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T00:38:55.529983",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T01:08:56.264833",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T01:38:56.985522",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T01:08:57.599096",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T01:10:27.300415",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T01:40:27.981880",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T02:10:28.710252",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T02:40:29.503062",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T03:10:30.298081",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T03:40:31.100247",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T04:10:31.841366",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T04:40:32.493493",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T05:10:33.260663",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T05:40:34.023005",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T06:10:34.684511",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T06:40:35.344152",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T07:10:36.120287",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T07:40:36.877435",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T08:10:37.656769",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T08:40:38.285127",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T09:10:39.023728",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T09:40:39.819267",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T10:10:40.597253",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T10:40:41.303546",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T11:10:42.019038",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T11:40:42.749542",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T12:10:43.524185",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T12:40:44.322316",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T13:10:45.168628",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T13:40:55.746935",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T14:11:06.565138",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T14:41:17.900010",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T15:11:28.362539",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T15:41:38.895269",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T16:11:49.931754",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T16:42:00.449815",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T17:12:10.914031",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T17:42:21.568778",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T18:12:32.199336",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T18:42:42.846366",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T19:12:43.648870",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T19:42:44.423905",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T20:12:45.263803",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T20:42:46.012327",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T21:12:46.629311",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T21:42:47.285768",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T22:12:47.947246",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T22:42:48.710729",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T23:12:49.481029",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-25T23:42:50.229428",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-26T00:12:51.058398",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-26T00:42:51.736694",
+    "portfolio": 124742.36,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0492
+  },
+  {
+    "timestamp": "2026-10-26T01:12:52.406884",
+    "portfolio": 124773.02,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0246
+  },
+  {
+    "timestamp": "2026-10-26T01:42:53.191502",
+    "portfolio": 124987.64,
+    "open_positions": 1,
+    "daily_pl_pct": 0.1472
+  },
+  {
+    "timestamp": "2026-10-26T02:12:53.961850",
+    "portfolio": 124844.56,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0327
+  },
+  {
+    "timestamp": "2026-10-26T02:42:54.745858",
+    "portfolio": 124997.86,
+    "open_positions": 1,
+    "daily_pl_pct": 0.1553
+  },
+  {
+    "timestamp": "2026-10-26T03:12:55.523014",
+    "portfolio": 124517.52,
+    "open_positions": 1,
+    "daily_pl_pct": -0.2298
+  },
+  {
+    "timestamp": "2026-10-26T03:42:56.303126",
+    "portfolio": 124558.4,
+    "open_positions": 1,
+    "daily_pl_pct": -0.1969
+  },
+  {
+    "timestamp": "2026-10-26T04:12:57.040942",
+    "portfolio": 124701.48,
+    "open_positions": 1,
+    "daily_pl_pct": -0.082
+  },
+  {
+    "timestamp": "2026-10-26T04:42:57.764511",
+    "portfolio": 124609.5,
+    "open_positions": 1,
+    "daily_pl_pct": -0.1558
+  },
+  {
+    "timestamp": "2026-10-26T05:12:58.496029",
+    "portfolio": 124527.74,
+    "open_positions": 1,
+    "daily_pl_pct": -0.2216
+  },
+  {
+    "timestamp": "2026-10-26T05:42:59.306647",
+    "portfolio": 124568.62,
+    "open_positions": 1,
+    "daily_pl_pct": -0.1887
+  },
+  {
+    "timestamp": "2026-10-26T06:13:00.105552",
+    "portfolio": 124721.92,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0656
+  },
+  {
+    "timestamp": "2026-10-26T06:43:00.744239",
+    "portfolio": 124854.78,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0409
+  },
+  {
+    "timestamp": "2026-10-26T07:13:01.531303",
+    "portfolio": 124926.32,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0982
+  },
+  {
+    "timestamp": "2026-10-26T07:43:02.317086",
+    "portfolio": 124773.02,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0246
+  },
+  {
+    "timestamp": "2026-10-26T08:13:02.968120",
+    "portfolio": 124660.6,
+    "open_positions": 1,
+    "daily_pl_pct": -0.1148
+  },
+  {
+    "timestamp": "2026-10-26T08:43:03.753420",
+    "portfolio": 124650.38,
+    "open_positions": 1,
+    "daily_pl_pct": -0.123
+  },
+  {
+    "timestamp": "2026-10-26T09:13:04.569740",
+    "portfolio": 124721.92,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0656
+  },
+  {
+    "timestamp": "2026-10-26T09:43:05.266164",
+    "portfolio": 124686.15,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0943
+  },
+  {
+    "timestamp": "2026-10-26T10:13:06.019053",
+    "portfolio": 124752.58,
+    "open_positions": 1,
+    "daily_pl_pct": -0.041
+  },
+  {
+    "timestamp": "2026-10-26T10:43:06.683658",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-26T11:13:07.387856",
+    "portfolio": 124905.88,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0818
+  },
+  {
+    "timestamp": "2026-10-26T11:43:08.138354",
+    "portfolio": 124803.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-26T12:13:08.855091",
+    "portfolio": 124742.36,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0492
+  },
+  {
+    "timestamp": "2026-10-26T12:43:09.646190",
+    "portfolio": 124732.14,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0574
+  },
+  {
+    "timestamp": "2026-10-26T13:13:10.326271",
+    "portfolio": 124967.1,
+    "open_positions": 1,
+    "daily_pl_pct": 0.1308
+  },
+  {
+    "timestamp": "2026-10-26T13:43:21.558230",
+    "portfolio": 125100.06,
+    "open_positions": 1,
+    "daily_pl_pct": 0.2369
+  },
+  {
+    "timestamp": "2026-10-26T14:13:32.877915",
+    "portfolio": 125171.6,
+    "open_positions": 1,
+    "daily_pl_pct": 0.2939
+  },
+  {
+    "timestamp": "2026-10-26T14:43:44.554030",
+    "portfolio": 124472.75,
+    "open_positions": 1,
+    "daily_pl_pct": -0.2659
+  },
+  {
+    "timestamp": "2026-10-26T15:13:55.783349",
+    "portfolio": 124332.98,
+    "open_positions": 1,
+    "daily_pl_pct": -0.3786
+  },
+  {
+    "timestamp": "2026-10-26T15:44:07.579420",
+    "portfolio": 124355.65,
+    "open_positions": 2,
+    "daily_pl_pct": -0.3603
+  },
+  {
+    "timestamp": "2026-10-26T16:14:19.541156",
+    "portfolio": 124396.74,
+    "open_positions": 2,
+    "daily_pl_pct": -0.3271
+  },
+  {
+    "timestamp": "2026-10-26T16:44:34.759684",
+    "portfolio": 124422.74,
+    "open_positions": 2,
+    "daily_pl_pct": -0.3062
+  },
+  {
+    "timestamp": "2026-10-26T17:14:46.752013",
+    "portfolio": 124053.98,
+    "open_positions": 2,
+    "daily_pl_pct": -0.6043
+  },
+  {
+    "timestamp": "2026-10-26T17:44:58.320628",
+    "portfolio": 124419.97,
+    "open_positions": 2,
+    "daily_pl_pct": -0.3084
+  },
+  {
+    "timestamp": "2026-10-26T18:15:11.660017",
+    "portfolio": 124444.0,
+    "open_positions": 2,
+    "daily_pl_pct": -0.289
+  },
+  {
+    "timestamp": "2026-10-26T18:45:24.180976",
+    "portfolio": 124954.6,
+    "open_positions": 2,
+    "daily_pl_pct": 0.1208
+  },
+  {
+    "timestamp": "2026-10-26T19:15:25.035983",
+    "portfolio": 125399.03,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4748
+  },
+  {
+    "timestamp": "2026-10-26T19:45:25.880690",
+    "portfolio": 125110.8,
+    "open_positions": 2,
+    "daily_pl_pct": 0.2455
+  },
+  {
+    "timestamp": "2026-10-26T20:15:26.685577",
+    "portfolio": 125376.34,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4568
+  },
+  {
+    "timestamp": "2026-10-26T20:45:27.376042",
+    "portfolio": 125238.48,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3472
+  },
+  {
+    "timestamp": "2026-10-26T21:15:28.149117",
+    "portfolio": 124976.44,
+    "open_positions": 2,
+    "daily_pl_pct": 0.1382
+  },
+  {
+    "timestamp": "2026-10-26T21:45:28.902526",
+    "portfolio": 124998.92,
+    "open_positions": 2,
+    "daily_pl_pct": 0.1562
+  },
+  {
+    "timestamp": "2026-10-26T22:15:29.684938",
+    "portfolio": 124932.84,
+    "open_positions": 2,
+    "daily_pl_pct": 0.1034
+  },
+  {
+    "timestamp": "2026-10-26T22:45:30.387994",
+    "portfolio": 125244.81,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3522
+  },
+  {
+    "timestamp": "2026-10-26T23:15:31.141005",
+    "portfolio": 125285.38,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3845
+  },
+  {
+    "timestamp": "2026-10-26T23:45:31.948600",
+    "portfolio": 125112.67,
+    "open_positions": 2,
+    "daily_pl_pct": 0.247
+  },
+  {
+    "timestamp": "2026-10-27T00:15:33.248235",
+    "portfolio": 124713.52,
+    "open_positions": 2,
+    "daily_pl_pct": -0.0723
+  },
+  {
+    "timestamp": "2026-10-27T00:45:34.040835",
+    "portfolio": 124936.2,
+    "open_positions": 2,
+    "daily_pl_pct": 0.1061
+  },
+  {
+    "timestamp": "2026-10-27T01:15:34.696272",
+    "portfolio": 124580.56,
+    "open_positions": 2,
+    "daily_pl_pct": -0.1791
+  },
+  {
+    "timestamp": "2026-10-27T01:45:35.479942",
+    "portfolio": 124358.48,
+    "open_positions": 2,
+    "daily_pl_pct": -0.358
+  },
+  {
+    "timestamp": "2026-10-27T02:15:36.256776",
+    "portfolio": 125558.39,
+    "open_positions": 2,
+    "daily_pl_pct": 0.6011
+  },
+  {
+    "timestamp": "2026-10-27T02:45:37.042474",
+    "portfolio": 126046.69,
+    "open_positions": 2,
+    "daily_pl_pct": 0.9862
+  },
+  {
+    "timestamp": "2026-10-27T03:15:37.815042",
+    "portfolio": 126490.16,
+    "open_positions": 2,
+    "daily_pl_pct": 1.3333
+  },
+  {
+    "timestamp": "2026-10-27T03:45:38.545834",
+    "portfolio": 125912.98,
+    "open_positions": 2,
+    "daily_pl_pct": 0.881
+  },
+  {
+    "timestamp": "2026-10-27T04:15:39.331172",
+    "portfolio": 125957.66,
+    "open_positions": 2,
+    "daily_pl_pct": 0.9162
+  },
+  {
+    "timestamp": "2026-10-27T04:45:39.971297",
+    "portfolio": 126802.53,
+    "open_positions": 2,
+    "daily_pl_pct": 1.5763
+  },
+  {
+    "timestamp": "2026-10-27T05:15:40.763409",
+    "portfolio": 127469.1,
+    "open_positions": 2,
+    "daily_pl_pct": 2.091
+  },
+  {
+    "timestamp": "2026-10-27T05:45:41.491967",
+    "portfolio": 127909.66,
+    "open_positions": 2,
+    "daily_pl_pct": 2.4283
+  },
+  {
+    "timestamp": "2026-10-27T06:15:42.300631",
+    "portfolio": 128224.07,
+    "open_positions": 2,
+    "daily_pl_pct": 2.6675
+  },
+  {
+    "timestamp": "2026-10-27T06:45:43.263452",
+    "portfolio": 129867.21,
+    "open_positions": 2,
+    "daily_pl_pct": 3.899
+  },
+  {
+    "timestamp": "2026-10-27T07:15:44.048596",
+    "portfolio": 129643.69,
+    "open_positions": 2,
+    "daily_pl_pct": 3.7333
+  },
+  {
+    "timestamp": "2026-10-27T07:45:44.858750",
+    "portfolio": 129509.95,
+    "open_positions": 2,
+    "daily_pl_pct": 3.6339
+  },
+  {
+    "timestamp": "2026-10-27T08:15:45.649794",
+    "portfolio": 128974.07,
+    "open_positions": 2,
+    "daily_pl_pct": 2.8951
+  },
+  {
+    "timestamp": "2026-10-27T08:45:46.415647",
+    "portfolio": 129639.5,
+    "open_positions": 2,
+    "daily_pl_pct": 3.3935
+  },
+  {
+    "timestamp": "2026-10-27T09:15:47.259329",
+    "portfolio": 128643.22,
+    "open_positions": 2,
+    "daily_pl_pct": 2.6454
+  },
+  {
+    "timestamp": "2026-10-27T09:45:48.051370",
+    "portfolio": 127776.37,
+    "open_positions": 2,
+    "daily_pl_pct": 1.9849
+  },
+  {
+    "timestamp": "2026-10-27T10:15:48.706103",
+    "portfolio": 128218.01,
+    "open_positions": 2,
+    "daily_pl_pct": 2.3225
+  },
+  {
+    "timestamp": "2026-10-27T10:45:49.489033",
+    "portfolio": 126625.26,
+    "open_positions": 2,
+    "daily_pl_pct": 1.0939
+  },
+  {
+    "timestamp": "2026-10-27T11:15:50.266962",
+    "portfolio": 127025.13,
+    "open_positions": 2,
+    "daily_pl_pct": 1.4052
+  },
+  {
+    "timestamp": "2026-10-27T11:45:50.970936",
+    "portfolio": 127693.08,
+    "open_positions": 2,
+    "daily_pl_pct": 1.921
+  },
+  {
+    "timestamp": "2026-10-27T12:15:51.643161",
+    "portfolio": 127470.73,
+    "open_positions": 2,
+    "daily_pl_pct": 1.7499
+  },
+  {
+    "timestamp": "2026-10-27T12:45:52.363346",
+    "portfolio": 126448.58,
+    "open_positions": 2,
+    "daily_pl_pct": 0.9557
+  },
+  {
+    "timestamp": "2026-10-27T13:15:53.096502",
+    "portfolio": 126046.67,
+    "open_positions": 2,
+    "daily_pl_pct": 0.6399
+  },
+  {
+    "timestamp": "2026-10-27T13:46:05.967930",
+    "portfolio": 125158.26,
+    "open_positions": 2,
+    "daily_pl_pct": -0.0654
+  },
+  {
+    "timestamp": "2026-10-27T14:16:17.815974",
+    "portfolio": 124485.33,
+    "open_positions": 2,
+    "daily_pl_pct": -0.6063
+  },
+  {
+    "timestamp": "2026-10-27T14:46:30.408786",
+    "portfolio": 124046.69,
+    "open_positions": 2,
+    "daily_pl_pct": -0.9621
+  },
+  {
+    "timestamp": "2026-10-27T15:16:42.883810",
+    "portfolio": 122965.0,
+    "open_positions": 2,
+    "daily_pl_pct": -1.8502
+  },
+  {
+    "timestamp": "2026-10-27T15:46:54.680635",
+    "portfolio": 122941.96,
+    "open_positions": 2,
+    "daily_pl_pct": -1.8693
+  },
+  {
+    "timestamp": "2026-10-27T16:17:07.108485",
+    "portfolio": 123275.46,
+    "open_positions": 2,
+    "daily_pl_pct": -1.5937
+  },
+  {
+    "timestamp": "2026-10-27T16:47:18.420604",
+    "portfolio": 122984.26,
+    "open_positions": 2,
+    "daily_pl_pct": -1.8343
+  },
+  {
+    "timestamp": "2026-10-27T17:17:29.968013",
+    "portfolio": 123207.61,
+    "open_positions": 2,
+    "daily_pl_pct": -1.6497
+  },
+  {
+    "timestamp": "2026-10-27T17:47:42.261724",
+    "portfolio": 123385.7,
+    "open_positions": 2,
+    "daily_pl_pct": -1.5029
+  },
+  {
+    "timestamp": "2026-10-27T18:17:54.127066",
+    "portfolio": 123651.52,
+    "open_positions": 2,
+    "daily_pl_pct": -1.2847
+  },
+  {
+    "timestamp": "2026-10-27T18:48:05.759179",
+    "portfolio": 123984.61,
+    "open_positions": 2,
+    "daily_pl_pct": -1.0126
+  },
+  {
+    "timestamp": "2026-10-27T19:18:06.442006",
+    "portfolio": 123319.81,
+    "open_positions": 2,
+    "daily_pl_pct": -1.5572
+  },
+  {
+    "timestamp": "2026-10-27T19:48:07.246321",
+    "portfolio": 122877.6,
+    "open_positions": 2,
+    "daily_pl_pct": -1.9227
+  },
+  {
+    "timestamp": "2026-10-27T20:18:08.040656",
+    "portfolio": 123074.95,
+    "open_positions": 2,
+    "daily_pl_pct": -1.7592
+  },
+  {
+    "timestamp": "2026-10-27T20:48:08.674933",
+    "portfolio": 123162.73,
+    "open_positions": 2,
+    "daily_pl_pct": -1.6867
+  },
+  {
+    "timestamp": "2026-10-27T21:18:09.438606",
+    "portfolio": 123118.7,
+    "open_positions": 2,
+    "daily_pl_pct": -1.7231
+  },
+  {
+    "timestamp": "2026-10-27T21:48:10.231447",
+    "portfolio": 123031.56,
+    "open_positions": 2,
+    "daily_pl_pct": -1.7951
+  },
+  {
+    "timestamp": "2026-10-27T22:18:11.010716",
+    "portfolio": 123030.03,
+    "open_positions": 2,
+    "daily_pl_pct": -1.7964
+  },
+  {
+    "timestamp": "2026-10-27T22:48:11.899372",
+    "portfolio": 122985.65,
+    "open_positions": 2,
+    "daily_pl_pct": -1.8331
+  },
+  {
+    "timestamp": "2026-10-27T23:18:12.657685",
+    "portfolio": 123024.32,
+    "open_positions": 2,
+    "daily_pl_pct": -1.8011
+  },
+  {
+    "timestamp": "2026-10-27T23:48:13.452130",
+    "portfolio": 122942.14,
+    "open_positions": 2,
+    "daily_pl_pct": -1.8692
+  },
+  {
+    "timestamp": "2026-10-28T00:18:14.222966",
+    "portfolio": 123119.15,
+    "open_positions": 2,
+    "daily_pl_pct": -1.7227
+  },
+  {
+    "timestamp": "2026-10-28T00:48:14.998201",
+    "portfolio": 123297.72,
+    "open_positions": 2,
+    "daily_pl_pct": -1.5754
+  },
+  {
+    "timestamp": "2026-10-28T01:18:15.867616",
+    "portfolio": 123697.17,
+    "open_positions": 2,
+    "daily_pl_pct": -1.2474
+  },
+  {
+    "timestamp": "2026-10-28T01:48:16.506875",
+    "portfolio": 123830.52,
+    "open_positions": 2,
+    "daily_pl_pct": -1.1383
+  },
+  {
+    "timestamp": "2026-10-28T02:18:17.203620",
+    "portfolio": 124718.27,
+    "open_positions": 2,
+    "daily_pl_pct": -0.4184
+  },
+  {
+    "timestamp": "2026-10-28T02:48:17.968636",
+    "portfolio": 124631.37,
+    "open_positions": 2,
+    "daily_pl_pct": -0.4884
+  },
+  {
+    "timestamp": "2026-10-28T03:18:18.754131",
+    "portfolio": 124142.86,
+    "open_positions": 2,
+    "daily_pl_pct": -0.8839
+  },
+  {
+    "timestamp": "2026-10-28T03:48:19.505976",
+    "portfolio": 124632.6,
+    "open_positions": 2,
+    "daily_pl_pct": -0.4874
+  },
+  {
+    "timestamp": "2026-10-28T04:18:20.302480",
+    "portfolio": 124899.15,
+    "open_positions": 2,
+    "daily_pl_pct": -0.273
+  },
+  {
+    "timestamp": "2026-10-28T04:48:20.976890",
+    "portfolio": 124987.22,
+    "open_positions": 2,
+    "daily_pl_pct": -0.2023
+  },
+  {
+    "timestamp": "2026-10-28T05:18:21.780061",
+    "portfolio": 124942.57,
+    "open_positions": 2,
+    "daily_pl_pct": -0.2381
+  },
+  {
+    "timestamp": "2026-10-28T05:48:22.595835",
+    "portfolio": 125120.96,
+    "open_positions": 2,
+    "daily_pl_pct": -0.0952
+  },
+  {
+    "timestamp": "2026-10-28T06:18:23.446317",
+    "portfolio": 125298.84,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0469
+  },
+  {
+    "timestamp": "2026-10-28T06:48:24.319465",
+    "portfolio": 125787.53,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4352
+  },
+  {
+    "timestamp": "2026-10-28T07:18:25.105149",
+    "portfolio": 125477.8,
+    "open_positions": 2,
+    "daily_pl_pct": 0.1894
+  },
+  {
+    "timestamp": "2026-10-28T07:48:25.968088",
+    "portfolio": 125609.77,
+    "open_positions": 2,
+    "daily_pl_pct": 0.2943
+  },
+  {
+    "timestamp": "2026-10-28T08:18:26.737507",
+    "portfolio": 124811.29,
+    "open_positions": 2,
+    "daily_pl_pct": 1.4276
+  },
+  {
+    "timestamp": "2026-10-28T08:48:27.492258",
+    "portfolio": 124410.19,
+    "open_positions": 2,
+    "daily_pl_pct": 1.1098
+  },
+  {
+    "timestamp": "2026-10-28T09:18:28.271588",
+    "portfolio": 124688.11,
+    "open_positions": 2,
+    "daily_pl_pct": 1.3302
+  },
+  {
+    "timestamp": "2026-10-28T09:48:29.099598",
+    "portfolio": 125345.17,
+    "open_positions": 2,
+    "daily_pl_pct": 1.8474
+  },
+  {
+    "timestamp": "2026-10-28T10:18:29.879877",
+    "portfolio": 126012.25,
+    "open_positions": 2,
+    "daily_pl_pct": 2.367
+  },
+  {
+    "timestamp": "2026-10-28T10:48:30.689249",
+    "portfolio": 125835.33,
+    "open_positions": 2,
+    "daily_pl_pct": 2.2298
+  },
+  {
+    "timestamp": "2026-10-28T11:18:31.477636",
+    "portfolio": 125967.78,
+    "open_positions": 2,
+    "daily_pl_pct": 2.3326
+  },
+  {
+    "timestamp": "2026-10-28T11:48:32.268655",
+    "portfolio": 125346.88,
+    "open_positions": 2,
+    "daily_pl_pct": 1.8488
+  },
+  {
+    "timestamp": "2026-10-28T12:18:32.987878",
+    "portfolio": 124591.61,
+    "open_positions": 2,
+    "daily_pl_pct": 1.2538
+  },
+  {
+    "timestamp": "2026-10-28T12:48:33.699027",
+    "portfolio": 124323.53,
+    "open_positions": 2,
+    "daily_pl_pct": 1.0409
+  },
+  {
+    "timestamp": "2026-10-28T13:18:34.557558",
+    "portfolio": 124413.19,
+    "open_positions": 2,
+    "daily_pl_pct": 1.1122
+  },
+  {
+    "timestamp": "2026-10-28T13:48:46.690492",
+    "portfolio": 125519.24,
+    "open_positions": 2,
+    "daily_pl_pct": 1.9836
+  },
+  {
+    "timestamp": "2026-10-28T14:18:58.540812",
+    "portfolio": 125812.74,
+    "open_positions": 2,
+    "daily_pl_pct": 2.2122
+  },
+  {
+    "timestamp": "2026-10-28T14:49:10.584334",
+    "portfolio": 126411.55,
+    "open_positions": 2,
+    "daily_pl_pct": 2.6754
+  },
+  {
+    "timestamp": "2026-10-28T15:19:23.319965",
+    "portfolio": 126368.91,
+    "open_positions": 2,
+    "daily_pl_pct": 2.6426
+  },
+  {
+    "timestamp": "2026-10-28T15:49:35.041626",
+    "portfolio": 126502.71,
+    "open_positions": 2,
+    "daily_pl_pct": 2.7456
+  },
+  {
+    "timestamp": "2026-10-28T16:19:47.392480",
+    "portfolio": 126658.24,
+    "open_positions": 2,
+    "daily_pl_pct": 2.865
+  },
+  {
+    "timestamp": "2026-10-28T16:49:59.852588",
+    "portfolio": 126280.7,
+    "open_positions": 2,
+    "daily_pl_pct": 2.5746
+  },
+  {
+    "timestamp": "2026-10-28T17:20:14.816529",
+    "portfolio": 126368.82,
+    "open_positions": 2,
+    "daily_pl_pct": 2.6425
+  },
+  {
+    "timestamp": "2026-10-28T17:50:29.074174",
+    "portfolio": 126411.5,
+    "open_positions": 2,
+    "daily_pl_pct": 2.6754
+  },
+  {
+    "timestamp": "2026-10-28T18:20:42.379832",
+    "portfolio": 126943.9,
+    "open_positions": 2,
+    "daily_pl_pct": 3.0836
+  },
+  {
+    "timestamp": "2026-10-28T18:50:55.061980",
+    "portfolio": 124727.72,
+    "open_positions": 2,
+    "daily_pl_pct": 1.3615
+  },
+  {
+    "timestamp": "2026-10-28T19:20:55.722525",
+    "portfolio": 125879.17,
+    "open_positions": 2,
+    "daily_pl_pct": 2.2638
+  },
+  {
+    "timestamp": "2026-10-28T19:50:56.554730",
+    "portfolio": 124548.14,
+    "open_positions": 2,
+    "daily_pl_pct": 1.2193
+  },
+  {
+    "timestamp": "2026-10-28T20:20:57.287653",
+    "portfolio": 124101.45,
+    "open_positions": 2,
+    "daily_pl_pct": 0.8638
+  },
+  {
+    "timestamp": "2026-10-28T20:50:58.012808",
+    "portfolio": 124851.71,
+    "open_positions": 2,
+    "daily_pl_pct": 1.4595
+  },
+  {
+    "timestamp": "2026-10-28T21:20:58.786037",
+    "portfolio": 124630.65,
+    "open_positions": 2,
+    "daily_pl_pct": 1.2847
+  },
+  {
+    "timestamp": "2026-10-28T21:50:59.531033",
+    "portfolio": 125081.01,
+    "open_positions": 2,
+    "daily_pl_pct": 1.6402
+  },
+  {
+    "timestamp": "2026-10-28T22:21:00.384276",
+    "portfolio": 125251.61,
+    "open_positions": 2,
+    "daily_pl_pct": 1.7741
+  },
+  {
+    "timestamp": "2026-10-28T22:51:01.138111",
+    "portfolio": 125604.85,
+    "open_positions": 2,
+    "daily_pl_pct": 2.0504
+  },
+  {
+    "timestamp": "2026-10-28T23:21:01.841526",
+    "portfolio": 124941.99,
+    "open_positions": 2,
+    "daily_pl_pct": 1.5307
+  },
+  {
+    "timestamp": "2026-10-28T23:51:02.495008",
+    "portfolio": 125459.0,
+    "open_positions": 2,
+    "daily_pl_pct": 1.9365
+  },
+  {
+    "timestamp": "2026-10-29T00:21:03.293312",
+    "portfolio": 126408.43,
+    "open_positions": 2,
+    "daily_pl_pct": 2.673
+  },
+  {
+    "timestamp": "2026-10-29T00:51:04.016049",
+    "portfolio": 126278.38,
+    "open_positions": 2,
+    "daily_pl_pct": 2.5728
+  },
+  {
+    "timestamp": "2026-10-29T01:21:04.637637",
+    "portfolio": 124232.01,
+    "open_positions": 2,
+    "daily_pl_pct": 0.968
+  },
+  {
+    "timestamp": "2026-10-29T01:51:05.463820",
+    "portfolio": 125963.1,
+    "open_positions": 2,
+    "daily_pl_pct": 2.3289
+  },
+  {
+    "timestamp": "2026-10-29T02:21:06.276503",
+    "portfolio": 126050.87,
+    "open_positions": 2,
+    "daily_pl_pct": 2.397
+  },
+  {
+    "timestamp": "2026-10-29T02:51:06.930099",
+    "portfolio": 126406.51,
+    "open_positions": 2,
+    "daily_pl_pct": 2.6716
+  },
+  {
+    "timestamp": "2026-10-29T03:21:07.603143",
+    "portfolio": 128095.35,
+    "open_positions": 2,
+    "daily_pl_pct": 3.9548
+  },
+  {
+    "timestamp": "2026-10-29T03:51:08.300517",
+    "portfolio": 127919.0,
+    "open_positions": 2,
+    "daily_pl_pct": 3.8223
+  },
+  {
+    "timestamp": "2026-10-29T04:21:09.009444",
+    "portfolio": 128052.65,
+    "open_positions": 2,
+    "daily_pl_pct": 3.9227
+  },
+  {
+    "timestamp": "2026-10-29T04:51:09.638663",
+    "portfolio": 127832.22,
+    "open_positions": 2,
+    "daily_pl_pct": 3.7571
+  },
+  {
+    "timestamp": "2026-10-29T05:21:10.389168",
+    "portfolio": 127170.24,
+    "open_positions": 2,
+    "daily_pl_pct": 3.2561
+  },
+  {
+    "timestamp": "2026-10-29T05:51:11.140733",
+    "portfolio": 128413.78,
+    "open_positions": 2,
+    "daily_pl_pct": 4.1929
+  },
+  {
+    "timestamp": "2026-10-29T06:21:11.924458",
+    "portfolio": 130013.95,
+    "open_positions": 2,
+    "daily_pl_pct": 5.3721
+  },
+  {
+    "timestamp": "2026-10-29T06:51:12.556611",
+    "portfolio": 130100.88,
+    "open_positions": 2,
+    "daily_pl_pct": 5.4353
+  },
+  {
+    "timestamp": "2026-10-29T07:21:13.351881",
+    "portfolio": 129256.52,
+    "open_positions": 2,
+    "daily_pl_pct": 4.8176
+  },
+  {
+    "timestamp": "2026-10-29T07:51:14.164443",
+    "portfolio": 129965.37,
+    "open_positions": 2,
+    "daily_pl_pct": 5.3367
+  },
+  {
+    "timestamp": "2026-10-29T08:21:15.149868",
+    "portfolio": 129344.2,
+    "open_positions": 2,
+    "daily_pl_pct": 4.5321
+  },
+  {
+    "timestamp": "2026-10-29T08:51:16.063872",
+    "portfolio": 130409.65,
+    "open_positions": 2,
+    "daily_pl_pct": 5.3121
+  },
+  {
+    "timestamp": "2026-10-29T09:21:16.813709",
+    "portfolio": 130101.39,
+    "open_positions": 2,
+    "daily_pl_pct": 5.0878
+  },
+  {
+    "timestamp": "2026-10-29T09:51:17.580836",
+    "portfolio": 130770.6,
+    "open_positions": 2,
+    "daily_pl_pct": 5.5735
+  },
+  {
+    "timestamp": "2026-10-29T10:21:18.354776",
+    "portfolio": 130191.32,
+    "open_positions": 2,
+    "daily_pl_pct": 5.1533
+  },
+  {
+    "timestamp": "2026-10-29T10:51:19.128136",
+    "portfolio": 129436.23,
+    "open_positions": 2,
+    "daily_pl_pct": 4.6
+  },
+  {
+    "timestamp": "2026-10-29T11:21:20.040836",
+    "portfolio": 129213.85,
+    "open_positions": 2,
+    "daily_pl_pct": 4.4358
+  },
+  {
+    "timestamp": "2026-10-29T11:51:20.903882",
+    "portfolio": 130589.75,
+    "open_positions": 2,
+    "daily_pl_pct": 5.4427
+  },
+  {
+    "timestamp": "2026-10-29T12:21:21.646193",
+    "portfolio": 130410.67,
+    "open_positions": 2,
+    "daily_pl_pct": 5.3129
+  },
+  {
+    "timestamp": "2026-10-29T12:51:22.300940",
+    "portfolio": 131166.3,
+    "open_positions": 2,
+    "daily_pl_pct": 5.8583
+  },
+  {
+    "timestamp": "2026-10-29T13:21:23.058067",
+    "portfolio": 131079.43,
+    "open_positions": 2,
+    "daily_pl_pct": 5.7959
+  },
+  {
+    "timestamp": "2026-10-29T13:51:34.609908",
+    "portfolio": 131985.55,
+    "open_positions": 2,
+    "daily_pl_pct": 6.4427
+  },
+  {
+    "timestamp": "2026-10-29T14:21:46.373258",
+    "portfolio": 131228.86,
+    "open_positions": 2,
+    "daily_pl_pct": 5.9032
+  },
+  {
+    "timestamp": "2026-10-29T14:51:58.290573",
+    "portfolio": 130385.2,
+    "open_positions": 2,
+    "daily_pl_pct": 5.2944
+  },
+  {
+    "timestamp": "2026-10-29T15:22:11.242692",
+    "portfolio": 130989.74,
+    "open_positions": 2,
+    "daily_pl_pct": 5.7314
+  },
+  {
+    "timestamp": "2026-10-29T15:52:25.579971",
+    "portfolio": 131077.05,
+    "open_positions": 2,
+    "daily_pl_pct": 5.7942
+  },
+  {
+    "timestamp": "2026-10-29T16:22:43.914457",
+    "portfolio": 130988.84,
+    "open_positions": 2,
+    "daily_pl_pct": 5.7308
+  },
+  {
+    "timestamp": "2026-10-29T16:53:03.722289",
+    "portfolio": 131563.31,
+    "open_positions": 2,
+    "daily_pl_pct": 6.1424
+  },
+  {
+    "timestamp": "2026-10-29T17:23:16.666627",
+    "portfolio": 131439.6,
+    "open_positions": 2,
+    "daily_pl_pct": 6.0541
+  },
+  {
+    "timestamp": "2026-10-29T17:53:29.940850",
+    "portfolio": 133111.46,
+    "open_positions": 2,
+    "daily_pl_pct": 7.234
+  },
+  {
+    "timestamp": "2026-10-29T18:23:43.100753",
+    "portfolio": 132990.72,
+    "open_positions": 2,
+    "daily_pl_pct": 7.1498
+  },
+  {
+    "timestamp": "2026-10-29T18:53:55.871174",
+    "portfolio": 132838.55,
+    "open_positions": 2,
+    "daily_pl_pct": 7.0434
+  },
+  {
+    "timestamp": "2026-10-29T19:23:56.674615",
+    "portfolio": 132779.08,
+    "open_positions": 2,
+    "daily_pl_pct": 7.0018
+  },
+  {
+    "timestamp": "2026-10-29T19:53:57.362268",
+    "portfolio": 131624.46,
+    "open_positions": 2,
+    "daily_pl_pct": 6.186
+  },
+  {
+    "timestamp": "2026-10-29T20:23:58.074999",
+    "portfolio": 131829.29,
+    "open_positions": 2,
+    "daily_pl_pct": 6.3318
+  },
+  {
+    "timestamp": "2026-10-29T20:53:58.803029",
+    "portfolio": 132801.51,
+    "open_positions": 2,
+    "daily_pl_pct": 7.0175
+  },
+  {
+    "timestamp": "2026-10-29T21:23:59.595420",
+    "portfolio": 132432.66,
+    "open_positions": 2,
+    "daily_pl_pct": 6.7585
+  },
+  {
+    "timestamp": "2026-10-29T21:54:00.401939",
+    "portfolio": 132676.87,
+    "open_positions": 2,
+    "daily_pl_pct": 6.9302
+  },
+  {
+    "timestamp": "2026-10-29T22:24:01.165981",
+    "portfolio": 132799.08,
+    "open_positions": 2,
+    "daily_pl_pct": 7.0158
+  },
+  {
+    "timestamp": "2026-10-29T22:54:02.011084",
+    "portfolio": 132979.68,
+    "open_positions": 2,
+    "daily_pl_pct": 7.1421
+  },
+  {
+    "timestamp": "2026-10-29T23:24:02.732346",
+    "portfolio": 133652.33,
+    "open_positions": 2,
+    "daily_pl_pct": 7.6094
+  },
+  {
+    "timestamp": "2026-10-29T23:54:03.407971",
+    "portfolio": 133469.95,
+    "open_positions": 2,
+    "daily_pl_pct": 7.4832
+  },
+  {
+    "timestamp": "2026-10-30T00:24:04.147376",
+    "portfolio": 133773.49,
+    "open_positions": 2,
+    "daily_pl_pct": 7.6931
+  },
+  {
+    "timestamp": "2026-10-30T00:54:04.999881",
+    "portfolio": 133588.54,
+    "open_positions": 2,
+    "daily_pl_pct": 7.5653
+  },
+  {
+    "timestamp": "2026-10-30T01:24:05.776652",
+    "portfolio": 136325.11,
+    "open_positions": 2,
+    "daily_pl_pct": 9.4208
+  },
+  {
+    "timestamp": "2026-10-30T01:54:06.905464",
+    "portfolio": 137176.56,
+    "open_positions": 2,
+    "daily_pl_pct": 9.9831
+  },
+  {
+    "timestamp": "2026-10-30T02:24:07.985169",
+    "portfolio": 135898.59,
+    "open_positions": 2,
+    "daily_pl_pct": 9.1366
+  },
+  {
+    "timestamp": "2026-10-30T02:54:08.737656",
+    "portfolio": 137178.81,
+    "open_positions": 2,
+    "daily_pl_pct": 9.9845
+  },
+  {
+    "timestamp": "2026-10-30T03:24:09.534015",
+    "portfolio": 137240.38,
+    "open_positions": 2,
+    "daily_pl_pct": 10.0249
+  },
+  {
+    "timestamp": "2026-10-30T03:54:10.267720",
+    "portfolio": 137485.07,
+    "open_positions": 2,
+    "daily_pl_pct": 10.1851
+  },
+  {
+    "timestamp": "2026-10-30T04:24:10.980237",
+    "portfolio": 137425.48,
+    "open_positions": 2,
+    "daily_pl_pct": 10.1461
+  },
+  {
+    "timestamp": "2026-10-30T04:54:11.749081",
+    "portfolio": 136999.62,
+    "open_positions": 2,
+    "daily_pl_pct": 9.8668
+  },
+  {
+    "timestamp": "2026-10-30T05:24:12.440638",
+    "portfolio": 136389.86,
+    "open_positions": 2,
+    "daily_pl_pct": 9.4638
+  },
+  {
+    "timestamp": "2026-10-30T05:54:13.221338",
+    "portfolio": 137364.63,
+    "open_positions": 2,
+    "daily_pl_pct": 10.1063
+  },
+  {
+    "timestamp": "2026-10-30T06:24:14.055636",
+    "portfolio": 139375.17,
+    "open_positions": 2,
+    "daily_pl_pct": 11.4031
+  },
+  {
+    "timestamp": "2026-10-30T06:54:14.925332",
+    "portfolio": 139620.28,
+    "open_positions": 2,
+    "daily_pl_pct": 11.5586
+  },
+  {
+    "timestamp": "2026-10-30T07:24:15.743078",
+    "portfolio": 140168.26,
+    "open_positions": 2,
+    "daily_pl_pct": 11.9043
+  },
+  {
+    "timestamp": "2026-10-30T07:54:16.525201",
+    "portfolio": 141871.22,
+    "open_positions": 2,
+    "daily_pl_pct": 7.4594
+  },
+  {
+    "timestamp": "2026-10-30T08:24:17.325278",
+    "portfolio": 139858.46,
+    "open_positions": 2,
+    "daily_pl_pct": 6.1276
+  },
+  {
+    "timestamp": "2026-10-30T08:54:18.107065",
+    "portfolio": 139497.12,
+    "open_positions": 2,
+    "daily_pl_pct": 5.8844
+  },
+  {
+    "timestamp": "2026-10-30T09:24:18.896871",
+    "portfolio": 139860.47,
+    "open_positions": 2,
+    "daily_pl_pct": 6.1289
+  },
+  {
+    "timestamp": "2026-10-30T09:54:19.519861",
+    "portfolio": 140104.37,
+    "open_positions": 2,
+    "daily_pl_pct": 6.2924
+  },
+  {
+    "timestamp": "2026-10-30T10:24:20.330111",
+    "portfolio": 141137.75,
+    "open_positions": 2,
+    "daily_pl_pct": 6.9785
+  },
+  {
+    "timestamp": "2026-10-30T10:54:21.371383",
+    "portfolio": 141564.36,
+    "open_positions": 2,
+    "daily_pl_pct": 7.2588
+  },
+  {
+    "timestamp": "2026-10-30T11:24:22.051968",
+    "portfolio": 142112.82,
+    "open_positions": 2,
+    "daily_pl_pct": 7.6167
+  },
+  {
+    "timestamp": "2026-10-30T11:54:22.845036",
+    "portfolio": 143156.44,
+    "open_positions": 2,
+    "daily_pl_pct": 8.2902
+  },
+  {
+    "timestamp": "2026-10-30T12:24:23.629048",
+    "portfolio": 143635.12,
+    "open_positions": 2,
+    "daily_pl_pct": 8.5958
+  },
+  {
+    "timestamp": "2026-10-30T12:54:24.361691",
+    "portfolio": 144123.18,
+    "open_positions": 2,
+    "daily_pl_pct": 8.9053
+  },
+  {
+    "timestamp": "2026-10-30T13:24:25.050342",
+    "portfolio": 145585.2,
+    "open_positions": 2,
+    "daily_pl_pct": 9.8202
+  },
+  {
+    "timestamp": "2026-10-30T13:54:37.700301",
+    "portfolio": 147137.16,
+    "open_positions": 2,
+    "daily_pl_pct": 10.7713
+  },
+  {
+    "timestamp": "2026-10-30T14:24:51.770004",
+    "portfolio": 148986.64,
+    "open_positions": 2,
+    "daily_pl_pct": 11.879
+  },
+  {
+    "timestamp": "2026-10-30T14:55:05.436488",
+    "portfolio": 146097.52,
+    "open_positions": 2,
+    "daily_pl_pct": 10.1364
+  },
+  {
+    "timestamp": "2026-10-30T15:25:20.543240",
+    "portfolio": 147680.28,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0995
+  },
+  {
+    "timestamp": "2026-10-30T15:55:34.617854",
+    "portfolio": 148590.95,
+    "open_positions": 2,
+    "daily_pl_pct": 11.6443
+  },
+  {
+    "timestamp": "2026-10-30T16:25:47.821752",
+    "portfolio": 148893.86,
+    "open_positions": 2,
+    "daily_pl_pct": 11.8241
+  },
+  {
+    "timestamp": "2026-10-30T16:56:00.757702",
+    "portfolio": 148866.63,
+    "open_positions": 2,
+    "daily_pl_pct": 11.808
+  },
+  {
+    "timestamp": "2026-10-30T17:26:14.369385",
+    "portfolio": 148553.71,
+    "open_positions": 2,
+    "daily_pl_pct": 11.6222
+  },
+  {
+    "timestamp": "2026-10-30T17:56:27.144261",
+    "portfolio": 149280.19,
+    "open_positions": 2,
+    "daily_pl_pct": 12.0523
+  },
+  {
+    "timestamp": "2026-10-30T18:26:39.689127",
+    "portfolio": 150036.3,
+    "open_positions": 2,
+    "daily_pl_pct": 12.4955
+  },
+  {
+    "timestamp": "2026-10-30T18:56:53.879854",
+    "portfolio": 149701.4,
+    "open_positions": 2,
+    "daily_pl_pct": 12.2997
+  },
+  {
+    "timestamp": "2026-10-30T19:26:54.686807",
+    "portfolio": 149096.14,
+    "open_positions": 2,
+    "daily_pl_pct": 11.9437
+  },
+  {
+    "timestamp": "2026-10-30T19:56:55.524736",
+    "portfolio": 148277.68,
+    "open_positions": 2,
+    "daily_pl_pct": 11.4577
+  },
+  {
+    "timestamp": "2026-10-30T20:26:56.287143",
+    "portfolio": 148921.21,
+    "open_positions": 2,
+    "daily_pl_pct": 11.8403
+  },
+  {
+    "timestamp": "2026-10-30T20:56:57.080792",
+    "portfolio": 149042.4,
+    "open_positions": 2,
+    "daily_pl_pct": 11.912
+  },
+  {
+    "timestamp": "2026-10-30T21:26:57.868155",
+    "portfolio": 148860.65,
+    "open_positions": 2,
+    "daily_pl_pct": 11.8044
+  },
+  {
+    "timestamp": "2026-10-30T21:56:58.638259",
+    "portfolio": 148765.88,
+    "open_positions": 2,
+    "daily_pl_pct": 11.7482
+  },
+  {
+    "timestamp": "2026-10-30T22:26:59.267727",
+    "portfolio": 148076.4,
+    "open_positions": 2,
+    "daily_pl_pct": 11.3373
+  },
+  {
+    "timestamp": "2026-10-30T22:57:00.047207",
+    "portfolio": 147955.16,
+    "open_positions": 2,
+    "daily_pl_pct": 11.2647
+  },
+  {
+    "timestamp": "2026-10-30T23:27:00.845099",
+    "portfolio": 148191.67,
+    "open_positions": 2,
+    "daily_pl_pct": 11.4063
+  },
+  {
+    "timestamp": "2026-10-30T23:57:01.606105",
+    "portfolio": 148313.97,
+    "open_positions": 2,
+    "daily_pl_pct": 11.4793
+  },
+  {
+    "timestamp": "2026-10-31T00:27:02.414402",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T00:57:03.108491",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T01:27:03.874671",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T01:57:04.545238",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T02:27:05.308124",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T02:57:06.110122",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T03:27:06.917374",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T03:57:07.656439",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T04:27:08.419074",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T04:57:09.183910",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T05:27:09.989657",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T05:57:10.786541",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T06:27:11.637972",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T06:57:12.710886",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T07:27:13.515578",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 11.0388
+  },
+  {
+    "timestamp": "2026-10-31T07:57:14.588578",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T08:27:15.405135",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T08:57:16.085378",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T09:27:16.864334",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T09:57:17.637057",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T10:27:18.408846",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T10:53:31.547672",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T11:23:14.503033",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T11:53:15.283095",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T12:23:16.073454",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T12:53:16.917895",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T13:23:17.683516",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T13:53:28.473180",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T14:23:40.405135",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T14:53:51.200837",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T15:24:02.085424",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T15:54:12.831947",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T16:24:23.791258",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T16:54:34.514298",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T17:24:45.224676",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T17:54:56.208918",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T18:25:07.376405",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T18:55:18.516378",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T19:25:19.161124",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T19:55:19.987456",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T20:25:20.691046",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T20:55:21.428676",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T21:25:22.212682",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T21:55:23.028182",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T22:25:23.717690",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T22:55:24.354870",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T23:25:25.123023",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-10-31T23:55:25.951981",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T00:25:26.755356",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T00:55:27.425843",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T01:25:28.252554",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T01:55:29.000273",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T02:25:29.708177",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T02:55:30.557263",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T03:25:31.359136",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T03:55:32.095618",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T04:25:32.830377",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T04:55:33.654409",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T05:25:34.337404",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T05:55:35.152743",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T06:25:35.949580",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T06:42:55.232457",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T07:12:56.143197",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T07:42:57.246314",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T08:12:58.218378",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T08:42:59.239546",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T09:13:00.367121",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T09:43:01.520777",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T10:13:02.546200",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T10:43:03.574547",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T11:13:04.515933",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T11:43:05.597295",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T12:13:06.754543",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T12:43:07.848033",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T13:13:08.819338",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T13:43:09.921461",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T14:13:10.884111",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T14:43:11.975555",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T15:13:12.947404",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T15:43:14.006223",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T16:13:15.057441",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T16:43:16.126681",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T17:13:17.114704",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T17:43:18.236527",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T18:13:19.270347",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T18:43:20.357531",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T19:13:21.486337",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T19:43:22.550526",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T20:13:23.525928",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T20:43:24.552300",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T21:13:25.528908",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T21:43:26.586087",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T22:13:27.675251",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T22:43:28.852309",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T23:13:29.943672",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-01T23:43:31.100367",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-02T00:13:32.137106",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-02T00:43:33.202334",
+    "portfolio": 147579.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-02T01:13:34.200162",
+    "portfolio": 143809.72,
+    "open_positions": 2,
+    "daily_pl_pct": -2.6214
+  },
+  {
+    "timestamp": "2026-11-02T01:43:35.293269",
+    "portfolio": 144968.78,
+    "open_positions": 2,
+    "daily_pl_pct": -1.8009
+  },
+  {
+    "timestamp": "2026-11-02T02:13:36.408838",
+    "portfolio": 144786.5,
+    "open_positions": 2,
+    "daily_pl_pct": -1.9291
+  },
+  {
+    "timestamp": "2026-11-02T02:43:37.454314",
+    "portfolio": 145152.56,
+    "open_positions": 2,
+    "daily_pl_pct": -1.672
+  },
+  {
+    "timestamp": "2026-11-02T03:13:38.517681",
+    "portfolio": 144238.37,
+    "open_positions": 2,
+    "daily_pl_pct": -2.3164
+  },
+  {
+    "timestamp": "2026-11-02T03:43:39.551348",
+    "portfolio": 144178.24,
+    "open_positions": 2,
+    "daily_pl_pct": -2.3591
+  },
+  {
+    "timestamp": "2026-11-02T04:13:40.669454",
+    "portfolio": 143995.66,
+    "open_positions": 2,
+    "daily_pl_pct": -2.4889
+  },
+  {
+    "timestamp": "2026-11-02T04:43:41.754846",
+    "portfolio": 144361.12,
+    "open_positions": 2,
+    "daily_pl_pct": -2.2294
+  },
+  {
+    "timestamp": "2026-11-02T05:13:43.013924",
+    "portfolio": 143691.47,
+    "open_positions": 2,
+    "daily_pl_pct": -2.7058
+  },
+  {
+    "timestamp": "2026-11-02T05:43:44.064684",
+    "portfolio": 141803.35,
+    "open_positions": 2,
+    "daily_pl_pct": -4.0734
+  },
+  {
+    "timestamp": "2026-11-02T06:13:45.143102",
+    "portfolio": 143020.35,
+    "open_positions": 2,
+    "daily_pl_pct": -3.1878
+  },
+  {
+    "timestamp": "2026-11-02T06:43:46.173572",
+    "portfolio": 143203.11,
+    "open_positions": 2,
+    "daily_pl_pct": -3.0561
+  },
+  {
+    "timestamp": "2026-11-02T07:13:47.274412",
+    "portfolio": 142532.32,
+    "open_positions": 2,
+    "daily_pl_pct": -3.5411
+  },
+  {
+    "timestamp": "2026-11-02T07:43:48.349463",
+    "portfolio": 142773.59,
+    "open_positions": 2,
+    "daily_pl_pct": -3.3661
+  },
+  {
+    "timestamp": "2026-11-02T08:13:49.440238",
+    "portfolio": 143079.46,
+    "open_positions": 2,
+    "daily_pl_pct": -3.1451
+  },
+  {
+    "timestamp": "2026-11-02T08:43:50.545210",
+    "portfolio": 142530.76,
+    "open_positions": 2,
+    "daily_pl_pct": -3.5422
+  },
+  {
+    "timestamp": "2026-11-02T09:13:51.627177",
+    "portfolio": 142166.56,
+    "open_positions": 2,
+    "daily_pl_pct": -3.8075
+  },
+  {
+    "timestamp": "2026-11-02T09:43:52.637235",
+    "portfolio": 142337.38,
+    "open_positions": 2,
+    "daily_pl_pct": -3.6829
+  },
+  {
+    "timestamp": "2026-11-02T10:13:53.671489",
+    "portfolio": 142899.64,
+    "open_positions": 2,
+    "daily_pl_pct": -3.2749
+  },
+  {
+    "timestamp": "2026-11-02T10:43:54.651950",
+    "portfolio": 143143.07,
+    "open_positions": 2,
+    "daily_pl_pct": -3.0993
+  },
+  {
+    "timestamp": "2026-11-02T11:13:55.609816",
+    "portfolio": 143080.96,
+    "open_positions": 2,
+    "daily_pl_pct": -3.1441
+  },
+  {
+    "timestamp": "2026-11-02T11:43:56.588275",
+    "portfolio": 143021.76,
+    "open_positions": 2,
+    "daily_pl_pct": -3.1868
+  },
+  {
+    "timestamp": "2026-11-02T12:13:57.676610",
+    "portfolio": 142958.93,
+    "open_positions": 2,
+    "daily_pl_pct": -3.2321
+  },
+  {
+    "timestamp": "2026-11-02T12:43:58.661789",
+    "portfolio": 143800.4,
+    "open_positions": 2,
+    "daily_pl_pct": -2.628
+  },
+  {
+    "timestamp": "2026-11-02T13:13:59.767958",
+    "portfolio": 144237.05,
+    "open_positions": 2,
+    "daily_pl_pct": -2.3173
+  },
+  {
+    "timestamp": "2026-11-02T13:44:00.890269",
+    "portfolio": 137417.17,
+    "open_positions": 2,
+    "daily_pl_pct": -7.3952
+  },
+  {
+    "timestamp": "2026-11-02T13:58:50.845394",
+    "portfolio": 139974.04,
+    "open_positions": 2,
+    "daily_pl_pct": -5.4335
+  },
+  {
+    "timestamp": "2026-11-02T14:01:36.345653",
+    "portfolio": 140765.83,
+    "open_positions": 2,
+    "daily_pl_pct": -4.8404
+  },
+  {
+    "timestamp": "2026-11-02T14:32:49.731883",
+    "portfolio": 139484.99,
+    "open_positions": 2,
+    "daily_pl_pct": -5.8031
+  },
+  {
+    "timestamp": "2026-11-02T15:03:09.813838",
+    "portfolio": 138870.66,
+    "open_positions": 1,
+    "daily_pl_pct": -6.2712
+  },
+  {
+    "timestamp": "2026-11-02T15:33:29.318534",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T16:03:41.080216",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T16:33:52.174303",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T17:04:03.407837",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T17:34:15.584870",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T18:04:27.416825",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T18:34:39.303302",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T19:04:52.297220",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T19:35:04.432797",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T20:05:05.557170",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T20:35:06.669901",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T21:05:07.743531",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T21:35:08.847568",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T22:05:09.925156",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T22:35:10.932682",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T23:05:12.001878",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-02T23:35:13.092756",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T00:05:14.266232",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T00:35:15.302570",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T01:05:16.406574",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T01:35:17.509190",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T02:05:18.629365",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T02:35:19.694074",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T03:05:20.863800",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T03:35:22.004065",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T04:05:23.088309",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T04:35:24.357266",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T05:05:25.441615",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T05:35:26.508640",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T06:05:27.618641",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T06:35:28.617128",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T07:05:29.600364",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T07:35:30.701198",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T08:05:31.848491",
+    "portfolio": 138877.96,
+    "open_positions": 0,
+    "daily_pl_pct": -6.2656
+  },
+  {
+    "timestamp": "2026-11-03T08:35:33.080052",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T09:05:34.098796",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T09:35:35.157774",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T10:05:36.160457",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T10:35:37.187475",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T11:05:38.246449",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T11:35:39.346271",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T12:05:40.473513",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T12:35:41.474540",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T13:05:42.541188",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T13:35:43.633848",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T14:05:44.742886",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T14:35:59.338449",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T15:06:12.680681",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T15:36:26.021597",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T16:06:38.956413",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T16:36:51.247008",
+    "portfolio": 138877.89,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-03T17:07:08.040820",
+    "portfolio": 138877.72,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0001
+  },
+  {
+    "timestamp": "2026-11-03T17:37:21.360522",
+    "portfolio": 138850.18,
+    "open_positions": 1,
+    "daily_pl_pct": -0.02
+  },
+  {
+    "timestamp": "2026-11-03T18:07:34.341641",
+    "portfolio": 138880.3,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0017
+  },
+  {
+    "timestamp": "2026-11-03T18:37:46.954555",
+    "portfolio": 138881.51,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0026
+  },
+  {
+    "timestamp": "2026-11-03T19:07:59.451021",
+    "portfolio": 138864.64,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0095
+  },
+  {
+    "timestamp": "2026-11-03T19:38:12.004887",
+    "portfolio": 138848.97,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0208
+  },
+  {
+    "timestamp": "2026-11-03T20:08:13.092081",
+    "portfolio": 138821.64,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0405
+  },
+  {
+    "timestamp": "2026-11-03T20:38:14.093929",
+    "portfolio": 138839.33,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0278
+  },
+  {
+    "timestamp": "2026-11-03T21:08:15.235305",
+    "portfolio": 138865.84,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0087
+  },
+  {
+    "timestamp": "2026-11-03T21:38:16.339076",
+    "portfolio": 138887.53,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0069
+  },
+  {
+    "timestamp": "2026-11-03T22:08:17.331344",
+    "portfolio": 138894.76,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0121
+  },
+  {
+    "timestamp": "2026-11-03T22:38:18.322294",
+    "portfolio": 138894.76,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0121
+  },
+  {
+    "timestamp": "2026-11-03T23:08:19.328831",
+    "portfolio": 138901.68,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0171
+  },
+  {
+    "timestamp": "2026-11-03T23:38:20.314687",
+    "portfolio": 138870.66,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0052
+  },
+  {
+    "timestamp": "2026-11-04T00:08:21.416227",
+    "portfolio": 138894.76,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0121
+  },
+  {
+    "timestamp": "2026-11-04T00:38:22.495966",
+    "portfolio": 138810.84,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0483
+  },
+  {
+    "timestamp": "2026-11-04T01:08:23.632023",
+    "portfolio": 138812.82,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0469
+  },
+  {
+    "timestamp": "2026-11-04T01:38:24.643444",
+    "portfolio": 138959.83,
+    "open_positions": 1,
+    "daily_pl_pct": 0.059
+  },
+  {
+    "timestamp": "2026-11-04T02:08:25.666067",
+    "portfolio": 138856.2,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0156
+  },
+  {
+    "timestamp": "2026-11-04T02:38:26.639232",
+    "portfolio": 138805.59,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0521
+  },
+  {
+    "timestamp": "2026-11-04T03:08:27.737715",
+    "portfolio": 138742.93,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0973
+  },
+  {
+    "timestamp": "2026-11-04T03:38:28.713296",
+    "portfolio": 138767.03,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0799
+  },
+  {
+    "timestamp": "2026-11-04T04:08:29.805837",
+    "portfolio": 138800.77,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0556
+  },
+  {
+    "timestamp": "2026-11-04T04:38:30.851675",
+    "portfolio": 138774.26,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0747
+  },
+  {
+    "timestamp": "2026-11-04T05:08:31.847201",
+    "portfolio": 138892.35,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0104
+  },
+  {
+    "timestamp": "2026-11-04T05:38:32.812602",
+    "portfolio": 139092.38,
+    "open_positions": 1,
+    "daily_pl_pct": 0.1542
+  },
+  {
+    "timestamp": "2026-11-04T06:08:33.895669",
+    "portfolio": 139220.11,
+    "open_positions": 1,
+    "daily_pl_pct": 0.2458
+  },
+  {
+    "timestamp": "2026-11-04T06:38:34.973680",
+    "portfolio": 139306.87,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3079
+  },
+  {
+    "timestamp": "2026-11-04T07:08:36.080994",
+    "portfolio": 139290.0,
+    "open_positions": 1,
+    "daily_pl_pct": 0.2959
+  },
+  {
+    "timestamp": "2026-11-04T07:38:37.157932",
+    "portfolio": 139323.74,
+    "open_positions": 1,
+    "daily_pl_pct": 0.32
+  },
+  {
+    "timestamp": "2026-11-04T08:08:38.271613",
+    "portfolio": 139335.79,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3286
+  },
+  {
+    "timestamp": "2026-11-04T08:38:39.386967",
+    "portfolio": 139338.19,
+    "open_positions": 1,
+    "daily_pl_pct": 0.339
+  },
+  {
+    "timestamp": "2026-11-04T09:08:40.403356",
+    "portfolio": 139338.19,
+    "open_positions": 1,
+    "daily_pl_pct": 0.339
+  },
+  {
+    "timestamp": "2026-11-04T09:38:41.404986",
+    "portfolio": 139362.29,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3562
+  },
+  {
+    "timestamp": "2026-11-04T10:08:42.512042",
+    "portfolio": 139383.98,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3717
+  },
+  {
+    "timestamp": "2026-11-04T10:38:43.592425",
+    "portfolio": 139396.03,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3804
+  },
+  {
+    "timestamp": "2026-11-04T11:08:44.647475",
+    "portfolio": 139369.52,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3614
+  },
+  {
+    "timestamp": "2026-11-04T11:38:45.760494",
+    "portfolio": 139374.34,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3649
+  },
+  {
+    "timestamp": "2026-11-04T12:08:46.862778",
+    "portfolio": 139330.96,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3338
+  },
+  {
+    "timestamp": "2026-11-04T12:38:47.851508",
+    "portfolio": 139379.16,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3683
+  },
+  {
+    "timestamp": "2026-11-04T13:08:48.910940",
+    "portfolio": 139323.73,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3287
+  },
+  {
+    "timestamp": "2026-11-04T13:38:49.979571",
+    "portfolio": 139373.98,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3646
+  },
+  {
+    "timestamp": "2026-11-04T14:08:50.976514",
+    "portfolio": 139369.54,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3614
+  },
+  {
+    "timestamp": "2026-11-04T14:39:10.655248",
+    "portfolio": 139402.66,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3851
+  },
+  {
+    "timestamp": "2026-11-04T15:09:22.786308",
+    "portfolio": 139392.98,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3782
+  },
+  {
+    "timestamp": "2026-11-04T15:39:36.072646",
+    "portfolio": 139373.62,
+    "open_positions": 1,
+    "daily_pl_pct": 0.3643
+  },
+  {
+    "timestamp": "2026-11-04T16:09:54.885777",
+    "portfolio": 139379.72,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3687
+  },
+  {
+    "timestamp": "2026-11-04T16:40:12.945772",
+    "portfolio": 139400.54,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3836
+  },
+  {
+    "timestamp": "2026-11-04T17:10:29.436374",
+    "portfolio": 139417.81,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3959
+  },
+  {
+    "timestamp": "2026-11-04T17:40:43.691256",
+    "portfolio": 139430.58,
+    "open_positions": 2,
+    "daily_pl_pct": 0.405
+  },
+  {
+    "timestamp": "2026-11-04T18:10:58.132666",
+    "portfolio": 139431.84,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4059
+  },
+  {
+    "timestamp": "2026-11-04T18:41:13.729137",
+    "portfolio": 139405.38,
+    "open_positions": 2,
+    "daily_pl_pct": 0.387
+  },
+  {
+    "timestamp": "2026-11-04T19:11:27.516857",
+    "portfolio": 139422.96,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3996
+  },
+  {
+    "timestamp": "2026-11-04T19:41:41.580550",
+    "portfolio": 139410.39,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3906
+  },
+  {
+    "timestamp": "2026-11-04T20:11:42.612679",
+    "portfolio": 139420.2,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3976
+  },
+  {
+    "timestamp": "2026-11-04T20:41:43.733324",
+    "portfolio": 139419.49,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3971
+  },
+  {
+    "timestamp": "2026-11-04T21:11:44.787939",
+    "portfolio": 139421.66,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3987
+  },
+  {
+    "timestamp": "2026-11-04T21:41:45.896030",
+    "portfolio": 139414.05,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3932
+  },
+  {
+    "timestamp": "2026-11-04T22:11:47.006345",
+    "portfolio": 139418.46,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3964
+  },
+  {
+    "timestamp": "2026-11-04T22:41:48.039314",
+    "portfolio": 139424.74,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4009
+  },
+  {
+    "timestamp": "2026-11-04T23:11:49.074247",
+    "portfolio": 139418.81,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3966
+  },
+  {
+    "timestamp": "2026-11-04T23:41:50.027246",
+    "portfolio": 139421.18,
+    "open_positions": 2,
+    "daily_pl_pct": 0.3983
+  },
+  {
+    "timestamp": "2026-11-05T00:11:51.022749",
+    "portfolio": 139413.66,
+    "open_positions": 2,
+    "daily_pl_pct": 0.393
+  },
+  {
+    "timestamp": "2026-11-05T00:41:52.130435",
+    "portfolio": 139429.47,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4042
+  },
+  {
+    "timestamp": "2026-11-05T01:11:53.094956",
+    "portfolio": 139444.44,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4149
+  },
+  {
+    "timestamp": "2026-11-05T01:41:54.064791",
+    "portfolio": 139477.17,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4383
+  },
+  {
+    "timestamp": "2026-11-05T02:11:55.147787",
+    "portfolio": 139518.52,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4678
+  },
+  {
+    "timestamp": "2026-11-05T02:41:56.152415",
+    "portfolio": 139518.37,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4677
+  },
+  {
+    "timestamp": "2026-11-05T03:11:57.244346",
+    "portfolio": 139492.33,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4491
+  },
+  {
+    "timestamp": "2026-11-05T03:41:58.236793",
+    "portfolio": 139513.34,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4641
+  },
+  {
+    "timestamp": "2026-11-05T04:11:59.325041",
+    "portfolio": 139502.36,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4563
+  },
+  {
+    "timestamp": "2026-11-05T04:42:00.390805",
+    "portfolio": 139496.06,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4518
+  },
+  {
+    "timestamp": "2026-11-05T05:12:01.517075",
+    "portfolio": 139476.51,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4378
+  },
+  {
+    "timestamp": "2026-11-05T05:42:02.599352",
+    "portfolio": 139428.66,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4037
+  },
+  {
+    "timestamp": "2026-11-05T06:12:03.635042",
+    "portfolio": 139449.96,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4189
+  },
+  {
+    "timestamp": "2026-11-05T06:42:04.728815",
+    "portfolio": 139446.46,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4164
+  },
+  {
+    "timestamp": "2026-11-05T07:12:05.726909",
+    "portfolio": 139448.18,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4176
+  },
+  {
+    "timestamp": "2026-11-05T07:42:06.768003",
+    "portfolio": 139434.9,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4081
+  },
+  {
+    "timestamp": "2026-11-05T08:12:07.735223",
+    "portfolio": 139445.57,
+    "open_positions": 2,
+    "daily_pl_pct": 0.4157
+  },
+  {
+    "timestamp": "2026-11-05T08:42:08.945823",
+    "portfolio": 139466.77,
+    "open_positions": 2,
+    "daily_pl_pct": 0.038
+  },
+  {
+    "timestamp": "2026-11-05T09:12:10.013747",
+    "portfolio": 139471.28,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0413
+  },
+  {
+    "timestamp": "2026-11-05T09:42:11.113194",
+    "portfolio": 139462.03,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0346
+  },
+  {
+    "timestamp": "2026-11-05T10:12:12.277694",
+    "portfolio": 139455.89,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0302
+  },
+  {
+    "timestamp": "2026-11-05T10:42:13.373292",
+    "portfolio": 139476.95,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0453
+  },
+  {
+    "timestamp": "2026-11-05T11:12:14.464688",
+    "portfolio": 139472.76,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0423
+  },
+  {
+    "timestamp": "2026-11-05T11:42:15.685514",
+    "portfolio": 139466.91,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0381
+  },
+  {
+    "timestamp": "2026-11-05T12:12:16.765872",
+    "portfolio": 139465.8,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0373
+  },
+  {
+    "timestamp": "2026-11-05T12:42:17.830568",
+    "portfolio": 139435.48,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0156
+  },
+  {
+    "timestamp": "2026-11-05T13:12:18.961973",
+    "portfolio": 139446.36,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0234
+  },
+  {
+    "timestamp": "2026-11-05T13:42:19.966176",
+    "portfolio": 139466.31,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0377
+  },
+  {
+    "timestamp": "2026-11-05T14:12:21.015155",
+    "portfolio": 139462.88,
+    "open_positions": 2,
+    "daily_pl_pct": 0.0352
+  },
+  {
+    "timestamp": "2026-11-05T14:42:38.643611",
+    "portfolio": 139385.93,
+    "open_positions": 2,
+    "daily_pl_pct": -0.02
+  },
+  {
+    "timestamp": "2026-11-05T15:12:56.941659",
+    "portfolio": 139382.85,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0222
+  },
+  {
+    "timestamp": "2026-11-05T15:43:12.288727",
+    "portfolio": 139393.74,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0143
+  },
+  {
+    "timestamp": "2026-11-05T16:13:31.219870",
+    "portfolio": 139348.98,
+    "open_positions": 1,
+    "daily_pl_pct": -0.0465
+  },
+  {
+    "timestamp": "2026-11-05T16:43:43.355410",
+    "portfolio": 139418.55,
+    "open_positions": 1,
+    "daily_pl_pct": 0.0035
+  },
+  {
+    "timestamp": "2026-11-05T17:14:00.766558",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T17:44:12.145502",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T18:14:23.452978",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T18:44:36.240878",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T19:14:48.921463",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T19:45:02.185133",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T20:15:03.249538",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T20:45:04.220808",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T21:15:05.315659",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T21:45:06.408984",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T22:15:07.791770",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T22:45:09.014954",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T23:15:10.067498",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-05T23:45:11.085043",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T00:15:12.100546",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T00:45:13.089504",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T01:15:14.187283",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T01:45:15.156818",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T02:15:16.206839",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T02:45:17.346430",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T03:15:18.373905",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T03:45:19.413681",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T04:15:20.475369",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T04:45:21.569311",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T05:15:22.669246",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T05:45:23.660290",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T06:15:24.719078",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T06:45:25.706532",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T07:15:26.856858",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T07:45:28.531220",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T08:15:29.948137",
+    "portfolio": 139430.48,
+    "open_positions": 0,
+    "daily_pl_pct": 0.012
+  },
+  {
+    "timestamp": "2026-11-06T08:45:31.045905",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T09:15:32.135951",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T09:45:33.223801",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T10:15:34.270304",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T10:45:35.257095",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T11:15:36.255808",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T11:45:37.256640",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T12:15:38.295027",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T12:45:39.459797",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T13:15:40.543801",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T13:45:41.641886",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T14:15:42.683843",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T14:45:59.013416",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T15:16:14.207887",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T15:46:31.650531",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T16:16:46.280120",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T16:46:58.884894",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T17:17:15.870221",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T17:47:30.734200",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T18:17:46.672819",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T18:48:01.409832",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T19:18:14.686493",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T19:48:26.701363",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T20:18:27.790417",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T20:48:28.829568",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T21:18:29.945701",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T21:48:31.045982",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T22:18:32.170832",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T22:48:33.258794",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T23:18:34.312560",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-06T23:48:35.381837",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T00:18:36.529948",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T00:48:37.635116",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T01:18:38.694423",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T01:48:39.780654",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T02:18:40.759253",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T02:48:41.852779",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T03:18:42.928222",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T03:48:43.931516",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T04:18:45.088668",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T04:48:46.223787",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T05:18:47.375638",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T05:48:48.557240",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T06:18:49.657503",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T06:48:50.747561",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T07:18:51.840410",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T07:48:53.206984",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T08:18:54.270791",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T08:48:55.254055",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T09:18:56.347114",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T09:48:57.427784",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T10:18:58.401347",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T10:48:59.445533",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T11:19:00.543756",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T11:49:01.579265",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T12:19:02.727878",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T12:49:03.833861",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T13:19:04.894912",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T13:49:06.030474",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T14:19:07.112997",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T14:49:08.201498",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T15:19:09.222345",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T15:49:10.306595",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T16:19:11.449498",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T16:49:12.582281",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T17:19:13.743765",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T17:49:14.883428",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T18:19:15.971438",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T18:49:17.204065",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T19:19:18.240644",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T19:49:19.308955",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T20:19:20.358448",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T20:49:21.486033",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T21:19:22.448128",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T21:49:23.512524",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T22:19:24.592843",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T22:49:25.652881",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T23:19:26.748069",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-07T23:49:27.787840",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T00:19:28.886261",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T00:49:30.041488",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T01:19:31.186145",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T01:49:32.261562",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T02:19:33.263978",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T02:49:34.232110",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T03:19:35.389769",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T03:49:37.498666",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T04:19:38.506947",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T04:49:39.578229",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T05:19:40.678923",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T05:49:41.655267",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T06:19:42.725338",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T06:49:43.715496",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T07:19:44.854739",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T07:49:45.976292",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T08:06:14.792591",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  },
+  {
+    "timestamp": "2026-11-08T08:36:15.924662",
+    "portfolio": 139430.33,
+    "open_positions": 0,
+    "daily_pl_pct": 0.0
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "disabled": [
+    "Trend: UP"
+  ],
+  "feature_stats": {
+    "Trend: BULL": {
+      "total": 48,
+      "wins": 23,
+      "losses": 25,
+      "win_rate": 47.9
+    },
+    "Above VWAP": {
+      "total": 56,
+      "wins": 26,
+      "losses": 30,
+      "win_rate": 46.4
+    },
+    "RSI overbought": {
+      "total": 14,
+      "wins": 6,
+      "losses": 8,
+      "win_rate": 42.9
+    },
+    "Trend: UP": {
+      "total": 18,
+      "wins": 5,
+      "losses": 13,
+      "win_rate": 27.8
+    },
+    "RSI oversold": {
+      "total": 17,
+      "wins": 9,
+      "losses": 8,
+      "win_rate": 52.9
+    }
+  },
+  "updated": "2026-11-08T00:19:28.566883"
+}

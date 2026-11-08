@@ -1,0 +1,13 @@
+{
+  "blacklist": [
+    "AMZN",
+    "DIA",
+    "GOOGL",
+    "IWM",
+    "MA",
+    "META",
+    "PFE",
+    "XLE"
+  ],
+  "generated": "2026-11-06T19:48:20.156595"
+}

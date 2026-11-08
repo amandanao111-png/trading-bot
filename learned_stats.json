@@ -1,0 +1,239 @@
+{
+  "total_trades": 166,
+  "winning_trades": 65,
+  "losing_trades": 45,
+  "total_pnl": -3641.215805999998,
+  "signal_stats": {
+    "STOP_LOSS": {
+      "total": 24,
+      "wins": 0,
+      "losses": 24
+    },
+    "RSI_EXIT": {
+      "total": 33,
+      "wins": 22,
+      "losses": 11
+    },
+    "PARTIAL_TAKE_50%": {
+      "total": 35,
+      "wins": 35,
+      "losses": 0
+    },
+    "HARD_STOP": {
+      "total": 3,
+      "wins": 0,
+      "losses": 3
+    },
+    "BACKFILL_2026-11-04": {
+      "total": 1,
+      "wins": 1,
+      "losses": 0
+    },
+    "BACKFILL_2026-11-05": {
+      "total": 2,
+      "wins": 1,
+      "losses": 1
+    }
+  },
+  "symbol_stats": {
+    "AAPL": {
+      "total": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": 57.0739999999995
+    },
+    "MA": {
+      "total": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -471.98960000000125
+    },
+    "AMD": {
+      "total": 9,
+      "wins": 7,
+      "losses": 2,
+      "pnl": -66.56998800000054
+    },
+    "INTC": {
+      "total": 2,
+      "wins": 0,
+      "losses": 2,
+      "pnl": -1088.009846
+    },
+    "XLK": {
+      "total": 4,
+      "wins": 1,
+      "losses": 3,
+      "pnl": 186.525036000002
+    },
+    "PFE": {
+      "total": 5,
+      "wins": 4,
+      "losses": 1,
+      "pnl": -264.353800000002
+    },
+    "GOOGL": {
+      "total": 4,
+      "wins": 2,
+      "losses": 2,
+      "pnl": -1286.4000040000024
+    },
+    "NVDA": {
+      "total": 3,
+      "wins": 3,
+      "losses": 0,
+      "pnl": 55.37980000000414
+    },
+    "COST": {
+      "total": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": 40.3420000000001
+    },
+    "GLD": {
+      "total": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": -152.3400260000002
+    },
+    "WMT": {
+      "total": 5,
+      "wins": 3,
+      "losses": 2,
+      "pnl": -1258.8299920000004
+    },
+    "AMZN": {
+      "total": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -182.24820000000057
+    },
+    "META": {
+      "total": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -397.48000799999943
+    },
+    "TSLA": {
+      "total": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -215.44399499999997
+    },
+    "SLV": {
+      "total": 21,
+      "wins": 20,
+      "losses": 1,
+      "pnl": 591.370707000002
+    },
+    "UNH": {
+      "total": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": 16.55000000000041
+    },
+    "DIA": {
+      "total": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": -277.9400049999997
+    },
+    "XLE": {
+      "total": 3,
+      "wins": 1,
+      "losses": 2,
+      "pnl": -101.26990599999937
+    },
+    "PG": {
+      "total": 2,
+      "wins": 0,
+      "losses": 2,
+      "pnl": -437.83999800000106
+    },
+    "XLF": {
+      "total": 2,
+      "wins": 0,
+      "losses": 2,
+      "pnl": -244.98000000000084
+    },
+    "IWM": {
+      "total": 3,
+      "wins": 2,
+      "losses": 1,
+      "pnl": -83.24500000000097
+    },
+    "MSFT": {
+      "total": 2,
+      "wins": 0,
+      "losses": 2,
+      "pnl": -476.9364830000003
+    },
+    "XLV": {
+      "total": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -202.8499840000004
+    },
+    "ABBV": {
+      "total": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -147.5
+    },
+    "SPY": {
+      "total": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -45.34999999999968
+    },
+    "VOO": {
+      "total": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -45.75999999999965
+    },
+    "QQQ": {
+      "total": 4,
+      "wins": 3,
+      "losses": 1,
+      "pnl": 578.8299900000022
+    },
+    "BAC": {
+      "total": 8,
+      "wins": 7,
+      "losses": 1,
+      "pnl": 336.1065100000007
+    },
+    "JNJ": {
+      "total": 2,
+      "wins": 0,
+      "losses": 2,
+      "pnl": -380.7599849999997
+    },
+    "V": {
+      "total": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -392.1600000000002
+    },
+    "TLT": {
+      "total": 1,
+      "wins": 0,
+      "losses": 1,
+      "pnl": -120.28000000000088
+    },
+    "JPM": {
+      "total": 2,
+      "wins": 2,
+      "losses": 0,
+      "pnl": 15.266999999999996
+    },
+    "KO": {
+      "total": 2,
+      "wins": 1,
+      "losses": 1,
+      "pnl": -422.41997699999934
+    }
+  },
+  "optimizations": []
+}

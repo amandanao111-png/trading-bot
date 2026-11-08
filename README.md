@@ -26,12 +26,18 @@ README.md             # This file
 ## 🎯 Quick Start
 
 ```bash
+# Set API keys (required!)
+export ALPACA_API_KEY="your_key_here"
+export ALPACA_API_SECRET="your_secret_here"
+
 # Check signals
 python3 technical_analysis.py
 
 # Run trading bot
 python3 trading_bot_v2.py
 ```
+
+> ⚠️ **Security Note**: API keys are now loaded from environment variables. Never hardcode secrets!
 
 ## 📊 Current Signals (V2)
 

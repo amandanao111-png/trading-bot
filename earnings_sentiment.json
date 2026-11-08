@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-06T16:00:00.162373",
+  "earnings": [
+    {
+      "symbol": "TSLA",
+      "earnings_date": "2026-04-23",
+      "eps_estimate": 0.95,
+      "eps_previous": 1.1,
+      "surprise_potential": 13.636363636363647,
+      "sentiment": "BUY",
+      "score": 40
+    },
+    {
+      "symbol": "JPM",
+      "earnings_date": "2026-04-25",
+      "eps_estimate": 4.1,
+      "eps_previous": 4.35,
+      "surprise_potential": 5.74712643678161,
+      "sentiment": "SLIGHT_BUY",
+      "score": 20
+    },
+    {
+      "symbol": "BAC",
+      "earnings_date": "2026-04-25",
+      "eps_estimate": 0.85,
+      "eps_previous": 0.95,
+      "surprise_potential": 10.526315789473681,
+      "sentiment": "BUY",
+      "score": 40
+    },
+    {
+      "symbol": "AAPL",
+      "earnings_date": "2026-04-28",
+      "eps_estimate": 2.15,
+      "eps_previous": 2.4,
+      "surprise_potential": 10.416666666666668,
+      "sentiment": "BUY",
+      "score": 40
+    },
+    {
+      "symbol": "GOOGL",
+      "earnings_date": "2026-04-29",
+      "eps_estimate": 1.85,
+      "eps_previous": 2.1,
+      "surprise_potential": 11.904761904761903,
+      "sentiment": "BUY",
+      "score": 40
+    },
+    {
+      "symbol": "AMD",
+      "earnings_date": "2026-04-29",
+      "eps_estimate": 1.25,
+      "eps_previous": 1.4,
+      "surprise_potential": 10.714285714285708,
+      "sentiment": "BUY",
+      "score": 40
+    },
+    {
+      "symbol": "MSFT",
+      "earnings_date": "2026-04-30",
+      "eps_estimate": 3.2,
+      "eps_previous": 3.45,
+      "surprise_potential": 7.246376811594203,
+      "sentiment": "SLIGHT_BUY",
+      "score": 20
+    },
+    {
+      "symbol": "META",
+      "earnings_date": "2026-04-30",
+      "eps_estimate": 4.5,
+      "eps_previous": 4.9,
+      "surprise_potential": 8.163265306122454,
+      "sentiment": "SLIGHT_BUY",
+      "score": 20
+    },
+    {
+      "symbol": "AMZN",
+      "earnings_date": "2026-05-01",
+      "eps_estimate": 1.5,
+      "eps_previous": 1.75,
+      "surprise_potential": 14.285714285714285,
+      "sentiment": "BUY",
+      "score": 40
+    },
+    {
+      "symbol": "NVDA",
+      "earnings_date": "2026-05-21",
+      "eps_estimate": 4.2,
+      "eps_previous": 4.8,
+      "surprise_potential": 12.499999999999993,
+      "sentiment": "BUY",
+      "score": 40
+    }
+  ]
+}

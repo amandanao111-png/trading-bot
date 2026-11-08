@@ -1,1 +1,3103 @@
-{"time": "2026-02-27T17:50:06.165184", "portfolio": 98951.17, "trades": [], "exits": ["NVDA"]}
+[
+  {
+    "timestamp": "2026-03-04T20:30:33.863910",
+    "type": "BUY",
+    "symbol": "AAPL",
+    "qty": 10,
+    "price": 100.0,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "RSI"
+    ],
+    "pnl": -36.26000000000005,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-04T20:30:52.503973",
+    "type": "BUY",
+    "symbol": "MA",
+    "qty": 2,
+    "price": 523.525,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": -8.434799999999996,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-04T20:30:58.356212",
+    "type": "SELL",
+    "symbol": "XLV",
+    "qty": 8,
+    "price": 157.345,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311498 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-04T21:00:48.349900",
+    "type": "SELL",
+    "symbol": "ABBV",
+    "qty": 5,
+    "price": 237.07,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311529 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-05T15:34:40.472702",
+    "type": "BUY",
+    "symbol": "MSFT",
+    "qty": 15,
+    "price": 409.855,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: BULL",
+      "RSI overbought",
+      "Above VWAP"
+    ],
+    "pnl": -148.9564949999999,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-05T15:34:43.679437",
+    "type": "BUY",
+    "symbol": "TSLA",
+    "qty": 15,
+    "price": 404.529,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL"
+    ],
+    "pnl": -215.44399499999997,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-05T15:34:45.931258",
+    "type": "SELL",
+    "symbol": "WMT",
+    "qty": 144,
+    "price": 123.015,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311542 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-05T15:34:55.113917",
+    "type": "SELL",
+    "symbol": "XLK",
+    "qty": 129,
+    "price": 140.82,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311549 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-05T15:34:56.074102",
+    "type": "BUY",
+    "symbol": "XLE",
+    "qty": 110,
+    "price": 56.645,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL"
+    ],
+    "pnl": -48.48998000000002,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-05T15:35:33.784043",
+    "type": "BUY",
+    "symbol": "AMD",
+    "qty": 26,
+    "price": 201.155,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL"
+    ],
+    "pnl": -135.2199940000002,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-05T15:35:34.698682",
+    "type": "BUY",
+    "symbol": "INTC",
+    "qty": 116,
+    "price": 45.981,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: BULL",
+      "RSI overbought",
+      "Above VWAP"
+    ],
+    "pnl": -139.84994799999959,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-05T15:35:44.801822",
+    "type": "BUY",
+    "symbol": "XLK",
+    "qty": 38,
+    "price": 140.31,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL"
+    ],
+    "pnl": 418.9200180000008,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-05T16:37:39.500906",
+    "type": "SELL",
+    "symbol": "PG",
+    "qty": 111,
+    "price": 155.06,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311556 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-05T16:37:42.144850",
+    "type": "SELL",
+    "symbol": "JPM",
+    "qty": 59,
+    "price": 293.98,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311561 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-05T17:40:46.084770",
+    "type": "SELL",
+    "symbol": "MA",
+    "qty": 2,
+    "price": 519.2926,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311567 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-05T17:40:49.085338",
+    "type": "SELL",
+    "symbol": "GLD",
+    "qty": 37,
+    "price": 467.03,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311580 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-05T17:41:50.198468",
+    "type": "BUY",
+    "symbol": "MA",
+    "qty": 8,
+    "price": 519.2926,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: UP",
+      "RSI overbought",
+      "Above VWAP"
+    ],
+    "pnl": 3.4399999999996,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-05T19:45:43.370923",
+    "type": "BUY",
+    "symbol": "PFE",
+    "qty": 164,
+    "price": 26.575,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: BULL",
+      "RSI overbought",
+      "High volume: 2.5x",
+      "Above VWAP",
+      "At upper BB"
+    ],
+    "pnl": 12.299999999999883,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-05T19:46:45.136319",
+    "type": "SELL",
+    "symbol": "PFE",
+    "qty": 164,
+    "price": 26.575,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311587 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-05T19:50:16.462801",
+    "type": "BUY",
+    "symbol": "PFE",
+    "qty": 164,
+    "price": 26.575,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: BULL",
+      "RSI overbought",
+      "High volume: 2.5x",
+      "Above VWAP",
+      "At upper BB"
+    ],
+    "pnl": 15.579999999999814,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-05T20:48:52.942766",
+    "type": "SELL",
+    "symbol": "PFE",
+    "qty": 164,
+    "price": 26.575,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311592 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-05T20:48:55.281753",
+    "type": "SELL",
+    "symbol": "V",
+    "qty": 55,
+    "price": 319.365,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311597 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-05T20:48:56.215905",
+    "type": "SELL",
+    "symbol": "MA",
+    "qty": 8,
+    "price": 521.9,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311603 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-06T14:35:14.015314",
+    "type": "SELL",
+    "symbol": "GOOGL",
+    "qty": 58,
+    "price": 294.68,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311608 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-06T14:35:16.935686",
+    "type": "SELL",
+    "symbol": "AMD",
+    "qty": 26,
+    "price": 195.14,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311613 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-06T14:35:23.117926",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 366,
+    "price": 48.4507,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311618 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-06T15:02:24.290147",
+    "type": "SELL",
+    "symbol": "AAPL",
+    "qty": 5,
+    "price": 255.2,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311623 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-06T15:02:25.209140",
+    "type": "SELL",
+    "symbol": "NVDA",
+    "qty": 99,
+    "price": 181.7461,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311627 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-06T15:02:27.502088",
+    "type": "BUY",
+    "symbol": "GOOGL",
+    "qty": 34,
+    "price": 297.745,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: UP",
+      "High volume: 2.1x",
+      "Above VWAP"
+    ],
+    "pnl": -387.270002000001,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T15:02:31.376276",
+    "type": "SELL",
+    "symbol": "INTC",
+    "qty": 116,
+    "price": 44.39,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311633 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-06T15:30:19.543303",
+    "type": "BUY",
+    "symbol": "NVDA",
+    "qty": 52,
+    "price": 182.083,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: BULL",
+      "RSI overbought",
+      "Above VWAP"
+    ],
+    "pnl": 23.373900000002152,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T15:30:24.316924",
+    "type": "BUY",
+    "symbol": "AMD",
+    "qty": 48,
+    "price": 198.34,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: UP",
+      "RSI overbought",
+      "High volume: 1.5x",
+      "Above VWAP"
+    ],
+    "pnl": -194.8800000000001,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T15:30:32.044547",
+    "type": "BUY",
+    "symbol": "IWM",
+    "qty": 38,
+    "price": 252.51,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: UP",
+      "High volume: 1.5x",
+      "Above VWAP",
+      "At upper BB"
+    ],
+    "pnl": -214.31999999999948,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T15:32:04.190780",
+    "type": "SELL",
+    "symbol": "NVDA",
+    "qty": 52,
+    "price": 182.083,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311638 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-06T16:00:08.064650",
+    "type": "BUY",
+    "symbol": "NVDA",
+    "qty": 47,
+    "price": 181.5399,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": 4.315999999999917,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T16:00:15.869648",
+    "type": "BUY",
+    "symbol": "COST",
+    "qty": 8,
+    "price": 992.93,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: UP",
+      "Above VWAP"
+    ],
+    "pnl": 44.09600000000046,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T16:00:23.499129",
+    "type": "BUY",
+    "symbol": "GLD",
+    "qty": 18,
+    "price": 472.83,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: BULL",
+      "RSI overbought",
+      "Above VWAP"
+    ],
+    "pnl": -76.1700130000001,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T16:30:15.418366",
+    "type": "BUY",
+    "symbol": "WMT",
+    "qty": 59,
+    "price": 123.845,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: BULL",
+      "RSI overbought",
+      "Above VWAP"
+    ],
+    "pnl": -681.7200479999999,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T16:30:18.405550",
+    "type": "BUY",
+    "symbol": "PFE",
+    "qty": 280,
+    "price": 26.455,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: UP",
+      "RSI overbought",
+      "High volume: 1.5x",
+      "Above VWAP",
+      "At upper BB"
+    ],
+    "pnl": 32.927999999999855,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T16:30:22.436852",
+    "type": "BUY",
+    "symbol": "SPY",
+    "qty": 10,
+    "price": 674.91,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: UP",
+      "RSI overbought",
+      "Above VWAP"
+    ],
+    "pnl": -45.34999999999968,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T16:30:24.946199",
+    "type": "BUY",
+    "symbol": "VOO",
+    "qty": 11,
+    "price": 620.71,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: UP",
+      "RSI overbought",
+      "Above VWAP"
+    ],
+    "pnl": -45.75999999999965,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T16:30:26.776910",
+    "type": "BUY",
+    "symbol": "DIA",
+    "qty": 15,
+    "price": 474.76,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: UP",
+      "RSI overbought",
+      "Above VWAP"
+    ],
+    "pnl": 83.269995,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T16:30:31.175123",
+    "type": "BUY",
+    "symbol": "XLF",
+    "qty": 147,
+    "price": 50.3,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: UP",
+      "RSI overbought",
+      "Above VWAP"
+    ],
+    "pnl": -163.1699999999999,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-06T17:30:43.874849",
+    "type": "SELL",
+    "symbol": "PFE",
+    "qty": 280,
+    "price": 26.5276,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311645 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-06T18:34:14.406744",
+    "type": "SELL",
+    "symbol": "COST",
+    "qty": 8,
+    "price": 1002.312,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311650 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-06T19:50:32.932040",
+    "type": "BUY",
+    "symbol": "UNH",
+    "qty": 21,
+    "price": 285.58,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: UP",
+      "Above VWAP"
+    ],
+    "pnl": -120.33000000000038,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-09T16:34:04.767849",
+    "type": "SELL",
+    "symbol": "AMZN",
+    "qty": 85,
+    "price": 210.515,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311655 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-09T16:34:05.744972",
+    "type": "SELL",
+    "symbol": "META",
+    "qty": 27,
+    "price": 637.77,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311660 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-09T16:34:06.710951",
+    "type": "SELL",
+    "symbol": "TSLA",
+    "qty": 15,
+    "price": 388.7944,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311665 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-09T17:00:32.188059",
+    "type": "SELL",
+    "symbol": "XLK",
+    "qty": 38,
+    "price": 138.35,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311670 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-10T14:01:05.806968",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 118,
+    "price": 74.71,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 679.0900000000012,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-10T14:30:19.134173",
+    "type": "SELL",
+    "symbol": "UNH",
+    "qty": 21,
+    "price": 280.2,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311676 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-10T14:30:27.120429",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 59,
+    "price": 74.71,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 344.6957000000005,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-10T15:00:42.721994",
+    "type": "SELL",
+    "symbol": "NVDA",
+    "qty": 47,
+    "price": 185.265,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311682 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-10T15:00:56.084828",
+    "type": "SELL",
+    "symbol": "DIA",
+    "qty": 15,
+    "price": 479.85,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311687 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-10T15:00:58.299045",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 30,
+    "price": 74.71,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 174.29000000000013,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-10T15:00:59.899758",
+    "type": "SELL",
+    "symbol": "XLE",
+    "qty": 110,
+    "price": 56.32,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311692 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-10T15:30:24.360184",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 15,
+    "price": 74.71,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 96.22350000000004,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-10T16:00:37.540104",
+    "type": "SELL",
+    "symbol": "GLD",
+    "qty": 18,
+    "price": 480.73,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311698 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-10T16:00:38.657287",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 8,
+    "price": 74.71,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 44.721600000000024,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-10T16:31:04.388146",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 4,
+    "price": 74.71,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 24.840000000000032,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-10T17:00:22.238185",
+    "type": "BUY",
+    "symbol": "PG",
+    "qty": 74,
+    "price": 155.97,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": -281.94000000000017,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-10T17:00:24.177222",
+    "type": "BUY",
+    "symbol": "PFE",
+    "qty": 425,
+    "price": 27.155,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": 51.000000000000426,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-10T17:00:30.816623",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 2,
+    "price": 74.71,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 12.420000000000016,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-10T17:30:23.897788",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 1,
+    "price": 74.71,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 6.210000000000008,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-10T18:00:24.897987",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 0,
+    "price": 74.71,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 6.210000000000008,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-10T18:30:34.160094",
+    "type": "BUY",
+    "symbol": "SLV",
+    "qty": 128,
+    "price": 80.92,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": -407.2231679999986,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-10T19:30:40.344245",
+    "type": "BUY",
+    "symbol": "XLV",
+    "qty": 64,
+    "price": 153.84,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: UP",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": -202.8499840000004,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-11T14:00:23.371160",
+    "type": "SELL",
+    "symbol": "PFE",
+    "qty": 425,
+    "price": 27.32,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311708 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-11T14:00:29.228604",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 128,
+    "price": 76.7506,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": -407.2231679999986,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-11T14:30:32.307233",
+    "type": "SELL",
+    "symbol": "GOOGL",
+    "qty": 34,
+    "price": 310.34,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311718 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-11T15:30:19.103194",
+    "type": "SELL",
+    "symbol": "PG",
+    "qty": 74,
+    "price": 152.38,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311724 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-11T16:30:17.773034",
+    "type": "BUY",
+    "symbol": "JNJ",
+    "qty": 51,
+    "price": 242.75,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: UP",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": -256.43998499999975,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-12T14:00:28.340898",
+    "type": "SELL",
+    "symbol": "XLF",
+    "qty": 147,
+    "price": 49.1,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311729 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-12T15:00:28.905438",
+    "type": "SELL",
+    "symbol": "IWM",
+    "qty": 38,
+    "price": 247.05,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311734 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-12T15:30:25.993741",
+    "type": "SELL",
+    "symbol": "WMT",
+    "qty": 59,
+    "price": 124.28,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311739 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-12T17:00:16.417279",
+    "type": "BUY",
+    "symbol": "WMT",
+    "qty": 113,
+    "price": 124.47,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": -388.2199559999999,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-12T18:00:32.413803",
+    "type": "BUY",
+    "symbol": "ABBV",
+    "qty": 59,
+    "price": 226.5249,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": -147.5,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-12T19:00:48.586730",
+    "type": "BUY",
+    "symbol": "WMT",
+    "qty": 102,
+    "price": 124.67,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": 390.3200599999992,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-13T15:00:31.583580",
+    "type": "BUY",
+    "symbol": "BAC",
+    "qty": 290,
+    "price": 47.525,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: UP",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": -40.57998999999917,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-13T16:00:38.674391",
+    "type": "SELL",
+    "symbol": "MSFT",
+    "qty": 15,
+    "price": 396.5129,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311745 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-13T16:00:41.222208",
+    "type": "SELL",
+    "symbol": "AMD",
+    "qty": 48,
+    "price": 194.34,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311750 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-13T16:00:53.380507",
+    "type": "SELL",
+    "symbol": "XLV",
+    "qty": 64,
+    "price": 150.31,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311755 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-13T16:30:43.318090",
+    "type": "SELL",
+    "symbol": "ABBV",
+    "qty": 59,
+    "price": 224.21,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311760 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-16T14:00:59.197276",
+    "type": "SELL",
+    "symbol": "SPY",
+    "qty": 10,
+    "price": 669.99,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311765 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-16T14:01:00.466424",
+    "type": "SELL",
+    "symbol": "VOO",
+    "qty": 11,
+    "price": 616.2,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311770 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-16T17:01:01.969116",
+    "type": "BUY",
+    "symbol": "XLK",
+    "qty": 109,
+    "price": 139.13,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": -321.00499999999926,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-17T14:00:38.948927",
+    "type": "SELL",
+    "symbol": "QQQ",
+    "qty": 29,
+    "price": 605.8707,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311775 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-17T15:00:43.791494",
+    "type": "BUY",
+    "symbol": "META",
+    "qty": 24,
+    "price": 630.53,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold"
+    ],
+    "pnl": -456.5200079999995,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-17T15:00:51.964125",
+    "type": "BUY",
+    "symbol": "DIA",
+    "qty": 32,
+    "price": 472.915,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold"
+    ],
+    "pnl": -383.0400000000009,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-17T15:00:55.572552",
+    "type": "BUY",
+    "symbol": "XLF",
+    "qty": 303,
+    "price": 49.82,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "High volume: 1.7x"
+    ],
+    "pnl": -81.81000000000094,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-17T15:30:57.076593",
+    "type": "BUY",
+    "symbol": "MA",
+    "qty": 25,
+    "price": 512.49,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: UP",
+      "RSI oversold"
+    ],
+    "pnl": -462.00000000000045,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-17T17:30:12.137703",
+    "type": "BUY",
+    "symbol": "GOOGL",
+    "qty": 39,
+    "price": 307.84,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": 69.41999999999894,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-17T18:30:13.624181",
+    "type": "SELL",
+    "symbol": "GOOGL",
+    "qty": 39,
+    "price": 309.52,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311781 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-17T19:30:22.184446",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 290,
+    "price": 47.49,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311786 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-17T20:00:23.767316",
+    "type": "SELL",
+    "symbol": "JNJ",
+    "qty": 51,
+    "price": 237.69,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311791 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-18T14:00:23.873005",
+    "type": "SELL",
+    "symbol": "XLF",
+    "qty": 303,
+    "price": 49.55,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311796 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-18T15:31:27.670427",
+    "type": "SELL",
+    "symbol": "MA",
+    "qty": 25,
+    "price": 493.9,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311801 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-18T16:30:16.817785",
+    "type": "BUY",
+    "symbol": "JNJ",
+    "qty": 56,
+    "price": 237.68,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: UP",
+      "RSI oversold"
+    ],
+    "pnl": -124.31999999999994,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-18T16:30:21.188773",
+    "type": "BUY",
+    "symbol": "IWM",
+    "qty": 54,
+    "price": 247.96,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: UP",
+      "RSI oversold"
+    ],
+    "pnl": 72.8999999999997,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-19T14:00:16.577360",
+    "type": "SELL",
+    "symbol": "META",
+    "qty": 24,
+    "price": 610.74,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311806 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-19T14:00:19.030353",
+    "type": "SELL",
+    "symbol": "WMT",
+    "qty": 102,
+    "price": 120.92,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311811 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-19T14:00:25.729587",
+    "type": "SELL",
+    "symbol": "DIA",
+    "qty": 32,
+    "price": 461.01,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311816 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-20T14:30:30.794580",
+    "type": "SELL",
+    "symbol": "XLK",
+    "qty": 109,
+    "price": 136.395,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311821 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-20T18:00:48.249172",
+    "type": "BUY",
+    "symbol": "PG",
+    "qty": 113,
+    "price": 145.185,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": -155.89999800000092,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-20T19:00:16.249873",
+    "type": "BUY",
+    "symbol": "WMT",
+    "qty": 130,
+    "price": 120.14,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": 102.51000000000026,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-23T14:30:11.132584",
+    "type": "BUY",
+    "symbol": "AAPL",
+    "qty": 60,
+    "price": 252.56,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": 129.5939999999996,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-23T15:00:15.785643",
+    "type": "BUY",
+    "symbol": "MSFT",
+    "qty": 37,
+    "price": 385.59,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": -327.9799880000004,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-23T16:00:51.171950",
+    "type": "BUY",
+    "symbol": "XLE",
+    "qty": 234,
+    "price": 59.3,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": 342.52007399999957,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-23T19:30:19.731967",
+    "type": "BUY",
+    "symbol": "V",
+    "qty": 43,
+    "price": 307.11,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": -392.1600000000002,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-24T14:00:15.215626",
+    "type": "SELL",
+    "symbol": "MSFT",
+    "qty": 37,
+    "price": 376.49,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311827 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-24T14:00:26.113845",
+    "type": "SELL",
+    "symbol": "XLE",
+    "qty": 234,
+    "price": 60.725,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311832 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-24T15:02:19.439928",
+    "type": "SELL",
+    "symbol": "WMT",
+    "qty": 130,
+    "price": 123.33,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311837 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-24T16:00:11.517218",
+    "type": "SELL",
+    "symbol": "AAPL",
+    "qty": 60,
+    "price": 254.4799,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311842 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-24T16:00:22.062794",
+    "type": "SELL",
+    "symbol": "IWM",
+    "qty": 54,
+    "price": 249.54,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311848 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-24T17:02:28.678010",
+    "type": "BUY",
+    "symbol": "AMD",
+    "qty": 59,
+    "price": 203.415,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": 398.75,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-24T19:02:06.783782",
+    "type": "SELL",
+    "symbol": "JNJ",
+    "qty": 56,
+    "price": 235.86,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311853 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-25T14:02:37.558828",
+    "type": "SELL",
+    "symbol": "AMD",
+    "qty": 30,
+    "price": 201.98,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311858 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-25T14:32:49.973029",
+    "type": "SELL",
+    "symbol": "AMD",
+    "qty": 15,
+    "price": 201.98,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311863 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-25T15:01:26.974921",
+    "type": "SELL",
+    "symbol": "AMD",
+    "qty": 8,
+    "price": 201.98,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311868 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-25T15:30:15.585864",
+    "type": "SELL",
+    "symbol": "AMD",
+    "qty": 4,
+    "price": 201.98,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311873 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-25T16:03:38.802910",
+    "type": "SELL",
+    "symbol": "AMD",
+    "qty": 2,
+    "price": 201.98,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311878 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-25T16:33:08.081602",
+    "type": "SELL",
+    "symbol": "AMD",
+    "qty": 1,
+    "price": 201.98,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311883 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-25T16:33:09.371708",
+    "type": "BUY",
+    "symbol": "INTC",
+    "qty": 350,
+    "price": 47.31,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": -808.3099500000006,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-25T17:00:14.499084",
+    "type": "SELL",
+    "symbol": "AMD",
+    "qty": 0,
+    "price": 201.98,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311888 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-25T18:03:04.968563",
+    "type": "SELL",
+    "symbol": "PG",
+    "qty": 113,
+    "price": 143.69,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311893 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-26T14:02:56.831029",
+    "type": "SELL",
+    "symbol": "INTC",
+    "qty": 350,
+    "price": 45.32,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311898 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-26T14:33:02.071088",
+    "type": "BUY",
+    "symbol": "GOOGL",
+    "qty": 60,
+    "price": 286.84,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: UP",
+      "Above VWAP"
+    ],
+    "pnl": -581.2799999999993,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-26T16:00:15.258488",
+    "type": "BUY",
+    "symbol": "AMZN",
+    "qty": 78,
+    "price": 211.93,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": -639.1632000000002,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-27T14:00:15.615877",
+    "type": "SELL",
+    "symbol": "GOOGL",
+    "qty": 60,
+    "price": 277.68,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311904 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-27T14:00:16.574399",
+    "type": "SELL",
+    "symbol": "AMZN",
+    "qty": 78,
+    "price": 203.3956,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311909 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-27T15:30:19.421244",
+    "type": "SELL",
+    "symbol": "V",
+    "qty": 43,
+    "price": 297.25,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311914 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-27T17:03:40.197492",
+    "type": "BUY",
+    "symbol": "SLV",
+    "qty": 251,
+    "price": 64.09,
+    "signal": "BUY",
+    "confidence": 65,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": 415.9038750000006,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-30T17:30:17.153576",
+    "type": "BUY",
+    "symbol": "KO",
+    "qty": 231,
+    "price": 76.7,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": -478.0699770000015,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-30T18:00:15.629827",
+    "type": "BUY",
+    "symbol": "AMZN",
+    "qty": 83,
+    "price": 202.82,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": 456.9149999999996,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-30T18:00:26.706331",
+    "type": "BUY",
+    "symbol": "TLT",
+    "qty": 194,
+    "price": 86.78,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": -120.28000000000088,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-30T19:32:14.833314",
+    "type": "BUY",
+    "symbol": "COST",
+    "qty": 15,
+    "price": 1001.32,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": -47.85000000000082,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-03-31T15:32:26.018282",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 126,
+    "price": 63.607769,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 415.9038750000006,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-31T16:32:51.088119",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 63,
+    "price": 63.607769,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 203.62425300000015,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-31T17:32:47.271995",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 32,
+    "price": 63.607769,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 101.2655609999999,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-31T18:02:48.500459",
+    "type": "SELL",
+    "symbol": "AMZN",
+    "qty": 83,
+    "price": 208.315,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311928 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-03-31T18:02:58.194988",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 16,
+    "price": 63.607769,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 52.26609599999995,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-31T18:30:26.998220",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 8,
+    "price": 63.607769,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 26.133047999999974,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-31T19:00:29.361381",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 4,
+    "price": 63.607769,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 13.066523999999987,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-31T19:32:51.836256",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 2,
+    "price": 63.607769,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 6.5332619999999935,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-31T20:00:28.076372",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 1,
+    "price": 63.607769,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 3.2666309999999967,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-03-31T20:30:24.490551",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 0,
+    "price": 63.607769,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 3.2666309999999967,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-04-01T20:32:32.859939",
+    "type": "SELL",
+    "symbol": "COST",
+    "qty": 15,
+    "price": 997.76,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311942 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-02T15:02:25.788907",
+    "type": "SELL",
+    "symbol": "TLT",
+    "qty": 194,
+    "price": 86.32,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311948 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-02T17:00:15.307432",
+    "type": "BUY",
+    "symbol": "GOOGL",
+    "qty": 57,
+    "price": 295.44,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311953 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-02T17:00:16.984577",
+    "type": "BUY",
+    "symbol": "AMZN",
+    "qty": 80,
+    "price": 209.88,
+    "signal": "BUY",
+    "confidence": 60,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "High volume: 3.0x",
+      "Above VWAP"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311958 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-02T17:00:17.946262",
+    "type": "BUY",
+    "symbol": "META",
+    "qty": 29,
+    "price": 571.28,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": 59.04000000000008,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-04-02T17:00:23.699418",
+    "type": "BUY",
+    "symbol": "UNH",
+    "qty": 60,
+    "price": 276.42,
+    "signal": "BUY",
+    "confidence": 65,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": 136.8800000000008,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-04-02T17:00:25.588350",
+    "type": "BUY",
+    "symbol": "JPM",
+    "qty": 57,
+    "price": 293.57,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": 15.266999999999996,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-04-02T17:00:26.583184",
+    "type": "BUY",
+    "symbol": "BAC",
+    "qty": 343,
+    "price": 49.105,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": 33.33000000000001,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-04-02T17:00:28.259145",
+    "type": "BUY",
+    "symbol": "QQQ",
+    "qty": 28,
+    "price": 582.92,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": 532.8699900000004,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-04-02T17:00:29.341158",
+    "type": "BUY",
+    "symbol": "SPY",
+    "qty": 25,
+    "price": 654.16,
+    "signal": "BUY",
+    "confidence": 65,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311964 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-02T17:00:32.526607",
+    "type": "BUY",
+    "symbol": "TLT",
+    "qty": 194,
+    "price": 86.69,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311968 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-02T17:00:34.435889",
+    "type": "BUY",
+    "symbol": "XLF",
+    "qty": 340,
+    "price": 49.4615,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311975 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T15:23:53.581942",
+    "type": "SELL",
+    "symbol": "META",
+    "qty": 0,
+    "price": 570.8,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311980 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T15:24:09.166721",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 11,
+    "price": 49.19,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311985 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T15:51:29.949228",
+    "type": "SELL",
+    "symbol": "JPM",
+    "qty": 1,
+    "price": 294.05,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311990 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T15:51:32.005571",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 6,
+    "price": 49.19,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311995 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T16:22:25.803075",
+    "type": "BUY",
+    "symbol": "UNH",
+    "qty": 58,
+    "price": 306.885,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.311999 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T16:22:27.585181",
+    "type": "SELL",
+    "symbol": "JPM",
+    "qty": 0,
+    "price": 294.05,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312004 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T16:22:28.510300",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 3,
+    "price": 49.19,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312009 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T16:52:54.343871",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 2,
+    "price": 49.19,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312014 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T17:23:24.811264",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 1,
+    "price": 49.19,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312019 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T17:53:48.945749",
+    "type": "SELL",
+    "symbol": "UNH",
+    "qty": 58,
+    "price": 309.87,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312023 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-13T17:53:51.882680",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 0,
+    "price": 49.19,
+    "signal": "PARTIAL_TAKE_50%",
+    "confidence": 50,
+    "reasons": [
+      "PARTIAL_TAKE_50%"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312028 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-14T18:01:47.416430",
+    "type": "BUY",
+    "symbol": "BAC",
+    "qty": 339,
+    "price": 53.365,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": 343.35649999999987,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-04-14T18:01:53.347687",
+    "type": "BUY",
+    "symbol": "DIA",
+    "qty": 37,
+    "price": 485.095,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": 21.830000000001178,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-04-14T19:02:53.708052",
+    "type": "SELL",
+    "symbol": "DIA",
+    "qty": 37,
+    "price": 485.3,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312034 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-15T15:05:48.692138",
+    "type": "SELL",
+    "symbol": "KO",
+    "qty": 231,
+    "price": 74.74,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312047 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-16T16:15:09.705097",
+    "type": "BUY",
+    "symbol": "WMT",
+    "qty": 153,
+    "price": 125.195,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312052 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-17T16:55:54.706309",
+    "type": "BUY",
+    "symbol": "IWM",
+    "qty": 65,
+    "price": 275.69,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI low",
+      "Above VWAP"
+    ],
+    "pnl": 58.17499999999882,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-04-17T17:26:29.468915",
+    "type": "SELL",
+    "symbol": "WMT",
+    "qty": 153,
+    "price": 125.67,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312057 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-17T17:57:17.829587",
+    "type": "SELL",
+    "symbol": "IWM",
+    "qty": 65,
+    "price": 277.365,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312063 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-21T18:49:43.821041",
+    "type": "BUY",
+    "symbol": "PFE",
+    "qty": 738,
+    "price": 27.5,
+    "signal": "BUY",
+    "confidence": 50,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "Above VWAP"
+    ],
+    "pnl": -436.96980000000156,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-04-22T15:29:29.600749",
+    "type": "SELL",
+    "symbol": "PFE",
+    "qty": 738,
+    "price": 26.9379,
+    "signal": "STOP_LOSS",
+    "confidence": 50,
+    "reasons": [
+      "STOP_LOSS"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312069 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-04-23T16:40:13.804239",
+    "type": "BUY",
+    "symbol": "KO",
+    "qty": 265,
+    "price": 76.215,
+    "signal": "BUY",
+    "confidence": 60,
+    "reasons": [
+      "Trend: BULL",
+      "RSI oversold",
+      "High volume: 1.9x",
+      "Above VWAP"
+    ],
+    "pnl": 55.65000000000211,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-04-23T19:13:57.171558",
+    "type": "SELL",
+    "symbol": "KO",
+    "qty": 265,
+    "price": 76.56,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312074 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-07-08T16:40:36.490470",
+    "type": "BUY",
+    "symbol": "QQQ",
+    "qty": 30,
+    "price": 701.45,
+    "signal": "BUY",
+    "confidence": 60,
+    "reasons": [
+      "RSI oversold",
+      "At lower BB"
+    ],
+    "pnl": 75.92000000000189,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-07-09T14:54:57.955814",
+    "type": "SELL",
+    "symbol": "QQQ",
+    "qty": 30,
+    "price": 720.84,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312079 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-07-15T17:38:42.124966",
+    "type": "BUY",
+    "symbol": "BAC",
+    "qty": 347,
+    "price": 61.42,
+    "signal": "BUY",
+    "confidence": 60,
+    "reasons": [
+      "RSI oversold",
+      "At lower BB"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312084 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-08-24T15:04:27.980328",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 347,
+    "price": 62.3895,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312089 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-08-28T17:13:35.868595",
+    "type": "BUY",
+    "symbol": "QQQ",
+    "qty": 26,
+    "price": 717.87,
+    "signal": "BUY",
+    "confidence": 60,
+    "reasons": [
+      "RSI oversold",
+      "At lower BB"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312094 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-09-04T15:06:35.705246",
+    "type": "SELL",
+    "symbol": "QQQ",
+    "qty": 26,
+    "price": 721.08,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312099 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-09-14T14:57:08.984318",
+    "type": "SELL",
+    "symbol": "XLK",
+    "qty": 67,
+    "price": 182.84,
+    "signal": "HARD_STOP",
+    "confidence": 50,
+    "reasons": [
+      "HARD_STOP"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_PHANTOM",
+    "cleanup_note": "Phantom entry cleaned up at 2026-09-18T08:39:04.312104 \u2014 symbol not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-09-18T18:06:58.344451",
+    "type": "BUY",
+    "symbol": "XLE",
+    "qty": 295,
+    "price": 64.38,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "RSI oversold"
+    ],
+    "pnl": -395.29999999999893,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-09-21T15:11:51.754149",
+    "type": "SELL",
+    "symbol": "XLE",
+    "qty": 295,
+    "price": 62.99,
+    "signal": "HARD_STOP",
+    "confidence": 50,
+    "reasons": [
+      "HARD_STOP"
+    ],
+    "pnl": 0.0,
+    "closed": true,
+    "exit_reason": "CLEANUP_STALE_OPEN",
+    "cleanup_note": "Stale open row closed at 2026-11-02T07:16:47.192723 \u2014 XLE not in current Alpaca positions"
+  },
+  {
+    "timestamp": "2026-11-02T07:16:47.192746",
+    "type": "BUY",
+    "symbol": "SPY",
+    "qty": 0,
+    "price": 0.0,
+    "signal": "ADOPTED_EXISTING",
+    "confidence": 50,
+    "reasons": [
+      "Adopted from Alpaca live positions during journal reconciliation"
+    ],
+    "pnl": 0.0,
+    "closed": false,
+    "adopted_note": "Position existed before journal reconciliation; qty/price backfilled from Alpaca"
+  },
+  {
+    "timestamp": "2026-11-03T17:07:06.424263",
+    "type": "BUY",
+    "symbol": "SLV",
+    "qty": 241,
+    "price": 44.8601,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "RSI oversold",
+      "Trend: SIDEWAYS (mean-reversion baseline)",
+      "Below VWAP"
+    ],
+    "pnl": 261.6,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-11-04T16:09:51.611398",
+    "type": "BUY",
+    "symbol": "QQQ",
+    "qty": 1,
+    "price": 693.2,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "RSI low",
+      "Trend: SIDEWAYS (mean-reversion baseline)",
+      "High volume: 1.7x",
+      "Below VWAP"
+    ],
+    "pnl": -29.96,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-11-08T08:06:55.306127",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 120,
+    "price": 47.07,
+    "signal": "SELL",
+    "confidence": 0,
+    "reasons": [
+      "PARTIAL_TAKE_50%",
+      "BACKFILL_2026-11-04"
+    ],
+    "pnl": 261.6,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-11-08T08:06:55.309856",
+    "type": "SELL",
+    "symbol": "QQQ",
+    "qty": 1,
+    "price": 662.27,
+    "signal": "SELL",
+    "confidence": 0,
+    "reasons": [
+      "HARD_STOP",
+      "BACKFILL_2026-11-05"
+    ],
+    "pnl": -29.96,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-11-08T08:06:55.312867",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 121,
+    "price": 47.543636,
+    "signal": "SELL",
+    "confidence": 0,
+    "reasons": [
+      "RSI_EXIT",
+      "BACKFILL_2026-11-05"
+    ],
+    "pnl": 321.09,
+    "closed": false
+  }
+]

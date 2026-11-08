@@ -1,0 +1,39 @@
+{
+  "blocked_hours": [
+    15,
+    18
+  ],
+  "by_hour": {
+    "15": {
+      "win_rate": 12.5,
+      "trades": 16,
+      "pnl": -2794.07,
+      "blocked": true
+    },
+    "16": {
+      "win_rate": 50.0,
+      "trades": 18,
+      "pnl": -2070.63,
+      "blocked": false
+    },
+    "17": {
+      "win_rate": 71.4,
+      "trades": 14,
+      "pnl": 246.67,
+      "blocked": false
+    },
+    "18": {
+      "win_rate": 33.3,
+      "trades": 9,
+      "pnl": -841.07,
+      "blocked": true
+    },
+    "19": {
+      "win_rate": 50.0,
+      "trades": 8,
+      "pnl": -242.48,
+      "blocked": false
+    }
+  },
+  "updated": "2026-11-08T00:19:28.563511"
+}
