@@ -11,15 +11,15 @@
       "blocked": true
     },
     "16": {
-      "win_rate": 50.0,
-      "trades": 18,
-      "pnl": -2070.63,
+      "win_rate": 47.4,
+      "trades": 19,
+      "pnl": -2100.59,
       "blocked": false
     },
     "17": {
-      "win_rate": 71.4,
-      "trades": 14,
-      "pnl": 246.67,
+      "win_rate": 73.3,
+      "trades": 15,
+      "pnl": 508.27,
       "blocked": false
     },
     "18": {
@@ -35,5 +35,5 @@
       "blocked": false
     }
   },
-  "updated": "2026-11-08T00:19:28.563511"
+  "updated": "2026-11-10T12:18:27.479505"
 }
