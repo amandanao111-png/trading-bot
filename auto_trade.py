@@ -1067,9 +1067,16 @@ def analyze_symbol(symbol):
         return None
 
     # === IMPROVEMENT 3: Required volume confirmation ===
-    # No entries on low-volume days (price action unreliable)
-    if REQUIRE_VOLUME_CONFIRMATION and volume_ratio < MIN_VOLUME_RATIO:
-        return None
+    # No entries on low-volume days (price action unreliable).
+    #
+    # 2026-11-10: this used to `return None` here, which silently killed the
+    # whole scan. The ratio compares ONE completed 5-min bar against a 20-bar
+    # mean, so it flips on noise: the same code analysed 8 symbols in one
+    # cycle, 3 in the next, and 0 in the one after that, and the log showed a
+    # blank "No signals" - indistinguishable from "the market had no signal".
+    # The gate's intent is to filter ENTRIES, not analysis, so it now travels
+    # with the result as "volume_ok" and is enforced at the entry decision.
+    volume_ok = (not REQUIRE_VOLUME_CONFIRMATION) or volume_ratio >= MIN_VOLUME_RATIO
 
     # Trend
     trend = "SIDEWAYS"
@@ -1204,6 +1211,7 @@ def analyze_symbol(symbol):
         "atr_pct": atr_pct,
         "vwap": vwap,
         "volume_ratio": volume_ratio,
+        "volume_ok": volume_ok,
         "signal": signal,
         "confidence": confidence,
         "reasons": reasons,
@@ -1684,11 +1692,17 @@ def do_trading_cycle():
     if auto_blacklist:
         print(f"\n🚫 Auto-blacklisted (poor history): {sorted(auto_blacklist)}")
 
+    scanned_count = 0
+    volume_rejected_count = 0
     for symbol in ALL_SYMBOLS:
         # Skip auto-blacklisted symbols
         if symbol in auto_blacklist:
             continue
         analysis = analyze_symbol(symbol)
+        if analysis:
+            scanned_count += 1
+            if not analysis.get("volume_ok", True):
+                volume_rejected_count += 1
         # Defect fix: exits were gated behind ENTRY analysis succeeding, so a
         # held position whose entry analysis failed (e.g. volume-confirmation
         # gate) was never stop-checked. Exit logic must run for held positions
@@ -1806,9 +1820,16 @@ def do_trading_cycle():
                 print(f"   → Skipped: authoritative market clock unavailable")
                 continue
 
-            # No entry analysis for this symbol (e.g. volume-gate fail). The exit
+            # No entry analysis for this symbol (e.g. data unavailable). The exit
             # check above already ran; there is no entry signal to evaluate.
             if not analysis:
+                continue
+
+            # Volume confirmation gate. Moved out of analyze_symbol() on
+            # 2026-11-10 so a quiet bar can never blank the whole scan. Same
+            # behaviour as before: a below-average-volume bar never enters.
+            if not analysis.get("volume_ok", True):
+                print(f"   → Skipped: volume {analysis['volume_ratio']:.2f} < {MIN_VOLUME_RATIO} (below-average volume)")
                 continue
 
             # Skip if max positions reached
@@ -1965,6 +1986,11 @@ def do_trading_cycle():
     # survive the cycle boundary.
     save_position_state(positions)
 
+    # Scan visibility: a silent blank scan is indistinguishable from "the
+    # market had no signal", so always report how many symbols were analysed
+    # and how many the volume gate held back.
+    print(f"📊 Scanned {scanned_count}/{len(ALL_SYMBOLS)} symbols | volume gate: "
+          f"{scanned_count - volume_rejected_count} pass, {volume_rejected_count} rejected")
 
     # Summary
     print("\n" + "="*30)
