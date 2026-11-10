@@ -130,6 +130,12 @@ def tune_position_sizing():
     # Only use last 20 trades per symbol (recency-weighted)
     by_symbol = defaultdict(list)
     for t in journal:
+        # EXCLUDE CLEANUP phantom rows (exit_reason CLEANUP_*): they carry
+        # pnl=0.0, which passes the "pnl is not None" test but then fails
+        # "pnl > 0", so every phantom counted as a LOSS and dragged every
+        # symbol's multiplier toward 0. That is what poisoned the sizing table.
+        if "CLEANUP" in str(t.get("exit_reason", "")):
+            continue
         if t.get("closed", False) and t.get("pnl") is not None:
             by_symbol[t["symbol"]].append(t)
 

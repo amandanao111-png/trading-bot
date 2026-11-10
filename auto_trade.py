@@ -561,7 +561,20 @@ def get_symbol_confidence_threshold(symbol):
 def get_symbol_position_multiplier(symbol):
     """Get evolution-tuned position size multiplier for a symbol.
     Returns 1.0 if no tuning exists.
+
+    Blacklist always wins: a blacklisted symbol gets 0.0 regardless of what
+    the evolution table says. Otherwise the two tables can disagree and a
+    blacklisted name can still be sized (the Nov-2026 table had 13 symbols
+    at 0.0 — including QQQ, the best symbol in the book — purely because
+    the evolution sample was poisoned by $0 cleanup rows).
     """
+    if symbol in SYMBOL_BLACKLIST:
+        return 0.0
+    try:
+        if symbol in get_auto_blacklist():
+            return 0.0
+    except Exception:
+        pass
     data = _load_evolution_file("symbol_position.json")
     if not data:
         return 1.0
@@ -1823,9 +1836,13 @@ def do_trading_cycle():
                       f"({', '.join(disabled_reasons)})")
                 continue
             
-            # NEW: RSI Entry Filter - Don't buy if RSI too high (will trigger RSI_EXIT)
-            if analysis['rsi'] > 50:
-                print(f"   → Skipped: RSI too high ({analysis['rsi']:.0f} > 50)")
+            # NEW: RSI Entry Filter - Don't buy if RSI so high it will
+            # immediately trigger RSI_EXIT. RSI_EXIT fires at RSI > 85
+            # (see check_exit), so this threshold was rejecting good entries
+            # at RSI 50-85 for no reason — it killed SLV (RSI 62) and
+            # QQQ (RSI 57) on Nov 9, both of which had positive edge.
+            if analysis['rsi'] > 85:
+                print(f"   → Skipped: RSI too high ({analysis['rsi']:.0f} > 85)")
                 continue
             
             # NEW: Sector cooldown check (after STOP_LOSS)
@@ -1895,8 +1912,25 @@ def do_trading_cycle():
 
             actual_position = min(kelly_position_pct(symbol) * vol_adj * signal_mult * symbol_mult * tier_mult * event_mult, 0.05)  # Cap at 5%
             
-            # Calculate qty based on available buying power
-            available_bp = float(account.get('buying_power', portfolio * 0.5))
+            # Calculate qty on EQUITY, not buying power. On a paper account
+            # buying_power is 4x equity, so a "5% cap" was silently a
+            # 20%-of-equity position, and 15 positions could reach 300% gross.
+            available_bp = float(account.get('portfolio_value', portfolio))
+
+            # Enforce MAX_PORTFOLIO_RISK as a gross-exposure ceiling.
+            # It was referenced exactly once in the whole repo (its own
+            # definition) — the guardrail did not exist.
+            gross_exposure = sum(
+                abs(float(p.get('qty', 0) or 0)) * float(p.get('current_price', 0) or 0)
+                for p in positions.values()
+            )
+            new_position_value = available_bp * actual_position
+            if gross_exposure + new_position_value > portfolio * MAX_PORTFOLIO_RISK:
+                print(f"   → Skipped: gross exposure would be "
+                      f"{(gross_exposure + new_position_value) / max(portfolio, 1) * 100:.1f}% "
+                      f"> MAX_PORTFOLIO_RISK {MAX_PORTFOLIO_RISK * 100:.0f}%")
+                continue
+
             qty = int((available_bp * actual_position) / analysis['price'])
             if qty <= 0:
                 print(f"   → Skipped: computed quantity is zero")

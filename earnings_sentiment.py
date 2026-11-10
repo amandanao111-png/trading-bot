@@ -1,148 +1,291 @@
 #!/usr/bin/env python3
 """
-Earnings Sentiment Analysis
-Analyzes upcoming earnings and provides sentiment indicators
+Earnings Sentiment Analysis — LIVE earnings calendar (Nasdaq API).
+
+WHY THIS EXISTS (2026-11-09):
+The original version of this script shipped a HARDCODED calendar of ten
+symbols with April-May 2026 dates. It ran weekly, wrote
+earnings_sentiment.json, printed a confident report, and exited 0 — and the
+event guard (event_guard.py) correctly refused to trust that file as stale.
+Net effect: a guard that was wired up and reported "ok" while protecting
+nothing. A monitor that reports the wrong thing is worse than no monitor.
+
+This version fetches the REAL earnings calendar from the Nasdaq public
+calendar API and writes real dates. If the fetch fails it says so loudly and
+leaves the previous file untouched (the guard then reports "not enforcing",
+which is the honest state).
+
+Tracked symbols = the trading bot's own universe (STOCKS + ETFS) plus every
+symbol that appears in the trade journal (i.e. anything the bot could
+actually hold or trade). Tracking the whole market would bloat the file
+without protecting anything.
+
+Data source: https://api.nasdaq.com/api/calendar/earnings?date=YYYY-MM-DD
 """
 
-import requests
 import json
-from datetime import datetime, timedelta
+import os
+import re
+import time
+import urllib.error
+import urllib.request
+from datetime import date, datetime, timedelta
 
-# Using Yahoo Finance for earnings dates
-# In production, would use a proper API
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+JOURNAL_FILE = os.path.join(BASE_DIR, "trade_journal.json")
+OUTPUT_FILE = os.path.join(BASE_DIR, "earnings_sentiment.json")
 
-# Sample earnings calendar (would be fetched from API)
-EARNINGS_CALENDAR = {
-    "AAPL": {"date": "2026-04-28", "estimate": 2.15, "previous": 2.40},
-    "MSFT": {"date": "2026-04-30", "estimate": 3.20, "previous": 3.45},
-    "GOOGL": {"date": "2026-04-29", "estimate": 1.85, "previous": 2.10},
-    "AMZN": {"date": "2026-05-01", "estimate": 1.50, "previous": 1.75},
-    "NVDA": {"date": "2026-05-21", "estimate": 4.20, "previous": 4.80},
-    "META": {"date": "2026-04-30", "estimate": 4.50, "previous": 4.90},
-    "TSLA": {"date": "2026-04-23", "estimate": 0.95, "previous": 1.10},
-    "AMD": {"date": "2026-04-29", "estimate": 1.25, "previous": 1.40},
-    "JPM": {"date": "2026-04-25", "estimate": 4.10, "previous": 4.35},
-    "BAC": {"date": "2026-04-25", "estimate": 0.85, "previous": 0.95}
-}
+# How many days forward to pull. 21 days matches the guard's staleness
+# window (EARNINGS_STALE_AFTER_DAYS) so a two-week miss can never leave
+# the guard silently unprotected.
+LOOKAHEAD_DAYS = 21
 
-def get_sentiment_indicators(symbol):
-    """Get sentiment indicators for a stock"""
-    earning = EARNINGS_CALENDAR.get(symbol, {})
-    
-    if not earning:
+UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/124 Safari/537.36")
+
+# Fallback tracked set, used if auto_trade.py cannot be parsed.
+FALLBACK_SYMBOLS = [
+    "AAPL", "NVDA", "MSFT", "AMD", "INTC", "COST", "ABBV", "JPM", "BAC", "V",
+    "QQQ", "SPY", "IWM", "VOO", "DIA", "GLD", "SLV", "TLT", "XLK", "XLE",
+    "XLF", "XLV",
+]
+
+
+def tracked_symbols():
+    """Symbols worth protecting: bot universe + anything in the journal."""
+    syms = set()
+
+    # 1. The bot's own universe, parsed straight from auto_trade.py so the
+    #    list can never drift from what the bot actually trades.
+    try:
+        src = open(os.path.join(BASE_DIR, "auto_trade.py")).read()
+        for name in ("STOCKS", "ETFS"):
+            m = re.search(rf"^{name}\s*=\s*\[(.*?)\]", src, re.S | re.M)
+            if m:
+                syms.update(re.findall(r'"([A-Z]{1,5})"', m.group(1)))
+    except Exception:
+        syms.update(FALLBACK_SYMBOLS)
+
+    # 2. Anything the bot has actually traded or holds.
+    try:
+        with open(JOURNAL_FILE) as fh:
+            journal = json.load(fh)
+        for t in journal:
+            if isinstance(t, dict) and t.get("symbol"):
+                syms.add(str(t["symbol"]).upper())
+    except Exception:
+        pass
+
+    return sorted(syms)
+
+
+def _parse_eps(raw):
+    """'$2.49' -> 2.49, '($0.44)' -> -0.44, 'N/A'/'' -> None."""
+    if raw is None:
         return None
-    
-    estimate = earning.get("estimate", 0)
-    previous = earning.get("previous", 0)
-    
-    # Calculate sentiment
-    surprise_potential = ((previous - estimate) / previous * 100) if previous else 0
-    
-    # Sentiment score (-100 to +100)
-    if surprise_potential > 20:
-        sentiment = "STRONG_BUY"
-        score = 80
-    elif surprise_potential > 10:
-        sentiment = "BUY"
-        score = 40
-    elif surprise_potential > 0:
-        sentiment = "SLIGHT_BUY"
-        score = 20
-    elif surprise_potential > -10:
-        sentiment = "HOLD"
-        score = 0
-    elif surprise_potential > -20:
-        sentiment = "SELL"
-        score = -40
+    s = str(raw).strip().replace("$", "").replace(",", "").replace("%", "")
+    if not s or s.upper() in ("N/A", "NA", "--", "-"):
+        return None
+    neg = s.startswith("(") and s.endswith(")")
+    if neg:
+        s = s[1:-1]
+    try:
+        val = float(s)
+    except ValueError:
+        return None
+    return -val if neg else val
+
+
+def fetch_day(d):
+    """Return the Nasdaq earnings rows for one ISO date. [] on failure."""
+    url = f"https://api.nasdaq.com/api/calendar/earnings?date={d}"
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA,
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "en-US,en;q=0.9",
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            payload = json.loads(resp.read().decode("utf-8", "replace"))
+    except Exception:
+        return []
+    data = payload.get("data") or {}
+    rows = data.get("rows") or []
+    out = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        sym = (row.get("symbol") or "").strip().upper()
+        if not sym or "." in sym:      # drop class-A style tickers like PBR.A
+            continue
+        out.append({
+            "symbol": sym,
+            "name": row.get("name"),
+            "time": row.get("time"),          # time-pre-market / time-after-hours
+            "eps_estimate": _parse_eps(row.get("epsForecast")),
+            "eps_previous": _parse_eps(row.get("lastYearEPS")),
+        })
+    return out
+
+
+def sentiment_for(estimate, previous):
+    """Year-over-year EPS growth: consensus forecast vs last year's actual.
+
+    NAMING NOTE (2026-11-09): the old script called this "surprise_potential"
+    and mapped it to BUY/SELL labels. On live data that produced nonsense -
+    NVDA (consensus $2.49 vs $1.24 last year, i.e. +100% growth) was labelled
+    STRONG_SELL because the formula was (previous - estimate) / previous.
+    A higher forecast simply means more EPS, not a bearish signal, and a
+    report that says "STRONG_SELL" about NVIDIA is worse than no report.
+
+    So the number is now what it actually is - YoY EPS growth - and the
+    labels describe the DIRECTION of earnings, not a trade recommendation.
+    Nothing in the bot consumes these labels; only the dates matter for
+    the event guard. Growth is not a buy signal.
+    """
+    if estimate is None or previous in (None, 0):
+        growth = 0.0
     else:
-        sentiment = "STRONG_SELL"
-        score = -80
-    
-    return {
-        "symbol": symbol,
-        "earnings_date": earning.get("date"),
-        "eps_estimate": estimate,
-        "eps_previous": previous,
-        "surprise_potential": surprise_potential,
-        "sentiment": sentiment,
-        "score": score
-    }
+        growth = ((estimate - previous) / previous) * 100.0
+
+    if growth > 20:
+        label, score = "STRONG_GROWTH", 80
+    elif growth > 10:
+        label, score = "GROWTH", 40
+    elif growth > 0:
+        label, score = "SLIGHT_GROWTH", 20
+    elif growth > -10:
+        label, score = "FLAT", 0
+    elif growth > -20:
+        label, score = "CONTRACTION", -40
+    else:
+        label, score = "STRONG_CONTRACTION", -80
+
+    return round(growth, 4), label, score
+
+
+def collect(lookahead=LOOKAHEAD_DAYS):
+    """Fetch the calendar for the next `lookahead` days.
+
+    Returns (rows, fetched_ok, days_with_rows). fetched_ok counts days the
+    endpoint ANSWERED (including weekends, which legitimately have zero
+    earnings). Counting only non-empty days made a working fetch look like
+    7 failures.
+    """
+    tracked = set(tracked_symbols())
+    rows = []
+    fetched_ok = 0
+    days_with_rows = 0
+    today = date.today()
+
+    for i in range(lookahead + 1):
+        d = today + timedelta(days=i)
+        day_rows = fetch_day(d.isoformat())
+        if day_rows is not None:
+            fetched_ok += 1
+        if day_rows:
+            days_with_rows += 1
+        for r in day_rows:
+            if r["symbol"] in tracked:
+                surprise, label, score = sentiment_for(r["eps_estimate"], r["eps_previous"])
+                rows.append({
+                    "symbol": r["symbol"],
+                    "earnings_date": d.isoformat(),
+                    "eps_estimate": r["eps_estimate"],
+                    "eps_previous": r["eps_previous"],
+                    "eps_yoy_growth_pct": surprise,
+                    "sentiment": label,
+                    "score": score,
+                    "session": r["time"],
+                    "name": r["name"],
+                })
+        time.sleep(0.4)   # be polite to the endpoint
+
+    return rows, fetched_ok, days_with_rows
+
 
 def analyze_all():
-    """Analyze all earnings"""
-    print("\n" + "="*70)
-    print("📈 EARNINGS SENTIMENT ANALYSIS")
-    print("="*70)
+    print("\n" + "=" * 70)
+    print("📈 EARNINGS SENTIMENT ANALYSIS (live Nasdaq calendar)")
+    print("=" * 70)
     print(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    
-    # Sort by earnings date
-    sorted_earnings = sorted(
-        [(s, e) for s, e in EARNINGS_CALENDAR.items()],
-        key=lambda x: x[1]["date"]
-    )
-    
-    print("\n📅 UPCOMING EARNINGS")
+
+    rows, fetched_ok, days_with_rows = collect()
+    print(f"Calendar fetched for {fetched_ok}/{LOOKAHEAD_DAYS + 1} days "
+          f"({days_with_rows} had earnings)")
+
+    if not rows:
+        print("\n⚠️  NO EARNINGS DATA RETRIEVED — leaving "
+              f"{os.path.basename(OUTPUT_FILE)} untouched.")
+        print("   The event guard will report 'earnings guard NOT enforcing'")
+        print("   until a run succeeds. That is the honest state.")
+        return []
+
+    by_date = {}
+    for r in rows:
+        by_date.setdefault(r["earnings_date"], []).append(r)
+
+    print("\n📅 UPCOMING EARNINGS (tracked symbols only)")
     print("-" * 70)
-    print(f"{'Symbol':<8} {'Date':<12} {'Est EPS':<10} {'Prev EPS':<10} {'Surprise':<12} {'Sentiment'}")
+    print(f"{'Symbol':<8} {'Date':<12} {'Est EPS':<10} {'Prev EPS':<10} "
+          f"{'YoY EPS':<10} {'When':<18}")
     print("-" * 70)
-    
-    sentiments = []
-    for symbol, earning in sorted_earnings:
-        info = get_sentiment_indicators(symbol)
-        if info:
-            sentiments.append(info)
-            emoji = "🟢" if info["sentiment"] in ["STRONG_BUY", "BUY"] else ("🔴" if info["sentiment"] in ["STRONG_SELL", "SELL"] else "🟡")
-            print(f"{symbol:<8} {earning['date']:<12} ${earning['estimate']:<9.2f} ${earning['previous']:<9.2f} {info['surprise_potential']:>+9.1f}% {emoji} {info['sentiment']}")
-    
-    # Portfolio impact
+
+    for d in sorted(by_date):
+        for r in sorted(by_date[d], key=lambda x: x["symbol"]):
+            est = f"${r['eps_estimate']:.2f}" if r["eps_estimate"] is not None else "-"
+            prev = f"${r['eps_previous']:.2f}" if r["eps_previous"] is not None else "-"
+            print(f"{r['symbol']:<8} {d:<12} {est:<10} {prev:<10} "
+                  f"{r['eps_yoy_growth_pct']:>+9.1f}% {str(r['session'] or ''):<18}")
+
+    # Portfolio impact — open positions only.
     print("\n🎯 PORTFOLIO POSITIONS IMPACT")
     print("-" * 70)
-    
-    # Load positions
     try:
-        with open("/Users/amandaai/.openclaw/workspace/trading_bot/trade_journal.json") as f:
-            journal = json.load(f)
-        
-        # Get unique symbols from open positions
-        open_symbols = set()
-        for entry in journal:
-            if entry.get("type") == "BUY" and not entry.get("closed", False):
-                open_symbols.add(entry["symbol"])
-        
-        portfolio_earnings = [s for s in open_symbols if s in EARNINGS_CALENDAR]
-        
-        if portfolio_earnings:
-            for symbol in portfolio_earnings:
-                info = get_sentiment_indicators(symbol)
-                if info:
-                    action = "⚠️ WATCH" if info["score"] < 0 else "✅ OK"
-                    print(f"  {symbol}: {info['earnings_date']} | Sentiment: {info['sentiment']} | {action}")
+        with open(JOURNAL_FILE) as fh:
+            journal = json.load(fh)
+        open_symbols = {
+            e["symbol"] for e in journal
+            if isinstance(e, dict) and e.get("type") == "BUY"
+            and not e.get("closed", False) and e.get("symbol")
+        }
+        first_upcoming = {}
+        for r in rows:
+            first_upcoming.setdefault(r["symbol"], r)
+        hits = [s for s in sorted(open_symbols) if s in first_upcoming]
+        if hits:
+            for s in hits:
+                r = first_upcoming[s]
+                print(f"  {s}: {r['earnings_date']} ({r['session']}) | "
+                      f"{r['sentiment']} | ⚠️ EARNINGS INSIDE GUARD WINDOW")
         else:
             print("  No upcoming earnings for current positions")
     except Exception as e:
         print(f"  Could not load positions: {e}")
-    
-    # Summary
-    buy_signals = [s for s in sentiments if s["score"] > 20]
-    sell_signals = [s for s in sentiments if s["score"] < -20]
-    
+
     print("\n📊 SUMMARY")
     print("-" * 70)
-    print(f"  Total analyzed: {len(sentiments)}")
-    print(f"  Strong buy signals: {len([s for s in sentiments if s['sentiment'] == 'STRONG_BUY'])}")
-    print(f"  Buy signals: {len([s for s in sentiments if s['sentiment'] == 'BUY'])}")
-    print(f"  Sell signals: {len([s for s in sentiments if s['sentiment'] == 'STRONG_SELL'])}")
-    
-    # Save report
+    print(f"  Tracked symbols: {len(tracked_symbols())}")
+    print(f"  Earnings rows: {len(rows)}")
+    print(f"  Strong growth: {len([r for r in rows if r['sentiment'] == 'STRONG_GROWTH'])}")
+    print(f"  Growth: {len([r for r in rows if r['sentiment'] == 'GROWTH'])}")
+    print(f"  Contraction: {len([r for r in rows if r['sentiment'] in ('CONTRACTION', 'STRONG_CONTRACTION')])}")
+
     report = {
         "date": datetime.now().isoformat(),
-        "earnings": sentiments
+        "source": "nasdaq.com/api/calendar/earnings",
+        "lookahead_days": LOOKAHEAD_DAYS,
+        "days_fetched": fetched_ok,
+        "days_with_earnings": days_with_rows,
+        "earnings": rows,
     }
-    
-    with open("/Users/amandaai/.openclaw/workspace/trading_bot/earnings_sentiment.json", "w") as f:
-        json.dump(report, f, indent=2)
-    
-    return sentiments
+    tmp = OUTPUT_FILE + ".tmp"
+    with open(tmp, "w") as fh:
+        json.dump(report, fh, indent=2)
+    os.replace(tmp, OUTPUT_FILE)
+    print(f"\n✅ Wrote {len(rows)} rows to {os.path.basename(OUTPUT_FILE)}")
+    return rows
+
 
 if __name__ == "__main__":
     analyze_all()

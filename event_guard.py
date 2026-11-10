@@ -52,6 +52,10 @@ EARNINGS_FILE = os.path.join(BASE_DIR, "earnings_sentiment.json")
 # Earnings data older than this is not trusted for blocking.
 EARNINGS_STALE_AFTER_DAYS = 21
 
+# The earnings FILE itself (not just its dates) older than this is not
+# trusted. A file refreshed weekly should never be more than ~10 days old.
+EARNINGS_FILE_STALE_AFTER_DAYS = 10
+
 # Extra buffer around a macro release before it is considered "past".
 MACRO_GRACE_MINUTES = 5
 
@@ -113,12 +117,31 @@ def _load_macro_events():
     return [e for e in events if isinstance(e, dict)]
 
 
+def _next_weekday(d):
+    """Next weekday (Mon-Fri) after date d. Used for after-hours reactions."""
+    nxt = d + timedelta(days=1)
+    while nxt.weekday() >= 5:
+        nxt += timedelta(days=1)
+    return nxt
+
+
 def _earnings_state(now=None):
     """Return (enforced, symbols_by_date, note).
 
     enforced is False when the earnings data is missing or stale. Callers
     must treat a non-enforced earnings guard as "no earnings protection",
     NOT as "no earnings today".
+
+    Two staleness tests, because one is not enough:
+      1. the newest earnings DATE must be recent (or in the future);
+      2. the FILE ITSELF must be recent. A file whose newest date is far in
+         the future stays "date-fresh" forever even if the refresher stopped
+         running weeks ago - so the report's own generated-at stamp is
+         checked separately. Without this, a dead cron looks healthy.
+
+    After-hours reports block the symbol on the NEXT WEEKDAY as well: the
+    print lands after the close, so the gap risk is the following open, not
+    the report date.
     """
     now = now or _us_eastern_now()
     data = _load_json(EARNINGS_FILE)
@@ -142,7 +165,11 @@ def _earnings_state(now=None):
             d = datetime.strptime(str(date_str), "%Y-%m-%d").date()
         except Exception:
             continue
-        by_date.setdefault(d, set()).add(str(symbol).upper())
+        sym = str(symbol).upper()
+        by_date.setdefault(d, set()).add(sym)
+        session = str(row.get("session") or "").lower()
+        if "after" in session:
+            by_date.setdefault(_next_weekday(d), set()).add(sym)
         if newest is None or d > newest:
             newest = d
 
@@ -154,6 +181,22 @@ def _earnings_state(now=None):
         return False, {}, (f"earnings data stale (newest {newest}, "
                            f"{age_days}d old > {EARNINGS_STALE_AFTER_DAYS}d) "
                            f"- earnings guard NOT enforcing")
+
+    # Second test: how old is the file itself?
+    gen = data.get("date")
+    if gen:
+        try:
+            gen_dt = datetime.fromisoformat(str(gen))
+            if gen_dt.tzinfo is not None:
+                gen_dt = gen_dt.astimezone(ZoneInfo("America/New_York")) if ZoneInfo else gen_dt
+            file_age = (now.date() - gen_dt.date()).days
+            if file_age > EARNINGS_FILE_STALE_AFTER_DAYS:
+                return False, {}, (f"earnings file stale (generated {file_age}d ago "
+                                   f"> {EARNINGS_FILE_STALE_AFTER_DAYS}d) "
+                                   f"- earnings guard NOT enforcing")
+        except Exception:
+            pass
+
     # Stale in the other direction (all dates in the future) is fine.
     return True, by_date, f"earnings data current (newest {newest})"
 
