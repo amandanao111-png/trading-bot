@@ -47,6 +47,35 @@ except Exception:  # pragma: no cover
     event_guard_state = None
     entry_size_multiplier = None
 
+# Telegram announcements for trade events.
+# Defect fix (2026-11-12): the only Telegram call in this file was
+# `send_telegram(alert_msg)` — a function that is defined nowhere in the
+# repo and imported nowhere. Every call raised NameError, which a bare
+# `except: pass` swallowed, so profit alerts have NEVER been delivered and
+# entries/exits were never announced at all. Route announcements through the
+# workspace `telegram_send` helper (the same one market_open_monitor.py
+# uses), guarded so a missing module can never take the trading loop down.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+TELEGRAM_CHAT_ID = "8250061141"
+try:
+    from telegram_send import send_message as _send_message
+except Exception:  # pragma: no cover
+    _send_message = None
+
+
+def announce_trade(text):
+    """Send a trade event to Telegram. Never raises, never blocks the loop."""
+    if _send_message is None:
+        print("   ⚠️ Telegram announce skipped: telegram_send module unavailable")
+        return False
+    try:
+        ok = _send_message(TELEGRAM_CHAT_ID, text)
+        print(f"   📣 Telegram announce {'sent' if ok else 'FAILED'}")
+        return bool(ok)
+    except Exception as e:
+        print(f"   ⚠️ Telegram announce error: {e}")
+        return False
+
 # API Keys - MUST BE SET VIA ENVIRONMENT VARIABLES
 # Set these before running: 
 #   export ALPACA_API_KEY="your_key"
@@ -726,6 +755,11 @@ def execute_mean_reversion_entries(mr_signals, positions, account, portfolio,
                 "is_mr": True,
             }
             print(f"   ✅ Bought {symbol} (Mean Reversion)")
+            announce_trade(
+                f"🟢 *Entry - {symbol}* (mean reversion)\n"
+                f"{qty} sh @ ${price:.2f}\n"
+                f"Why: mean-reversion signal (RSI/Stoch)"
+            )
 
 
 def check_mean_reversion_signal(symbol):
@@ -1747,7 +1781,7 @@ def do_trading_cycle():
                     print(f"   📢 {exit_reason}: {exit_details}")
                     try:
                         alert_msg = f"📢 *Profit Alert - {symbol}*\n\nProfit: {exit_details}\nAction: Review and decide whether to sell!"
-                        send_telegram(alert_msg)
+                        announce_trade(alert_msg)
                     except:
                         pass
                 else:
@@ -1819,6 +1853,15 @@ def do_trading_cycle():
                             print(f"   📚 Learning recorded")
                         except Exception as e:
                             print(f"   ⚠️ Learning record failed: {e}")
+
+                        # An exit is a reportable event. The heartbeat runs
+                        # with target=none (internal only), so this bot path is
+                        # the only one that reliably reaches the user.
+                        announce_trade(
+                            f"🔴 *Exit - {symbol}*\n"
+                            f"{exit_reason} · {rec_qty} sh @ ${rec_price:.2f}\n"
+                            f"P&L: ${pnl:+.2f}"
+                        )
 
         # Entry signals — log rejected BUY signals for debugging
         elif s == "BUY" and c >= optimal_conf:
@@ -1978,6 +2021,17 @@ def do_trading_cycle():
                     trades.append(symbol)
                     positions[symbol] = {"qty": qty, "avg_price": analysis['price'], "peak_price": analysis['price']}
                     print(f"   ✅ Bought {symbol}")
+
+                    # Report the entry (symbol, qty, fill, and why it passed
+                    # the gates) — see HEARTBEAT.md trade-reporting rule.
+                    _tier = analysis.get('tier', '')
+                    _reasons = ", ".join(analysis.get('reasons', []) or ['n/a'])
+                    announce_trade(
+                        f"🟢 *Entry - {symbol}*\n"
+                        f"{qty} sh @ ${analysis['price']:.2f} · {s} ({c}%)"
+                        f"{' · tier ' + str(_tier) if _tier else ''}\n"
+                        f"Why: {_reasons}"
+                    )
                     
                     # Record trade for learning
                     try:
