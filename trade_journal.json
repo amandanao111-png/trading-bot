@@ -3099,5 +3099,67 @@
     ],
     "pnl": 321.09,
     "closed": false
+  },
+  {
+    "timestamp": "2026-11-11T15:58:02.213732",
+    "type": "BUY",
+    "symbol": "NVDA",
+    "qty": 5,
+    "price": 174.43,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "Trend: SIDEWAYS (mean-reversion baseline)",
+      "High volume: 1.5x",
+      "Above VWAP"
+    ],
+    "pnl": -72.68999999999991,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-11-11T17:28:42.342932",
+    "type": "BUY",
+    "symbol": "AAPL",
+    "qty": 1,
+    "price": 354.83,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: BULL",
+      "RSI overbought",
+      "High volume: 2.6x",
+      "Above VWAP"
+    ],
+    "pnl": 0,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-11-11T17:28:50.615883",
+    "type": "BUY",
+    "symbol": "BAC",
+    "qty": 53,
+    "price": 50.71,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: SIDEWAYS (mean-reversion baseline)",
+      "Above VWAP"
+    ],
+    "pnl": 0,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-11-12T14:55:21.732659",
+    "type": "SELL",
+    "symbol": "NVDA",
+    "qty": 5,
+    "price": 161.24,
+    "signal": "HARD_STOP",
+    "confidence": 50,
+    "reasons": [
+      "HARD_STOP"
+    ],
+    "pnl": -72.68999999999991,
+    "closed": false
   }
 ]

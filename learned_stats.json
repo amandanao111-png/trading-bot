@@ -1,13 +1,18 @@
 {
-  "total_trades": 71,
+  "total_trades": 75,
   "winning_trades": 30,
-  "losing_trades": 41,
-  "total_pnl": -5966.320866999998,
+  "losing_trades": 42,
+  "total_pnl": -6039.010866999997,
   "signal_stats": {
     "BUY": {
       "total": 71,
       "wins": 30,
       "losses": 41
+    },
+    "HARD_STOP": {
+      "total": 1,
+      "wins": 0,
+      "losses": 1
     }
   },
   "symbol_stats": {
@@ -72,10 +77,10 @@
       "pnl": -899.1300020000014
     },
     "NVDA": {
-      "total": 2,
+      "total": 3,
       "wins": 2,
-      "losses": 0,
-      "pnl": 27.68990000000207
+      "losses": 1,
+      "pnl": -45.00009999999784
     },
     "IWM": {
       "total": 3,

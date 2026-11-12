@@ -1,36 +1,6 @@
 {
   "runs": [
     {
-      "timestamp": "2026-08-12T21:00:01.837245",
-      "duration_seconds": 0.005199,
-      "results_summary": {
-        "symbols_tuned": 0,
-        "symbols_sized": 1,
-        "hours_blocked": 2,
-        "features_flagged": 1
-      }
-    },
-    {
-      "timestamp": "2026-08-13T00:19:18.856058",
-      "duration_seconds": 0.012555,
-      "results_summary": {
-        "symbols_tuned": 0,
-        "symbols_sized": 1,
-        "hours_blocked": 2,
-        "features_flagged": 1
-      }
-    },
-    {
-      "timestamp": "2026-08-13T21:00:05.104017",
-      "duration_seconds": 0.004604,
-      "results_summary": {
-        "symbols_tuned": 0,
-        "symbols_sized": 1,
-        "hours_blocked": 2,
-        "features_flagged": 1
-      }
-    },
-    {
       "timestamp": "2026-08-14T00:00:11.795341",
       "duration_seconds": 0.011522,
       "results_summary": {
@@ -1723,6 +1693,46 @@
     {
       "timestamp": "2026-11-10T12:18:27.478352",
       "duration_seconds": 0.002268,
+      "results_summary": {
+        "symbols_tuned": 0,
+        "symbols_sized": 1,
+        "hours_blocked": 2,
+        "features_flagged": 1
+      }
+    },
+    {
+      "timestamp": "2026-11-10T21:00:05.569839",
+      "duration_seconds": 0.003979,
+      "results_summary": {
+        "symbols_tuned": 0,
+        "symbols_sized": 1,
+        "hours_blocked": 2,
+        "features_flagged": 1
+      }
+    },
+    {
+      "timestamp": "2026-11-11T00:26:58.687650",
+      "duration_seconds": 0.009202,
+      "results_summary": {
+        "symbols_tuned": 0,
+        "symbols_sized": 1,
+        "hours_blocked": 2,
+        "features_flagged": 1
+      }
+    },
+    {
+      "timestamp": "2026-11-11T21:00:05.171083",
+      "duration_seconds": 0.003805,
+      "results_summary": {
+        "symbols_tuned": 0,
+        "symbols_sized": 1,
+        "hours_blocked": 2,
+        "features_flagged": 1
+      }
+    },
+    {
+      "timestamp": "2026-11-12T00:00:09.744136",
+      "duration_seconds": 0.014144,
       "results_summary": {
         "symbols_tuned": 0,
         "symbols_sized": 1,

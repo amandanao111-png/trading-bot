@@ -1478,6 +1478,21 @@ def place_order(symbol, qty, side, reduce_only=False):
             print(f"   ⚠️ Partial fill: {int(filled_qty)}/{int(qty)} sh @ {order.get('filled_avg_price', '?')}")
             return True
 
+        # A non-terminal status here means the order is still WORKING at the
+        # exchange (new / accepted / pending_new), not dead. Cancelling it at
+        # this point guarantees a protective exit never executes:
+        #   2026-11-02: the SLV close was cancelled unfilled, 11 times.
+        #   2026-11-12: the NVDA HARD_STOP sell (5 sh) sat "new" for 48s at
+        #   the open and was cancelled unfilled — the -2% stop never fired and
+        #   the position stayed open at -10%.
+        # Leave a working order live: a market order fills as soon as the
+        # market is liquid, and reduce_only stops it from flipping the
+        # position if a later cycle places a second one.
+        if status in ("new", "accepted", "pending_new", "partially_filled"):
+            print(f"   ⚠️ Order still working (status={status}) — leaving it live "
+                  f"(not cancelling); it may fill shortly. Will reconcile next cycle.")
+            return False
+
         print(f"   ⚠️ Order not filled (status={status}). Cancelling.")
         if order_id:
             try:

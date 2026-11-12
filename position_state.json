@@ -1,1 +1,8 @@
-{}
+{
+  "AAPL": {
+    "peak_price": 354.83
+  },
+  "BAC": {
+    "peak_price": 50.71
+  }
+}
