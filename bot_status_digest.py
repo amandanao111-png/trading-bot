@@ -3,10 +3,31 @@
 bot_status_digest.py — Daily 1-page digest of the trading bot.
 
 Reads from LIVE sources (no stale V6 snapshot):
-- bot_out.log → last error / alive signal
-- rebalancing_report.json → latest portfolio value + sector suggestions
-- symbol_position.json → active positions
+- Alpaca /v2/positions → real open positions + live sector allocation
+- trade_journal.json → open positions (fallback when the API is unreachable)
+- equity_curve_v6.json → live portfolio value + open-position count
+- rebalancing_report.json → fallback allocation when the API is unreachable
+- symbol_position.json → per-symbol evolution multipliers (NOT positions)
 - disabled_features.json → what's been turned off (the bot's evolution trail)
+
+patch 2026-11-12 (Day 256): two defects were fixed here after measuring
+what the digest actually printed against Alpaca.
+
+  1. "Active Positions" was read from symbol_position.json, which holds
+     per-symbol evolution multipliers (win rate, average P&L), not
+     positions. The 2026-11-12 digest reported "PFE: multiplier=0.6" as
+     the only open position while the bot actually held AAPL (1), BAC (53)
+     and NVDA (5). Open positions now come from the trade journal, which
+     was verified to reproduce Alpaca's book exactly.
+
+  2. Sector allocation came from rebalancing_report.json, which the
+     weekly cron writes on Sunday. On 2026-11-12 that file was dated
+     2026-11-08T18:00 — it predated all three open positions, so it
+     reported gross exposure 0.0% and every sector at 0.00%, and the
+     digest printed "6 BUY signal(s) sitting idle" as an action item.
+     Allocation is now computed live from Alpaca. When the API is
+     unreachable the file is used, but only when it is genuinely fresh
+     (it must not predate the newest open position).
 
 Writes dashboard/bot_digest_YYYY-MM-DD.txt
 Replaces broken equity_curve_v6.json (stale 19 days as of 2026-07-08).
@@ -123,32 +144,178 @@ def get_last_error():
     return None
 
 
+def derive_open_positions():
+    """Open positions derived from the trade journal.
+
+    The journal is the source of truth for what the book holds: a BUY adds
+    quantity, a SELL subtracts it, and a row with ``closed=True`` marks the
+    symbol flat at that point in history.
+
+    Verified 2026-11-12: this reproduces Alpaca's /v2/positions exactly
+    (AAPL 1 @ 354.83, BAC 53 @ 50.71, NVDA 5 @ 174.43).
+    """
+    rows = read_json(WORKSPACE / "trading_bot" / "trade_journal.json", [])
+    if not isinstance(rows, list):
+        return {}
+    books = {}
+    for r in rows:
+        if not isinstance(r, dict):
+            continue
+        sym = r.get("symbol")
+        if not sym:
+            continue
+        try:
+            qty = float(r.get("qty") or 0)
+            price = float(r.get("price") or 0)
+        except (TypeError, ValueError):
+            continue
+        book = books.setdefault(sym, {"qty": 0.0, "cost": 0.0, "opened_at": None})
+        kind = r.get("type")
+        if kind == "BUY":
+            book["qty"] += qty
+            book["cost"] += qty * price
+            if not r.get("closed"):
+                book["opened_at"] = r.get("timestamp")
+        elif kind in ("SELL", "EXIT", "CLOSE"):
+            book["qty"] -= qty
+            book["cost"] -= qty * price
+        if r.get("closed"):
+            book["qty"] = 0.0
+            book["cost"] = 0.0
+            book["opened_at"] = None
+    out = {}
+    for sym, book in books.items():
+        if abs(book["qty"]) < 1e-9:
+            continue
+        out[sym] = {
+            "qty": book["qty"],
+            "avg_price": (book["cost"] / book["qty"]) if book["qty"] else 0.0,
+            "opened_at": book["opened_at"],
+        }
+    return out
+
+
+def live_allocation():
+    """Compute sector allocation from the live Alpaca book.
+
+    Returns None when the API cannot be reached, so the caller can fall back
+    to the weekly report file without pretending it is current.
+    """
+    try:
+        import rebalancing as rb
+        positions, portfolio_value = rb.fetch_live_state()
+        current, suggestions, exposure = rb.build_report(positions, portfolio_value)
+        return {
+            "date": datetime.now().isoformat(timespec="seconds"),
+            "portfolio_value": portfolio_value,
+            "current_allocation": current,
+            "target_allocation": rb.TARGET_ALLOCATION,
+            "suggestions": suggestions,
+            "positions": positions,
+            **exposure,
+        }
+    except Exception:
+        return None
+
+
+def equity_curve_latest():
+    """Latest row of equity_curve_v6.json (the bot writes it every cycle)."""
+    rows = read_json(WORKSPACE / "trading_bot" / "equity_curve_v6.json", [])
+    if isinstance(rows, list) and rows:
+        last = rows[-1]
+        if isinstance(last, dict):
+            return last
+    return {}
+
+
+def newest_open_timestamp(open_pos):
+    """Newest open-position timestamp, as an ISO string."""
+    stamps = [p.get("opened_at") for p in open_pos.values() if p.get("opened_at")]
+    return max(stamps) if stamps else None
+
+
 def main():
+    live = live_allocation()
     processes = find_bot_processes()
     pid, days_alive = processes[0] if processes else (None, None)
     reb = read_json(WORKSPACE / "trading_bot" / "rebalancing_report.json", {})
-    pos = read_json(WORKSPACE / "trading_bot" / "symbol_position.json", {})
+    multipliers = read_json(WORKSPACE / "trading_bot" / "symbol_position.json", {})
     disabled = read_json(WORKSPACE / "trading_bot" / "disabled_features.json", {})
 
+    # Open positions come from the trade journal, which reproduces Alpaca's
+    # book exactly (verified 2026-11-12). symbol_position.json holds
+    # per-symbol evolution multipliers and is NOT a position list.
+    live_positions = [p for p in (live or {}).get("positions", []) if isinstance(p, dict)]
+
+    # Open positions: Alpaca is the book of record. The trade journal is only
+    # a fallback, because it is capped at 200 rows -- once a BUY row falls
+    # out of that window its SELL row remains and the journal derives a
+    # phantom short (measured 2026-11-12: QQQ -1 and SLV -241 were ghosts
+    # that Alpaca did not hold).
+    open_pos = {}
+    if live_positions:
+        for lp in live_positions:
+            sym = lp.get("symbol")
+            if not sym:
+                continue
+            try:
+                qty = float(lp.get("qty") or 0)
+                avg = float(lp.get("avg_entry_price") or 0)
+                mv = float(lp.get("market_value") or 0)
+            except (TypeError, ValueError):
+                continue
+            if abs(qty) < 1e-9:
+                continue
+            open_pos[sym] = {"qty": qty, "avg_price": avg, "market_value": mv,
+                             "opened_at": None}
+    else:
+        open_pos = derive_open_positions()
+    # Stamp each open position with its open time from the journal, when the
+    # journal still remembers it.
+    journal_pos = derive_open_positions()
+    for sym, book in open_pos.items():
+        if journal_pos.get(sym, {}).get("opened_at"):
+            book["opened_at"] = journal_pos[sym]["opened_at"]
+
+    # Allocation: prefer the live Alpaca book. The weekly report file is
+    # only a fallback, and only when it does not predate the newest open
+    # position -- a report written before the positions existed cannot
+    # describe the book that exists now.
+    if live:
+        reb = live
+        allocation_source = "live (Alpaca /v2/positions)"
+    else:
+        allocation_source = "weekly rebalancing_report.json (fallback)"
     portfolio = reb.get("portfolio_value", 0)
     alloc = reb.get("current_allocation", {})
     target = reb.get("target_allocation", {})
     suggestions = reb.get("suggestions", [])
 
-    # Staleness guard (2026-10-24): a stale rebalancing_report.json with an
-    # empty current_allocation makes every sector read "underweight by full
-    # target" -> 6 phantom BUYs and a fake "BUY signals sitting idle" item.
-    # Only trust the report if it is recent AND carries a real allocation.
     report_age_seconds_value = report_age_seconds(reb)
     report_age_days = (report_age_seconds_value / 86400
                        if report_age_seconds_value is not None else None)
+
+    newest_open = newest_open_timestamp(open_pos)
+    report_predates_book = False
+    if not live and newest_open and reb.get("date"):
+        try:
+            report_ts = datetime.fromisoformat(str(reb["date"]).replace("Z", "+00:00"))
+            open_ts = datetime.fromisoformat(str(newest_open).replace("Z", "+00:00"))
+            if report_ts.tzinfo is None:
+                report_ts = report_ts.replace(tzinfo=open_ts.tzinfo)
+            if open_ts.tzinfo is None:
+                open_ts = open_ts.replace(tzinfo=report_ts.tzinfo)
+            report_predates_book = report_ts < open_ts
+        except Exception:
+            report_predates_book = False
+
     report_stale = (report_age_seconds_value is None
                     or report_age_seconds_value < 0
                     or report_age_seconds_value > 7 * 86400
-                    or not alloc)
+                    or not alloc
+                    or report_predates_book)
     if report_stale:
         suggestions = []
-    positions = list(pos.keys()) if isinstance(pos, dict) else []
 
     out = []
     out.append(f"# Bot Digest — {TODAY}")
@@ -178,13 +345,16 @@ def main():
     if report_stale:
         age_text = (f"{report_age_days:.1f}d old"
                     if report_age_days is not None else "unknown age")
+        why = ("report predates the current open positions"
+               if report_predates_book else "report too old")
         out.append(
             f"## Rebalancing Suggestions — STALE "
-            f"({age_text}, "
+            f"({age_text}, {why}, "
             f"allocation={json.dumps(alloc) if alloc else '{}'}) — suppressed"
         )
     else:
         out.append("## Rebalancing Suggestions")
+        out.append(f"- Source: {allocation_source}")
     if not report_stale and reb.get("gross_exposure_pct") is not None:
         # patch 2026-11-05: show gross exposure next to the suggestions. A
         # sector % on its own hides the fact that the book is levered.
@@ -211,17 +381,34 @@ def main():
     out.append("")
 
     out.append("## Active Positions")
-    if positions:
-        for sym in positions:
-            p = pos[sym]
+    if open_pos:
+        for sym in sorted(open_pos):
+            p = open_pos[sym]
+            mv = ""
+            if p.get("market_value"):
+                mv = f", market ${p['market_value']:,.0f}"
             out.append(
-                f"- {sym}: multiplier={p.get('multiplier')}, "
-                f"WR={p.get('win_rate')}% ({p.get('trades')} trades), "
-                f"avg_pnl={p.get('avg_pnl')}"
+                f"- {sym}: {p['qty']:g} sh @ {p['avg_price']:.2f}{mv}"
+                + (f" (opened {p['opened_at']})" if p.get("opened_at") else "")
             )
     else:
         out.append("- (none open)")
     out.append("")
+
+    # Per-symbol evolution multipliers. These are NOT positions -- they are
+    # the sizing/confidence the evolution pass learned per symbol.
+    if isinstance(multipliers, dict) and multipliers:
+        out.append("## Symbol Multipliers (evolution, not positions)")
+        for sym in sorted(multipliers):
+            m = multipliers[sym]
+            if not isinstance(m, dict):
+                continue
+            out.append(
+                f"- {sym}: multiplier={m.get('multiplier')}, "
+                f"WR={m.get('win_rate')}% ({m.get('trades')} trades), "
+                f"avg_pnl={m.get('avg_pnl')}"
+            )
+        out.append("")
 
     out.append("## Disabled Features (evolution trail)")
     feats = format_disabled_features(disabled)
