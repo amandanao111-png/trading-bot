@@ -77,10 +77,12 @@ class TestMeanReversionRunsOnce(unittest.TestCase):
                      "is_kill_zone": False}
         with mock.patch.object(at, "get_bars", return_value={"close": [100.0]}):
             with mock.patch.object(at, "place_order", return_value=True) as place:
-                at.execute_mean_reversion_entries(
-                    {"QQQ": 45}, positions, account, 100000.0,
-                    time_info, set(), trades)
+                with mock.patch.object(at, "announce_trade") as announce:
+                    at.execute_mean_reversion_entries(
+                        {"QQQ": 45}, positions, account, 100000.0,
+                        time_info, set(), trades)
         self.assertEqual(place.call_count, 1)
+        announce.assert_called_once()
         self.assertEqual(trades, ["QQQ"])
 
     def test_unavailable_clock_blocks_mean_reversion(self):
@@ -117,6 +119,40 @@ class TestDigestReporting(unittest.TestCase):
         output = "123 00:00:01 pgrep -f auto_trade.py\n"
         with mock.patch("subprocess.check_output", return_value=output):
             self.assertEqual(digest.find_bot_processes(), [])
+
+    def test_empty_live_book_is_authoritative(self):
+        live = {"positions": []}
+        self.assertEqual(digest.open_positions_from_live(live), {})
+
+    def test_live_book_conversion_keeps_only_real_holdings(self):
+        live = {"positions": [
+            {"symbol": "AAPL", "qty": "2", "avg_entry_price": "100",
+             "market_value": "210"},
+            {"symbol": "QQQ", "qty": "0", "avg_entry_price": "500",
+             "market_value": "0"},
+        ]}
+        positions = digest.open_positions_from_live(live)
+        self.assertEqual(set(positions), {"AAPL"})
+        self.assertEqual(positions["AAPL"]["qty"], 2.0)
+
+    def test_truncated_journal_does_not_create_phantom_shorts(self):
+        with mock.patch.object(digest, "read_json", return_value=[
+            {"type": "SELL", "symbol": "QQQ", "qty": 3, "price": 600,
+             "timestamp": "2026-11-13T15:40:00"},
+        ]):
+            positions = digest.derive_open_positions()
+        self.assertEqual(positions, {})
+
+    def test_journal_timestamp_is_not_copied_across_opposite_sign(self):
+        journal = {
+            "AAPL": {"qty": -1.0, "opened_at": "2026-11-01T00:00:00"},
+        }
+        live = {
+            "AAPL": {"qty": 2.0, "avg_price": 100.0, "market_value": 210.0,
+                     "opened_at": None},
+        }
+        reconciled = digest.reconcile_journal_positions(journal, live)
+        self.assertIsNone(reconciled["AAPL"]["opened_at"])
 
 
 class TestLauncherEntryPoint(unittest.TestCase):

@@ -185,12 +185,54 @@ def derive_open_positions():
             book["opened_at"] = None
     out = {}
     for sym, book in books.items():
-        if abs(book["qty"]) < 1e-9:
+        # A negative quantity here is not evidence of a short position. The
+        # journal is capped, so once a BUY row falls out of the window its
+        # later SELL row remains and arithmetic produces a phantom negative
+        # position. The bot is long-only; omit these unverifiable rows rather
+        # than publishing fake shorts in the digest.
+        if book["qty"] <= 1e-9:
             continue
         out[sym] = {
             "qty": book["qty"],
             "avg_price": (book["cost"] / book["qty"]) if book["qty"] else 0.0,
             "opened_at": book["opened_at"],
+        }
+    return out
+
+
+def open_positions_from_live(live):
+    """Convert a successful Alpaca response into the digest position map.
+
+    An empty Alpaca position list is authoritative: it means the book is
+    flat. It must not trigger the journal fallback. The old code treated
+    "empty live list" the same as "live API unavailable", so a real flat
+    book was replaced by phantom journal shorts.
+    """
+    out = {}
+    if not isinstance(live, dict):
+        return out
+    positions = live.get("positions")
+    if not isinstance(positions, list):
+        return out
+    for position in positions:
+        if not isinstance(position, dict):
+            continue
+        symbol = position.get("symbol")
+        if not symbol:
+            continue
+        try:
+            qty = float(position.get("qty") or 0)
+            avg = float(position.get("avg_entry_price") or 0)
+            market_value = float(position.get("market_value") or 0)
+        except (TypeError, ValueError):
+            continue
+        if abs(qty) < 1e-9:
+            continue
+        out[symbol] = {
+            "qty": qty,
+            "avg_price": avg,
+            "market_value": market_value,
+            "opened_at": None,
         }
     return out
 
@@ -234,6 +276,30 @@ def newest_open_timestamp(open_pos):
     return max(stamps) if stamps else None
 
 
+def reconcile_journal_positions(journal_pos, live_pos):
+    """Remove journal rows whose sign contradicts the live book.
+
+    The journal is useful only for the open timestamp. Its quantities can be
+    stale because the file is capped, while Alpaca is the live book of
+    record. A symbol present in one source with the opposite sign is
+    inconsistent and must not be shown as a holding.
+    """
+    reconciled = {}
+    for symbol, position in live_pos.items():
+        row = dict(position)
+        journal = journal_pos.get(symbol)
+        if isinstance(journal, dict):
+            try:
+                same_sign = (float(journal.get("qty") or 0) *
+                             float(row.get("qty") or 0)) >= 0
+            except (TypeError, ValueError):
+                same_sign = False
+            if same_sign and journal.get("opened_at"):
+                row["opened_at"] = journal.get("opened_at")
+        reconciled[symbol] = row
+    return reconciled
+
+
 def main():
     live = live_allocation()
     processes = find_bot_processes()
@@ -247,35 +313,18 @@ def main():
     # per-symbol evolution multipliers and is NOT a position list.
     live_positions = [p for p in (live or {}).get("positions", []) if isinstance(p, dict)]
 
-    # Open positions: Alpaca is the book of record. The trade journal is only
-    # a fallback, because it is capped at 200 rows -- once a BUY row falls
-    # out of that window its SELL row remains and the journal derives a
-    # phantom short (measured 2026-11-12: QQQ -1 and SLV -241 were ghosts
-    # that Alpaca did not hold).
-    open_pos = {}
-    if live_positions:
-        for lp in live_positions:
-            sym = lp.get("symbol")
-            if not sym:
-                continue
-            try:
-                qty = float(lp.get("qty") or 0)
-                avg = float(lp.get("avg_entry_price") or 0)
-                mv = float(lp.get("market_value") or 0)
-            except (TypeError, ValueError):
-                continue
-            if abs(qty) < 1e-9:
-                continue
-            open_pos[sym] = {"qty": qty, "avg_price": avg, "market_value": mv,
-                             "opened_at": None}
+    # Open positions: Alpaca is the book of record. A successful response
+    # with zero positions means the book is flat; only an unavailable live
+    # API may use the journal fallback. The journal is capped, so a missing
+    # earlier BUY can otherwise derive a phantom negative position.
+    if live is not None:
+        open_pos = open_positions_from_live(live)
     else:
         open_pos = derive_open_positions()
-    # Stamp each open position with its open time from the journal, when the
-    # journal still remembers it.
+    # Stamp each live position with its open time from the journal only when
+    # the two sources agree on the direction of the holding.
     journal_pos = derive_open_positions()
-    for sym, book in open_pos.items():
-        if journal_pos.get(sym, {}).get("opened_at"):
-            book["opened_at"] = journal_pos[sym]["opened_at"]
+    open_pos = reconcile_journal_positions(journal_pos, open_pos)
 
     # Allocation: prefer the live Alpaca book. The weekly report file is
     # only a fallback, and only when it does not predate the newest open
@@ -443,7 +492,10 @@ def main():
         )
     if suggestions and any(s.get("action") == "BUY" for s in suggestions):
         buy = [s.get("sector") for s in suggestions if s.get("action") == "BUY"]
-        items.append(f"💰 {len(buy)} BUY signal(s) sitting idle: {', '.join(buy)}")
+        items.append(
+            f"💰 {len(buy)} sector target gap(s): {', '.join(buy)} "
+            "(allocation guidance, not trade signals)"
+        )
     elif report_stale:
         items.append(
             "⚠️ rebalancing_report.json is stale — 6 phantom BUY signals suppressed. "
