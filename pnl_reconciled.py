@@ -218,10 +218,18 @@ print()
 print('=' * 78)
 print('RECONCILIATION')
 print('=' * 78)
-implied_start = eq - cash_pnl
+# Equity = starting capital + gross trading P&L + fees (for a flat account).
+# The old formula omitted fees from implied_start, understating capital by the
+# absolute fee total. Keep the gross, fee and net layers visible so this class
+# of sign error cannot hide behind a single headline number.
+net_cash_pnl = cash_pnl + fees
+implied_start = eq - net_cash_pnl
 print(f"  equity now            ${eq:>15,.2f}")
-print(f"  cash-basis realised   ${cash_pnl:>+13,.2f}")
+print(f"  cash-basis gross      ${cash_pnl:>+13,.2f}")
+print(f"  fees                  ${fees:>+13,.2f}")
+print(f"  => net realised       ${net_cash_pnl:>+13,.2f}")
 print(f"  => implied start      ${implied_start:>15,.2f}")
+print(f"  deposits observed     ${deposits:>15,.2f}  (start gap ${implied_start-deposits:+,.2f})")
 print(f"  NET vs $100K paper start: ${eq - 100000:>+13,.2f}  ({(eq-100000)/100000*100:+.2f}%)")
 
 # ---- HARD completeness test: flat account => every symbol's shares must net to 0
@@ -255,7 +263,19 @@ if PROBLEMS:
 else:
     print('VERIFIED: fills complete, fees read, balance test passed.')
 
-json.dump({'equity': eq, 'cash': cash, 'fees': fees, 'deposits': deposits,
-           'cash_pnl': cash_pnl, 'fills': len(fills), 'orders': len(orders),
-           'implied_start': implied_start, 'problems': PROBLEMS},
-          open(f'{TB}/pnl_reconciled_last.json', 'w'), indent=1)
+result = {'generated_at': datetime.now().astimezone().isoformat(),
+          'source': 'alpaca_fill_activities+orders_crosscheck',
+          'equity': eq, 'cash': cash, 'fees': fees, 'deposits': deposits,
+          'cash_pnl': cash_pnl, 'net_cash_pnl': net_cash_pnl,
+          'fills': len(fills), 'orders': len(orders),
+          'positions': len(pos),
+          'symbols_reconciled': sum(1 for v in net.values() if abs(v) < 0.5),
+          'symbols_total': len(net),
+          'implied_start': implied_start, 'problems': PROBLEMS}
+# Atomic replace: a killed reconciliation run must not leave a truncated JSON
+# snapshot that a dashboard or downstream tool could mistake for a result.
+out_path = f'{TB}/pnl_reconciled_last.json'
+tmp_path = out_path + '.tmp'
+with open(tmp_path, 'w') as f:
+    json.dump(result, f, indent=1)
+os.replace(tmp_path, out_path)
