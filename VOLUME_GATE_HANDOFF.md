@@ -72,7 +72,7 @@ the guard blocks at 09:35 ET (Nov 17 pre-open window), 16:15 ET (NVDA pre-releas
 09:35 ET Nov 18 (NVDA reaction) and 13:30 ET Nov 18 (FOMC minutes pre-release).
 
 ## Dedupe commit
-`<DEDUPE_COMMIT>` — macro_events: collapse duplicate event pairs (21 -> 14 events).
+`d6956e7` — macro_events: collapse duplicate event pairs (21 -> 14 events). Pushed to origin/main.
 
 ## Restart verification
 - `launchctl kickstart -k gui/$(id -u)/ai.nova.trading-bot` at 09:50 London.
