@@ -93,3 +93,32 @@ the guard blocks at 09:35 ET (Nov 17 pre-open window), 16:15 ET (NVDA pre-releas
   on the right symbols: on 2026-11-16 SLV goes 14:46 ET **0.53 rej → 1.66 PASS** and
   16:15 ET **0.33 rej → 1.52 PASS** (the BUY the old gate blocked), while dead sessions
   (SLV 0.62-0.86, AAPL 0.70-0.86) still reject.
+
+## Full-universe replay (all 15 scanned symbols, 5 completed sessions x 3 clocks)
+Simulated against the live bot universe (ALL_SYMBOLS minus the dynamic blacklist), replaying
+each session's own 5-min bars through volume_gate.compute_gate with the prior 20 sessions as the
+baseline, judged at MIN_VOLUME_RATIO=0.90:
+
+| date       | 14:46 ET        | 15:45 ET        | 16:15 ET        |
+|------------|-----------------|-----------------|-----------------|
+| 2026-11-10 | 7 pass / 8 rej  | 5 pass / 10 rej | 5 pass / 10 rej |
+| 2026-11-11 | 4 pass / 11 rej | 4 pass / 11 rej | 5 pass / 10 rej |
+| 2026-11-12 | 9 pass / 6 rej  | 8 pass / 7 rej  | 7 pass / 8 rej  |
+| 2026-11-13 | 11 pass / 4 rej | 9 pass / 6 rej  | 10 pass / 5 rej |
+| 2026-11-16 | 14 pass / 1 rej | 13 pass / 2 rej | 14 pass / 1 rej |
+
+The gate discriminates: the dead sessions (Nov 10/11 — BAC 0.53-0.59, ABBV 0.56-0.69, SLV
+0.62-0.83) reject heavily, while the active Nov 16 session passes almost everything — and it does
+NOT collapse late in the session (16:15 ET still passes 14/15 on Nov 16). This is the opposite
+of the old gate, which rejected 15/15 at 16:15 ET on Nov 16 including the SLV BUY.
+
+## Live bot verification (final)
+- PID **65612**, `ps -o lstart` = `Tue Nov 17 09:50:48 2026`; `auto_trade.py` mtime
+  `2026-11-17 09:44:07` → **PID start time is LATER than the code mtime** → running the new code.
+- `launchctl list` → `65612  -15  ai.nova.trading-bot` (running).
+- trades.log after the restart: `🚀 Starting V9 Trading Loop` / `⏰ 04:50 ET - Market CLOSED` /
+  `💤 Sleeping 30 minutes until next check...` — 0 error/traceback/exception lines; trades.err.log
+  untouched since Oct 24 (no new stderr).
+- The `📊 Scanned N/M symbols | volume gate: X pass, Y rejected` line cannot appear before the
+  09:30 ET / 14:30 London open — the bot sleeps pre-open. The full-universe table above is the
+  prediction for that line, computed from the same code path.
