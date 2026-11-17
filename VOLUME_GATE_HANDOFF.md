@@ -50,7 +50,25 @@ then means "at least a typical day" while still rejecting dead tape (dead sessio
    (each bullet needs `<!-- project: path:/Users/amandaai/.openclaw/workspace -->`).
 
 ## Commit hash
-(filled in after commit)
+`804365e` — "volume gate: judge volume at the same time of day, not against a mixed 20-bar mean"
+Pushed to origin/main (`0b41e15..804365e  main -> main`).
 
 ## Restart verification
-(filled in after restart)
+- `launchctl kickstart -k gui/$(id -u)/ai.nova.trading-bot` at 09:50 London.
+- New PID **65612**, `ps -o lstart` = `Tue Nov 17 09:50:48 2026`; `auto_trade.py` mtime = `2026-11-17 09:44:07`.
+  **PID start time is LATER than the code mtime** → the running process is on the new code.
+- trades.log tail after the restart: `🚀 Starting V9 Trading Loop` / `⏰ 04:50 ET - Market CLOSED` /
+  `💤 Sleeping 30 minutes until next check...` — no error/traceback/exception lines.
+- Live integration check (`analyze_symbol("SLV")` at 04:50 ET, pre-open) returns `None` because
+  `get_bars()` has fewer than 30 completed 5-min bars before the open — pre-existing behaviour,
+  untouched by this patch (the gate is only reached after the 30-bar check). The volume-gate scan
+  line (`Scanned N/M symbols | volume gate: X pass, Y rejected`) will first appear in trades.log
+  on the first cycle after the 09:30 ET / 14:30 London open.
+
+## Verification completed (parent re-ran it after the child run was killed)
+- `venv/bin/python test_volume_gate.py` → **ALL TESTS PASSED** (23/23, MIN_VOLUME_RATIO=0.9).
+- `venv/bin/python replay_volume_gate.py --sessions 5 --symbols SLV,AAPL,QQQ` →
+  TOTAL old gate 24 pass / 21 rejected, new gate 24 pass / 21 rejected, with the decisions landing
+  on the right symbols: on 2026-11-16 SLV goes 14:46 ET **0.53 rej → 1.66 PASS** and
+  16:15 ET **0.33 rej → 1.52 PASS** (the BUY the old gate blocked), while dead sessions
+  (SLV 0.62-0.86, AAPL 0.70-0.86) still reject.
