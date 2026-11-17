@@ -52,6 +52,27 @@ then means "at least a typical day" while still rejecting dead tape (dead sessio
 ## Commit hash
 `804365e` — "volume gate: judge volume at the same time of day, not against a mixed 20-bar mean"
 Pushed to origin/main (`0b41e15..804365e  main -> main`).
+`469ca8b` — "docs: volume-gate handoff - commit hash, restart verification, replay numbers".
+
+## macro_events.json — final state (data-only, event_guard.py untouched)
+The parent session and this child appended the same Nov 17/18 events concurrently, so the file
+ended up with 21 events and 9 duplicate pairs (every new event twice). It now carries **ONE entry
+per real-world event (14 total)**: the original 4 entries are untouched, and the new entries are
+Tue 2026-11-17: Retail sales (Oct) 08:30 | Industrial production + import prices 09:15 |
+NAHB housing market index (Nov) 10:00 | Home Depot earnings (Q3) 06:00 (pre-open) |
+Disney earnings (Q4) 06:00 (pre-open) | NVIDIA earnings (Q3) 16:20 (after the close).
+Wed 2026-11-18: NVIDIA earnings reaction 09:30 | FOMC minutes 14:00 | Anthropic IPO pricing 16:30.
+Thu 2026-11-19: Anthropic IPO debut (ANT) 09:30.
+The two non-duplicate additions from the parent's set were kept — "NVIDIA earnings reaction
+(Nov 17 print)" (blocks the first 45 min of the Nov 18 open, where the after-close NVDA print is
+priced) and a new "Anthropic IPO debut (ANT)" on Nov 19 09:30 (the Wed pricing print lands after
+the close, so the Thu debut is the window that actually carries the gap). Verified: valid JSON,
+every entry has exactly the original 8 keys, no duplicate names, `event_guard.py` untouched, and
+the guard blocks at 09:35 ET (Nov 17 pre-open window), 16:15 ET (NVDA pre-release),
+09:35 ET Nov 18 (NVDA reaction) and 13:30 ET Nov 18 (FOMC minutes pre-release).
+
+## Dedupe commit
+`<DEDUPE_COMMIT>` — macro_events: collapse duplicate event pairs (21 -> 14 events).
 
 ## Restart verification
 - `launchctl kickstart -k gui/$(id -u)/ai.nova.trading-bot` at 09:50 London.

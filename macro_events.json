@@ -49,97 +49,17 @@
       "block_before_min": 30,
       "block_after_min": 0,
       "block_first_open_min": 45,
-      "note": "One hour BEFORE the open, so the reaction lands at the open - same shape as the CPI/PPI guard. Est +0.2%, prior +0.8%. Feeds the Dec FOMC hike odds."
+      "note": "Released 08:30 ET, one hour BEFORE the 09:30 open, so the reaction lands at the open - same shape as the CPI/PPI guard. Consensus +0.2% (prior +0.8%); a miss with the 10y at 5.13% is exactly what this guard exists for. Feeds the Dec FOMC hike odds."
     },
     {
-      "name": "Industrial production (Oct)",
-      "date": "2026-11-17",
-      "time_et": "09:15",
-      "impact": "high",
-      "block_before_min": 30,
-      "block_after_min": 0,
-      "block_first_open_min": 45,
-      "note": "15 minutes BEFORE the open. Released alongside import prices; the reaction lands in the first minutes of trading, so the open window stays blocked."
-    },
-    {
-      "name": "NAHB housing market index (Nov)",
-      "date": "2026-11-17",
-      "time_et": "10:00",
-      "impact": "medium",
-      "block_before_min": 15,
-      "block_after_min": 30,
-      "block_first_open_min": 0,
-      "note": "Released 30 minutes after the open - a mid-session release, so this one blocks around the print rather than the open."
-    },
-    {
-      "name": "Home Depot earnings (HD)",
-      "date": "2026-11-17",
-      "time_et": "07:00",
-      "impact": "high",
-      "block_before_min": 30,
-      "block_after_min": 0,
-      "block_first_open_min": 45,
-      "note": "Reports BEFORE the open. Exact release time not independently verified - assume the worst case and keep the open blocked. EPS est 3.84, revenue est 42.81B."
-    },
-    {
-      "name": "Disney earnings (DIS)",
-      "date": "2026-11-17",
-      "time_et": "07:00",
-      "impact": "high",
-      "block_before_min": 30,
-      "block_after_min": 0,
-      "block_first_open_min": 45,
-      "note": "Reports BEFORE the open. Exact release time not independently verified - assume the worst case and keep the open blocked. EPS est 1.68, revenue est 25.21B."
-    },
-    {
-      "name": "NVIDIA earnings (NVDA)",
-      "date": "2026-11-17",
-      "time_et": "16:20",
-      "impact": "high",
-      "block_before_min": 30,
-      "block_after_min": 0,
-      "block_first_open_min": 0,
-      "note": "Reports AFTER the close, so the gap risk lands on the Wed Nov 18 open (the earnings guard already blocks NVDA into that open). This entry closes the last 10 minutes of the Nov 17 session. Consensus rev ~108.9-109.2B, EPS 2.47, guide 108B +/-2%."
-    },
-    {
-      "name": "FOMC minutes",
-      "date": "2026-11-18",
-      "time_et": "14:00",
-      "impact": "high",
-      "block_before_min": 60,
-      "block_after_min": 30,
-      "block_first_open_min": 0,
-      "note": "Minutes of the latest FOMC meeting, mid-session release. Same guard shape as the FOMC decision entry: the pre-release hour is what this adds."
-    },
-    {
-      "name": "Anthropic IPO pricing (ANT)",
-      "date": "2026-11-18",
-      "time_et": "16:30",
-      "impact": "high",
-      "block_before_min": 30,
-      "block_after_min": 0,
-      "block_first_open_min": 0,
-      "note": "IPO price is set AFTER the close on Wed Nov 18; ANT trades on Thu Nov 19 (Nasdaq). Price range 70-78, 825M shares, up to 64.4B + 26B Class N, ~6x oversubscribed. The real gap risk is the Thu Nov 19 debut, not the Wed session."
-    },
-    {
-      "name": "Retail sales (Oct)",
-      "date": "2026-11-17",
-      "time_et": "08:30",
-      "impact": "high",
-      "block_before_min": 30,
-      "block_after_min": 0,
-      "block_first_open_min": 45,
-      "note": "Released 08:30 ET, one hour BEFORE the 09:30 open, so the reaction lands at the open. Consensus +0.2% (prior +0.8%) - a miss with the 10y at 5.13% is exactly what this guard exists for."
-    },
-    {
-      "name": "Industrial production (Sep) + import prices",
+      "name": "Industrial production + import prices",
       "date": "2026-11-17",
       "time_et": "09:15",
       "impact": "medium",
-      "block_before_min": 15,
+      "block_before_min": 30,
       "block_after_min": 0,
-      "block_first_open_min": 30,
-      "note": "15 minutes before the open; the block carries into the first 30 minutes of the session."
+      "block_first_open_min": 45,
+      "note": "15 minutes before the open, so the reaction lands at the open - the block carries into the first 45 minutes of the session (which the 08:30 retail-sales entry already blocks)."
     },
     {
       "name": "NAHB housing market index (Nov)",
@@ -149,7 +69,7 @@
       "block_before_min": 15,
       "block_after_min": 0,
       "block_first_open_min": 0,
-      "note": "Mid-session release, low impact."
+      "note": "Mid-session release, low impact - blocks a short halo before the print only."
     },
     {
       "name": "Home Depot earnings (Q3)",
@@ -169,7 +89,7 @@
       "block_before_min": 0,
       "block_after_min": 0,
       "block_first_open_min": 30,
-      "note": "Pre-open print (EPS est 1.68, revenue est 25.21B per the 08:43 morning-planning brief). VERIFY the exact release time - Disney normally reports after the close, so confirm before trading on it."
+      "note": "Pre-open print (EPS est 1.68, revenue est 25.21B per the 08:43 morning-planning brief). VERIFY the exact release time - Disney normally reports after the close, so confirm before trading on it. Pre-open event: the guard blocks the first 30 minutes of the open."
     },
     {
       "name": "NVIDIA earnings (Q3)",
@@ -179,7 +99,7 @@
       "block_before_min": 30,
       "block_after_min": 0,
       "block_first_open_min": 0,
-      "note": "AFTER the close. No new NVDA entries into the print; the reaction is tomorrow's open, see the Nov 18 reaction entry. Implied move ~+/-10% on options vs a realised +/-2.6% average."
+      "note": "AFTER the close. No new NVDA entries into the print; the reaction lands on tomorrow's open - see the Nov 18 reaction entry. Consensus rev ~108.9-109.2B, EPS 2.47, guide 108B +/-2%; implied move ~+/-10% on options vs a realised +/-2.6% average."
     },
     {
       "name": "NVIDIA earnings reaction (Nov 17 print)",
@@ -192,24 +112,34 @@
       "note": "Blocks the first 45 minutes of the Nov 18 open - the window where the Nov 17 after-close NVDA print gets priced. NVDA is on the bot's blacklist (ledger -$432), so this is a book-level hedge, not an NVDA trade."
     },
     {
-      "name": "FOMC minutes (Oct)",
+      "name": "FOMC minutes",
       "date": "2026-11-18",
       "time_et": "14:00",
       "impact": "high",
       "block_before_min": 60,
       "block_after_min": 30,
       "block_first_open_min": 0,
-      "note": "Mid-session release; the pre-release hour is blocked. The 14:00-16:00 ET kill zone already covers part of it."
+      "note": "Minutes of the latest FOMC meeting, mid-session release. Same guard shape as the FOMC decision entry: the pre-release hour is what this adds (the 14:00-16:00 ET kill zone already covers part of it)."
     },
     {
       "name": "Anthropic IPO pricing (ANT)",
       "date": "2026-11-18",
-      "time_et": "09:00",
+      "time_et": "16:30",
       "impact": "medium",
-      "block_before_min": 15,
+      "block_before_min": 30,
       "block_after_min": 0,
-      "block_first_open_min": 30,
-      "note": "Anthropic prices its IPO Wed (range $70-78, ~825M shares, >6x oversubscribed per the 08:43 brief); ANT's first trade follows. Pre-open event: blocks the first 30 minutes of the open. VERIFY the pricing time."
+      "block_first_open_min": 0,
+      "note": "The IPO price is set AFTER the close on Wed Nov 18; ANT trades on Thu Nov 19 (Nasdaq). Range $70-78, ~825M shares, up to $64.4B + $26B Class N, ~6x oversubscribed. VERIFY the exact pricing time. The reaction risk is the Thu debut - see the next entry."
+    },
+    {
+      "name": "Anthropic IPO debut (ANT)",
+      "date": "2026-11-19",
+      "time_et": "09:30",
+      "impact": "high",
+      "block_before_min": 0,
+      "block_after_min": 45,
+      "block_first_open_min": 45,
+      "note": "ANT's first trade (Nasdaq, Thu Nov 19) - a fresh IPO can gap violently at the open, so the first 45 minutes of that session are blocked. Added beyond the requested event list because the Wed pricing print itself lands after the close; this is the window that actually carries the gap."
     }
   ]
 }
