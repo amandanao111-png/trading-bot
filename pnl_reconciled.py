@@ -19,7 +19,17 @@ Why this exists (2026-11-14):
 
   This script takes FILL activities as the execution ledger (ground truth for
   what actually traded), cross-checks them against the orders endpoint, and
-  HARD-FAILS if the flat-account balance test does not reconcile to zero.
+  HARD-FAILS if the share balance test does not reconcile.
+
+  Balance test (2026-11-17): each symbol's net FILL shares must equal its
+  CURRENT OPEN POSITION quantity (signed: long positive, short negative). A
+  flat account has open qty 0 everywhere, so this is the original
+  bought==sold test; an account holding open positions no longer false-fails
+  on a legitimate holding, but a genuine mismatch still fails loudly.
+
+  implied_start had the same flat-account assumption (equity - net_cash_pnl),
+  which double-counts an open position's market value. It now removes the
+  open-position market value as well.
 
 Usage: python3 pnl_reconciled.py
 """
@@ -38,6 +48,74 @@ H = {'APCA-API-KEY-ID': os.environ.get('ALPACA_API_KEY', ''),
 B = 'https://paper-api.alpaca.markets/v2'
 CAP = 500
 PROBLEMS = []
+
+# ============================================================ pure logic
+# No network calls below this banner: these helpers hold the reconciliation
+# rules so they can be unit-tested offline (see test_pnl_reconciled.py).
+SHARE_TOL = 0.5        # shares; sub-share noise is not a reconciliation failure
+
+
+def _to_float(v, default=0.0):
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return default
+
+
+def open_position_map(positions):
+    """Normalise Alpaca /v2/positions rows into {symbol: {qty, market_value}}.
+
+    qty is SIGNED: long positive, short negative. Alpaca already returns it
+    that way; `side` is used to re-derive the sign when the field is absent.
+    """
+    out = {}
+    for p in positions or []:
+        if not isinstance(p, dict):
+            continue
+        sym = p.get('symbol')
+        if not sym:
+            continue
+        qty = _to_float(p.get('qty'))
+        mv = _to_float(p.get('market_value'))
+        side = p.get('side') or ('long' if qty >= 0 else 'short')
+        qty = -abs(qty) if side == 'short' else abs(qty)
+        out[sym] = {'qty': qty, 'market_value': mv, 'side': side}
+    return out
+
+
+def balance_test(act_buy, act_sell, act_short, open_pos, tol=SHARE_TOL):
+    """HARD completeness test: net FILL shares per symbol vs OPEN position qty.
+
+    A flat account has open qty 0 for every symbol, so this reduces to the
+    old "bought == sold" test. With open positions the ledger must explain
+    them: net fill shares must equal the open quantity, otherwise the ledger
+    is incomplete and the run must not be trusted.
+
+    Returns (net, mismatches): net[s] = ledger net shares; mismatches is a
+    list of dicts, one per symbol that fails.
+    """
+    open_pos = open_pos or {}
+    syms = set(act_buy) | set(act_sell) | set(act_short) | set(open_pos)
+    net, mismatches = {}, []
+    for s in sorted(syms):
+        n = (_to_float(act_buy.get(s)) - _to_float(act_sell.get(s))
+             - _to_float(act_short.get(s)))
+        oq = _to_float(open_pos.get(s, {}).get('qty'))
+        net[s] = n
+        if abs(n - oq) > tol:
+            mismatches.append({'symbol': s, 'net_shares': n, 'open_qty': oq,
+                               'diff': n - oq})
+    return net, mismatches
+
+
+def implied_start_from_books(equity, net_cash_pnl, open_market_value):
+    """Starting capital implied by the books.
+
+    equity = cash + market value of open positions, so the open-position
+    market value has to come off before the realised P&L is subtracted,
+    otherwise an open position is counted twice.
+    """
+    return float(equity) - float(net_cash_pnl) - float(open_market_value)
 
 
 def get(path, **params):
@@ -65,6 +143,8 @@ if not acct:
 eq = float(acct.get('equity', 0))
 cash = float(acct.get('cash', 0))
 pos = get('/positions')
+open_pos = open_position_map(pos)
+open_mv = sum(v['market_value'] for v in open_pos.values())
 buying_power = float(acct.get('buying_power', 0))
 day_pl = eq - float(acct.get('last_equity', 0))
 
@@ -222,32 +302,51 @@ print('=' * 78)
 # The old formula omitted fees from implied_start, understating capital by the
 # absolute fee total. Keep the gross, fee and net layers visible so this class
 # of sign error cannot hide behind a single headline number.
+# With open positions, equity ALSO contains their market value, so it has to
+# come off before the realised P&L is subtracted (otherwise the open position
+# is counted twice and implied start comes out too high).
 net_cash_pnl = cash_pnl + fees
-implied_start = eq - net_cash_pnl
+implied_start = implied_start_from_books(eq, net_cash_pnl, open_mv)
 print(f"  equity now            ${eq:>15,.2f}")
+print(f"  open position value   ${open_mv:>+13,.2f}  ({len(open_pos)} open)")
 print(f"  cash-basis gross      ${cash_pnl:>+13,.2f}")
 print(f"  fees                  ${fees:>+13,.2f}")
 print(f"  => net realised       ${net_cash_pnl:>+13,.2f}")
 print(f"  => implied start      ${implied_start:>15,.2f}")
+print(f"     cash cross-check   ${cash - net_cash_pnl:>15,.2f}")
 print(f"  deposits observed     ${deposits:>15,.2f}  (start gap ${implied_start-deposits:+,.2f})")
 print(f"  NET vs $100K paper start: ${eq - 100000:>+13,.2f}  ({(eq-100000)/100000*100:+.2f}%)")
 
-# ---- HARD completeness test: flat account => every symbol's shares must net to 0
+if open_pos:
+    print()
+    print('  OPEN POSITIONS (account is not flat - balance test uses these)')
+    print(f"  {'symbol':10s} {'qty':>8s} {'market value':>16s}")
+    for s, v in sorted(open_pos.items()):
+        print(f"  {s:10s} {v['qty']:>+8.0f} {v['market_value']:>+16,.2f}")
+    print(f"  {'TOTAL':10s} {'':8s} {open_mv:>+16,.2f}")
+
+# ---- HARD completeness test: every symbol's net FILL shares must equal its
+#      CURRENT OPEN POSITION quantity (signed). A flat account has open qty 0
+#      everywhere, so this reduces to the old bought==sold test.
 print()
 print('=' * 78)
-print('COMPLETENESS TEST (flat account: bought == sold per symbol)')
+print('COMPLETENESS TEST (net fill shares == open position qty per symbol)')
 print('=' * 78)
-net = {}
-for s in syms:
-    # a flat account must have bought exactly what it sold, per symbol
-    n = act_buy[s] - act_sell[s] - act_short[s]
-    net[s] = n
-    if abs(n) > 0.5:
-        print(f"  {s:8s} net shares {n:+9.0f}   <-- NOT RECONCILED")
-if all(abs(v) < 0.5 for v in net.values()):
-    print('  all symbols reconcile to zero  [PASS]')
+net, mismatches = balance_test(act_buy, act_sell, act_short, open_pos)
+for m in mismatches:
+    print(f"  {m['symbol']:8s} net shares {m['net_shares']:+9.0f} vs open "
+          f"{m['open_qty']:+9.0f}  diff {m['diff']:+9.0f}   <-- NOT RECONCILED")
+if not mismatches:
+    if open_pos:
+        print(f"  all symbols reconcile to their open position  [PASS]  "
+              f"({len(open_pos)} open: "
+              + ', '.join(f"{s} {v['qty']:+.0f}" for s, v in sorted(open_pos.items()))
+              + ')')
+    else:
+        print('  all symbols reconcile to zero  [PASS]')
 else:
-    PROBLEMS.append('flat-account share balance test FAILED')
+    PROBLEMS.append(f'share balance test FAILED: {len(mismatches)} symbol(s) '
+                    'disagree with the open position')
 
 if total_diff > 0.5:
     PROBLEMS.append(f'activity vs orders qty mismatch: {total_diff:.0f} shares')
@@ -269,7 +368,10 @@ result = {'generated_at': datetime.now().astimezone().isoformat(),
           'cash_pnl': cash_pnl, 'net_cash_pnl': net_cash_pnl,
           'fills': len(fills), 'orders': len(orders),
           'positions': len(pos),
-          'symbols_reconciled': sum(1 for v in net.values() if abs(v) < 0.5),
+          'open_positions': {s: {'qty': v['qty'], 'market_value': v['market_value']}
+                             for s, v in open_pos.items()},
+          'open_market_value': open_mv,
+          'symbols_reconciled': len(net) - len(mismatches),
           'symbols_total': len(net),
           'implied_start': implied_start, 'problems': PROBLEMS}
 # Atomic replace: a killed reconciliation run must not leave a truncated JSON
