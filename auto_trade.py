@@ -47,6 +47,14 @@ except Exception:  # pragma: no cover
     event_guard_state = None
     entry_size_multiplier = None
 
+# Volume gate — same-time-of-day baseline (2026-11-17).
+# Imports are wrapped: a volume gate that cannot load must degrade to a
+# NEUTRAL ratio of 1.0 (never 0), never take the trading loop down.
+try:
+    from volume_gate import evaluate as _evaluate_volume
+except Exception:  # pragma: no cover
+    _evaluate_volume = None
+
 # Telegram announcements for trade events.
 # Defect fix (2026-11-12): the only Telegram call in this file was
 # `send_telegram(alert_msg)` — a function that is defined nowhere in the
@@ -189,9 +197,21 @@ AUTO_BLACKLIST_MAX_PNL = -100   # And below this P&L = blacklist
 AUTO_BLACKLIST_FILE = "/Users/amandaai/.openclaw/workspace/trading_bot/auto_blacklist.json"
 
 # === IMPROVEMENT 3: Required volume confirmation ===
-# Volume > 1.0x average required for entries (was a soft 10pt bonus)
+# Volume confirmation required for entries (was a soft 10pt bonus).
+#
+# 2026-11-17: the threshold used to be compared against a MIXED baseline —
+# one completed 5-min bar vs the mean of the previous 20 bars — so the gate
+# rejected almost everything later in the session by construction. The ratio
+# is now measured against the SAME time-of-day cumulative volume of the last
+# N sessions (see volume_gate.py), where a normal session sits within ~10%
+# of the 20-session median. A threshold of exactly 1.0 against a MEDIAN
+# baseline rejects half of all normal sessions by construction and locks a
+# symbol out for as long as its volume regime stays 10% below the month's
+# median (exactly AAPL's situation on 2026-11-10..16). 0.90 therefore means
+# "today is running at least as busy as a typical day" while still rejecting
+# genuinely dead tape (the replay put the dead sessions at 0.62-0.86).
 REQUIRE_VOLUME_CONFIRMATION = True
-MIN_VOLUME_RATIO = 1.0      # Volume must be >= average
+MIN_VOLUME_RATIO = 0.90     # today's cumulative volume vs the same-time-of-day median
 
 # === IMPROVEMENT 4: Stronger trend filter ===
 # Require price > EMA20 by minimum margin (was just "above")
@@ -1068,6 +1088,29 @@ def get_auto_blacklist():
     return blacklist
 
 
+def _volume_gate(symbol):
+    """Return (ratio, recent_ratio, info) for the volume gate.
+
+    Wrapper around volume_gate.evaluate(). It never raises: a volume gate
+    that cannot measure the market must degrade to a NEUTRAL 1.0 (never 0) —
+    it must never block an entry on a measurement failure and must never take
+    the trading loop down.
+    """
+    empty = {"baseline": "unavailable", "sessions": 0, "today_volume": 0.0,
+             "baseline_volume": 0.0, "cutoff_et": "??:??",
+             "reason": "volume gate unavailable"}
+    if _evaluate_volume is None:
+        return 1.0, 1.0, empty
+    try:
+        ratio, recent, info = _evaluate_volume(symbol)
+        return ratio, recent, info
+    except Exception as e:
+        print(f"   ⚠️ volume gate error for {symbol}: {e}")
+        info = dict(empty)
+        info["baseline"] = "error"
+        return 1.0, 1.0, info
+
+
 def analyze_symbol(symbol):
     """Advanced analysis with optimized strategy"""
     data = get_bars(symbol)
@@ -1088,7 +1131,16 @@ def analyze_symbol(symbol):
     atr = Indicators.ATR(high, low, close)
     vwap = Indicators.VWAP(high, low, close, volume)
     bb_upper, bb_middle, bb_lower = Indicators.BollingerBands(close)
-    volume_ratio = Indicators.VolumeConfirmation(volume)
+
+    # Volume baseline (2026-11-17) — compare like with like.
+    # The legacy ratio compared ONE completed 5-min bar against the mean of
+    # the previous 20 bars (a mixed window), so the gate rejected almost
+    # everything later in the session by construction. The ratio is now the
+    # session-cumulative volume up to this clock against the SAME clock-time
+    # cumulative volume of the last N sessions (median baseline).
+    # The fallback is always a NEUTRAL 1.0 — never 0 — and the baseline that
+    # was actually used travels with the result so the log can show it.
+    volume_ratio, volume_ratio_recent, volume_baseline = _volume_gate(symbol)
 
     current_price = close[-1]
 
@@ -1110,6 +1162,9 @@ def analyze_symbol(symbol):
     # blank "No signals" - indistinguishable from "the market had no signal".
     # The gate's intent is to filter ENTRIES, not analysis, so it now travels
     # with the result as "volume_ok" and is enforced at the entry decision.
+    #
+    # 2026-11-17: the ratio itself was rebuilt on a same-time-of-day baseline
+    # (see volume_gate.py). The enforcement point did not move.
     volume_ok = (not REQUIRE_VOLUME_CONFIRMATION) or volume_ratio >= MIN_VOLUME_RATIO
 
     # Trend
@@ -1192,13 +1247,17 @@ def analyze_symbol(symbol):
     elif rsi < 50 and close[-1] < ema20:
         sell_score += 10
 
-    # Volume confirmation — count regardless of trend (price action, not trend)
-    if volume_ratio > 1.5:
+    # Volume confirmation — count regardless of trend (price action, not trend).
+    # "High volume" now means the LAST 30 COMPLETED MINUTES are running hot
+    # against the same 30 minutes on the last N sessions. The old metric (one
+    # bar vs a 20-bar mean) fired on noise; the session-cumulative ratio that
+    # the entry gate uses measures the whole session, not the current tape.
+    if volume_ratio_recent > 1.5:
         if current_price > ema20:
             buy_score += 10
         elif current_price < ema20:
             sell_score += 10
-        reasons.append(f"High volume: {volume_ratio:.1f}x")
+        reasons.append(f"High volume: {volume_ratio_recent:.1f}x")
 
     # VWAP confirmation — count regardless of trend (price action)
     if current_price > vwap:
@@ -1245,6 +1304,8 @@ def analyze_symbol(symbol):
         "atr_pct": atr_pct,
         "vwap": vwap,
         "volume_ratio": volume_ratio,
+        "volume_ratio_recent": volume_ratio_recent,
+        "volume_baseline": volume_baseline,
         "volume_ok": volume_ok,
         "signal": signal,
         "confidence": confidence,
@@ -1743,6 +1804,7 @@ def do_trading_cycle():
 
     scanned_count = 0
     volume_rejected_count = 0
+    volume_baselines = {}
     for symbol in ALL_SYMBOLS:
         # Skip auto-blacklisted symbols
         if symbol in auto_blacklist:
@@ -1752,6 +1814,10 @@ def do_trading_cycle():
             scanned_count += 1
             if not analysis.get("volume_ok", True):
                 volume_rejected_count += 1
+            _bl = analysis.get("volume_baseline") or {}
+            if _bl:
+                _bl_key = _bl.get("baseline", "unknown")
+                volume_baselines[_bl_key] = volume_baselines.get(_bl_key, 0) + 1
         # Defect fix: exits were gated behind ENTRY analysis succeeding, so a
         # held position whose entry analysis failed (e.g. volume-confirmation
         # gate) was never stop-checked. Exit logic must run for held positions
@@ -1770,7 +1836,7 @@ def do_trading_cycle():
             c = analysis['confidence']
             emoji = "🟢" if s == "BUY" else "🔴" if s == "SELL" else "⚪"
 
-            print(f"{emoji} {symbol}: ${analysis['price']:.2f} | RSI:{analysis['rsi']:.0f} Stoch:{analysis['stoch_rsi']:.0f} | {analysis['trend'][:4]} | {s}({c}%)")
+            print(f"{emoji} {symbol}: ${analysis['price']:.2f} | RSI:{analysis['rsi']:.0f} Stoch:{analysis['stoch_rsi']:.0f} | {analysis['trend'][:4]} | {s}({c}%) | vol {analysis.get('volume_ratio', 1.0):.2f}")
 
         # Check exits
         if symbol in positions:
@@ -1887,7 +1953,10 @@ def do_trading_cycle():
             # 2026-11-10 so a quiet bar can never blank the whole scan. Same
             # behaviour as before: a below-average-volume bar never enters.
             if not analysis.get("volume_ok", True):
-                print(f"   → Skipped: volume {analysis['volume_ratio']:.2f} < {MIN_VOLUME_RATIO} (below-average volume)")
+                _bl = analysis.get("volume_baseline") or {}
+                print(f"   → Skipped: volume {analysis['volume_ratio']:.2f} < {MIN_VOLUME_RATIO} "
+                      f"(below same-time-of-day average, {_bl.get('sessions', 0)} sessions, "
+                      f"cutoff {_bl.get('cutoff_et', '??:??')} ET)")
                 continue
 
             # Skip if max positions reached
@@ -2060,6 +2129,11 @@ def do_trading_cycle():
     # and how many the volume gate held back.
     print(f"📊 Scanned {scanned_count}/{len(ALL_SYMBOLS)} symbols | volume gate: "
           f"{scanned_count - volume_rejected_count} pass, {volume_rejected_count} rejected")
+    # Which baseline the gate actually used (a neutral fallback must be visible,
+    # never silently hidden behind a pass).
+    if volume_baselines:
+        _bl_txt = ", ".join(f"{k}={v}" for k, v in sorted(volume_baselines.items()))
+        print(f"📈 Volume baseline: same-time-of-day cumulative vs prior-session median ({_bl_txt})")
 
     # Summary
     print("\n" + "="*30)
