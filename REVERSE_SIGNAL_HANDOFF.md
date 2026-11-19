@@ -40,7 +40,23 @@ when the analyzer flips to SELL (confidence >= 50). Work + tests + commit + push
 - [x] Append dated entry to /Users/amandaai/.openclaw/workspace/memory/2026-11-19.md.
 
 ## COMMIT
-a1f9dc2 — trading bot: exit held longs when the analyzer flips to SELL (REVERSE_SIGNAL)
+b2e91b5 — trading bot: exit held longs when the analyzer flips to SELL (REVERSE_SIGNAL)
+         (pushed to origin/main: a486f90..b2e91b5)
+Also: a follow-up commit corrects this handoff's COMMIT hash (it was written
+with a placeholder before the commit existed) — see `git log -2` for it.
+
+## RESTART PROOF (done)
+- Old PID 65612 (started Tue Nov 17 09:50:48) killed.
+- `launchctl kickstart -k gui/501/ai.nova.trading-bot` -> **new PID 40552,
+  started Thu Nov 19 10:31:19 2026**.
+- auto_trade.py mtime = 2026-11-19 10:27:28  ->  new process start is LATER ✔
+- trades.log: line 16090 `🚀 Starting V9 Trading Loop`, line 16093
+  `⏰ 05:31 ET - Market CLOSED`  ✔ (market closed, so this is the proof line)
+
+## MEMORY NOTE
+- /Users/amandaai/.openclaw/workspace/memory/2026-11-19.md appended (8 lines, each
+  with the project marker) and committed in the WORKSPACE ROOT repo as fab8ba3
+  (that repo was otherwise left untouched).
 
 ## SCOPE LIMITS (respected — not touched)
 - market-open-monitor cron schedule (already fixed separately, 15:10 London)
