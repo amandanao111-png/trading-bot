@@ -12,7 +12,7 @@ V9 Features:
 import requests
 import numpy as np
 import pandas as pd
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import sys
 import json
 import os
@@ -1374,6 +1374,352 @@ def save_position_state(positions):
     except Exception as e:
         print(f"   ⚠️ position state save failed: {e}")
 
+# === Pending exit orders — late-fill reconcile (2026-11-19) ===
+# An exit order can be left ALIVE at the exchange. place_order() polls
+# GET /v2/orders/{id} and, when the status is a working one
+# (new / accepted / pending_new / partially_filled), deliberately leaves the
+# order live instead of cancelling it (cancelling a protective exit
+# guarantees it never executes — 2026-11-02, 2026-11-12).
+#
+# The bug: a left-live order makes place_order() return False, so the caller
+# never runs the exit bookkeeping (journal row + Telegram announcement +
+# position cleanup). The order may still fill a minute later, and then the
+# exit happens at Alpaca with NO journal row and NO announcement.
+#
+# 2026-11-19 live example: the AAPL REVERSE_SIGNAL sell (5 sh, Alpaca order
+# 77f266bd-1ad7-4188-ae5e-f2db118ec487) sat "new" at the end of its cycle
+# and filled at 352.858 about a minute later. The trade vanished.
+#
+# Fix: persist the live order here and reconcile it on the next cycle
+# (BEFORE any new exit is evaluated) so the bookkeeping is completed exactly
+# once, whenever the fill actually happens.
+TRADE_JOURNAL_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "trade_journal.json")
+PENDING_EXIT_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pending_exit_orders.json")
+
+# Statuses that mean "still alive at the exchange".
+PENDING_WORKING_STATUSES = {"new", "accepted", "pending_new", "partially_filled",
+                             "pending_replace", "calculated"}
+# Statuses that mean "dead — it will never fill".
+PENDING_DEAD_STATUSES = {"canceled", "expired", "rejected", "pending_cancel",
+                         "pending_expire"}
+# Done records are kept this long purely so a repeated reconcile stays
+# idempotent; after that they are pruned.
+PENDING_DONE_RETENTION_DAYS = 7
+
+
+def load_pending_exits():
+    """Load the pending exit order table (order_id -> record)."""
+    try:
+        with open(PENDING_EXIT_FILE) as f:
+            data = json.load(f)
+    except Exception:
+        return {}
+    if isinstance(data, dict):
+        orders = data.get("orders")
+        if isinstance(orders, dict):
+            return orders
+        if data and all(isinstance(v, dict) for v in data.values()):
+            return data
+    return {}
+
+
+def save_pending_exits(orders):
+    """Persist the pending exit order table (atomic replace)."""
+    try:
+        tmp = PENDING_EXIT_FILE + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(orders, f, indent=2)
+        os.replace(tmp, PENDING_EXIT_FILE)
+    except Exception as e:
+        print(f"   ⚠️ pending exit state save failed: {e}")
+
+
+def pending_exit_symbols(orders=None):
+    """Symbols that already have a live (unresolved) exit order.
+
+    A symbol with a live exit order must NOT get a second exit order in the
+    same cycle — reduce_only stops the position flipping, but two live
+    orders would still over-close once both fill.
+    """
+    orders = load_pending_exits() if orders is None else orders
+    out = set()
+    for rec in orders.values():
+        if not isinstance(rec, dict):
+            continue
+        if rec.get("status", "pending") != "pending":
+            continue
+        sym = rec.get("symbol")
+        if sym:
+            out.add(sym)
+    return out
+
+
+def record_pending_exit(order_id, symbol, side, requested_qty, exit_reason,
+                        exit_detail="", entry_price=0.0, confidence=0,
+                        is_short=False, is_partial=False, filled_qty=0.0,
+                        filled_avg_price=None):
+    """Persist one live exit order so a later cycle can reconcile its fill."""
+    if not order_id:
+        return False
+    orders = load_pending_exits()
+    orders[order_id] = {
+        "order_id": order_id,
+        "symbol": symbol,
+        "side": side,
+        "requested_qty": int(requested_qty or 0),
+        "filled_qty": float(filled_qty or 0),
+        "filled_avg_price": filled_avg_price,
+        "exit_reason": exit_reason,
+        "exit_detail": exit_detail,
+        "entry_price": float(entry_price or 0),
+        "confidence": confidence,
+        "is_short": bool(is_short),
+        "is_partial": bool(is_partial),
+        "status": "pending",
+        "created_at": datetime.now().isoformat(),
+    }
+    save_pending_exits(orders)
+    return True
+
+
+def get_order_by_id(order_id):
+    """GET /v2/orders/{id} -> order dict, or None when it cannot be read."""
+    try:
+        r = requests.get(f"{BASE_URL}/v2/orders/{order_id}", headers=HEADERS, timeout=10)
+        if r.status_code != 200:
+            return None
+        return r.json()
+    except Exception:
+        return None
+
+
+def _journal_rows():
+    """Read trade_journal.json as a list of rows (never raises)."""
+    try:
+        with open(TRADE_JOURNAL_FILE) as f:
+            data = json.load(f)
+        return data if isinstance(data, list) else []
+    except Exception:
+        return []
+
+
+def _write_journal_rows(rows):
+    """Write trade_journal.json atomically (never raises)."""
+    try:
+        tmp = TRADE_JOURNAL_FILE + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(rows, f, indent=2)
+        os.replace(tmp, TRADE_JOURNAL_FILE)
+    except Exception as e:
+        print(f"   ⚠️ journal write failed: {e}")
+
+
+def journal_has_order(order_id):
+    """True when a journal row already exists for this order id.
+
+    This is the idempotency guard: reconciling the same order twice must
+    never write a second journal row.
+    """
+    return journal_order_row(order_id) is not None
+
+
+def journal_order_row(order_id):
+    """The journal row for this order id, or None when there is none."""
+    for row in _journal_rows():
+        if isinstance(row, dict) and row.get("order_id") == order_id:
+            return row
+    return None
+
+
+def mark_journal_announced(order_id):
+    """Stamp the journal row as announced.
+
+    The announcement idempotency lives in the JOURNAL, not only in the
+    pending file: a stale copy of pending_exit_orders.json must never
+    produce a second announcement for an order that was already announced.
+    """
+    rows = _journal_rows()
+    changed = False
+    for row in rows:
+        if isinstance(row, dict) and row.get("order_id") == order_id:
+            row["announced"] = True
+            changed = True
+    if changed:
+        _write_journal_rows(rows)
+    return changed
+
+
+def reconcile_pending_exits(positions=None):
+    """Reconcile exit orders that an earlier cycle left live.
+
+    Called at the START of every trading cycle, before any new exit is
+    evaluated, so a late fill is never missed:
+
+      * filled (or partially filled, filled_qty > 0)
+          -> complete the bookkeeping the exit cycle skipped: write the
+             trade_journal.json SELL row, send the Telegram announcement,
+             update the position state, print "Reconciled late fill".
+      * canceled / expired / rejected
+          -> log it, drop the pending entry, NO announcement.
+      * still working
+          -> keep it pending. No announcement, no journal row, no spam.
+
+    Idempotent: the journal row is guarded on order_id and the announcement
+    is guarded on the per-record "announced_at" stamp, so reconciling the
+    same order twice writes exactly one row and sends exactly one message.
+    """
+    orders = load_pending_exits()
+    result = {"filled": [], "still_working": [], "dead": [], "symbols": set()}
+    if not orders:
+        return result
+
+    live = [oid for oid, rec in orders.items()
+            if isinstance(rec, dict) and rec.get("status", "pending") == "pending"]
+    if not live:
+        return result
+
+    print(f"\n🔎 Reconciling {len(live)} pending exit order(s)...")
+
+    for order_id in list(live):
+        rec = orders.get(order_id)
+        if not isinstance(rec, dict):
+            orders.pop(order_id, None)
+            continue
+
+        symbol = rec.get("symbol")
+        order = get_order_by_id(order_id)
+        if not order:
+            print(f"   ⏳ Pending exit {symbol} {order_id[:8]}: status unavailable - keeping pending")
+            result["still_working"].append(order_id)
+            continue
+
+        status = str(order.get("status", "") or "").lower()
+        try:
+            filled_qty = float(order.get("filled_qty", 0) or 0)
+        except (TypeError, ValueError):
+            filled_qty = 0.0
+        avg_price = order.get("filled_avg_price")
+        try:
+            avg_price = float(avg_price) if avg_price is not None else None
+        except (TypeError, ValueError):
+            avg_price = None
+
+        # --- dead order: it will never fill -> drop it, say nothing ---
+        if filled_qty <= 0 and status in PENDING_DEAD_STATUSES:
+            print(f"   ❌ Pending exit {symbol} {order_id[:8]} dead (status={status}) - dropped, no fill")
+            rec["status"] = "dead"
+            rec["final_status"] = status
+            rec["resolved_at"] = datetime.now().isoformat()
+            orders[order_id] = rec
+            result["dead"].append(order_id)
+            continue
+
+        # --- still working: keep pending, no announce, no journal ---
+        if filled_qty <= 0:
+            print(f"   ⏳ Pending exit {symbol} {order_id[:8]} still working "
+                  f"(status={status}) - keeping pending, no announce")
+            result["still_working"].append(order_id)
+            continue
+
+        # === LATE FILL -> complete the skipped exit bookkeeping ===
+        reason = rec.get("exit_reason") or "LATE_FILL"
+        entry_price = float(rec.get("entry_price") or 0)
+        is_short = bool(rec.get("is_short"))
+        qty = int(filled_qty)
+        price = avg_price if avg_price is not None else entry_price
+        pnl = ((entry_price - price) * qty) if is_short else ((price - entry_price) * qty)
+
+        print(f"   ✅ Reconciled late fill: {symbol} {qty} sh @ {price} ({reason})")
+
+        # --- trade_journal.json SELL row (idempotent on order_id) ---
+        if not journal_has_order(order_id):
+            before = len(_journal_rows())
+            try:
+                record_trade("SELL", symbol, qty, price, reason,
+                             rec.get("confidence") or 0, [reason], pnl)
+            except Exception as e:
+                print(f"   ⚠️ Learning record failed: {e}")
+            rows = _journal_rows()
+            if len(rows) > before:
+                rows[before]["order_id"] = order_id
+                rows[before]["filled_avg_price"] = avg_price
+                rows[before]["exit_reason"] = reason
+                rows[before]["late_fill"] = True
+                _write_journal_rows(rows)
+            rec["journaled_at"] = datetime.now().isoformat()
+        else:
+            print(f"   📚 Journal row already exists for {order_id[:8]} - not writing again")
+
+        # --- Telegram announcement (exactly once) ---
+        # The guard is the journal row itself (durable) plus the pending
+        # record stamp, so neither a repeated reconcile nor a stale copy of
+        # the pending file can announce the same exit twice.
+        _row = journal_order_row(order_id)
+        _already_announced = bool(rec.get("announced_at")) or bool(
+            _row and _row.get("announced"))
+        if _already_announced:
+            print(f"   📣 Telegram announce already sent for {order_id[:8]} - not repeating")
+        else:
+            _ok = announce_trade(
+                f"🔴 *Exit - {symbol}*\n"
+                f"{reason} · {qty} sh @ ${price:.2f}\n"
+                f"P&L: ${pnl:+.2f}"
+            )
+            if _ok is False:
+                print(f"   ⚠️ Telegram announce failed - will retry next cycle")
+            else:
+                rec["announced_at"] = datetime.now().isoformat()
+                mark_journal_announced(order_id)
+
+        # --- position / peak state ---
+        if positions is not None and symbol in positions:
+            if rec.get("is_partial"):
+                pos = positions[symbol]
+                cur = pos.get("qty", 0) or 0
+                pos["qty"] = (cur + qty) if is_short else (cur - qty)
+                pos["partial_taken"] = True
+                print(f"   ✅ Sold {qty} shares of {symbol}, keeping {pos['qty']}")
+            else:
+                positions.pop(symbol, None)
+                print(f"   ✅ Position {symbol} closed by late fill")
+
+        # --- stop-out cooldown parity with the normal exit path ---
+        if "HARD_STOP" in str(reason) or "STOP_LOSS" in str(reason):
+            try:
+                set_sector_cooldown(symbol)
+                print(f"   ⚠️ Sector cooldown set for {symbol} (24h)")
+            except Exception as e:
+                print(f"   ⚠️ Sector cooldown failed: {e}")
+
+        rec["status"] = "done"
+        rec["filled_qty"] = qty
+        rec["filled_avg_price"] = avg_price
+        rec["final_status"] = status
+        rec["resolved_at"] = datetime.now().isoformat()
+        orders[order_id] = rec
+        result["filled"].append(order_id)
+        result["symbols"].add(symbol)
+
+    # Prune resolved records older than the retention window.
+    try:
+        cutoff = datetime.now() - timedelta(days=PENDING_DONE_RETENTION_DAYS)
+        for oid in list(orders.keys()):
+            rec = orders.get(oid)
+            if not isinstance(rec, dict) or rec.get("status") == "pending":
+                continue
+            stamp = rec.get("resolved_at") or rec.get("created_at")
+            try:
+                if stamp and datetime.fromisoformat(stamp) < cutoff:
+                    orders.pop(oid, None)
+            except Exception:
+                continue
+    except Exception:
+        pass
+
+    save_pending_exits(orders)
+    return result
+
+
 def check_exit(symbol, position, analysis=None):
     """Smart exit with ATR-based stops + trailing stop + profit alerts
 
@@ -1492,13 +1838,33 @@ def check_exit(symbol, position, analysis=None):
     return None, None
 
 
-def place_order_chunked(symbol, qty, side, price, reduce_only=False, max_attempts=8):
+# Details of the most recent order attempt.
+#
+# place_order() keeps its boolean return value (True = the order filled) but
+# records what actually happened here, so the caller can tell "filled" apart
+# from "left live at the exchange" and persist a pending-exit record for the
+# latter (see reconcile_pending_exits).
+#
+#   outcome: "filled" | "working" | "dead" | "error"
+LAST_ORDER_INFO = {}
+
+
+def place_order_chunked(symbol, qty, side, price, reduce_only=False, max_attempts=8,
+                        exit_reason=None, exit_detail="", entry_price=0.0,
+                        confidence=0, is_short=False, is_partial=False):
     """Place an exit order in chunks sized to available buying power.
 
     Fix (2026-11-02): covering the SLV short needed $278,922 but buying
     power was only $224,403 — a single order is rejected with 403
     "insufficient buying_power" no matter how the fill is verified. Split
     the close into affordable chunks and keep going until covered.
+
+    Fix (2026-11-19): a chunk whose order is left LIVE at the exchange is
+    NOT a failure. The old code printed "Chunk of N failed — 0/N covered"
+    and the caller then skipped the whole exit bookkeeping, so an order that
+    filled a minute later produced no journal row and no announcement. Now
+    the chunk is recorded as a pending exit and the misleading message is
+    replaced by a distinct "still working" line.
     """
     remaining = int(qty)
     if remaining <= 0:
@@ -1531,7 +1897,24 @@ def place_order_chunked(symbol, qty, side, price, reduce_only=False, max_attempt
             remaining -= chunk
             time.sleep(0.5)
         else:
-            print(f"   ⚠️ Chunk of {chunk} failed — {covered}/{qty} covered")
+            _info = LAST_ORDER_INFO or {}
+            if _info.get("outcome") == "working" and _info.get("order_id"):
+                # The order is ALIVE at the exchange - this is NOT a failure.
+                print(f"   ℹ️ Order still working (status={_info.get('status')}) - "
+                      f"left live, will reconcile next cycle (not a failure)")
+                if exit_reason:
+                    record_pending_exit(
+                        _info["order_id"], symbol, side,
+                        _info.get("requested_qty", chunk), exit_reason,
+                        exit_detail, entry_price, confidence, is_short, is_partial,
+                        filled_qty=_info.get("filled_qty", 0.0),
+                        filled_avg_price=_info.get("filled_avg_price"),
+                    )
+                    print(f"   📌 Pending exit recorded: {symbol} "
+                          f"{str(_info['order_id'])[:8]} ({exit_reason}) — "
+                          f"will reconcile next cycle")
+            else:
+                print(f"   ⚠️ Chunk of {chunk} failed — {covered}/{qty} covered")
             break
 
     if covered:
@@ -1555,6 +1938,8 @@ def place_order(symbol, qty, side, reduce_only=False):
     if not symbol or not qty or qty <= 0:
         return False
 
+    LAST_ORDER_INFO.clear()
+
     url = f"{BASE_URL}/v2/orders"
     data = {
         "symbol": symbol,
@@ -1575,12 +1960,20 @@ def place_order(symbol, qty, side, reduce_only=False):
         r = requests.post(url, headers=HEADERS, json=data, timeout=30)
         if r.status_code not in [200, 201]:
             print(f"   Order failed: {r.status_code} - {r.text[:100]}")
+            LAST_ORDER_INFO.update({"outcome": "error", "symbol": symbol, "side": side,
+                                    "requested_qty": int(qty), "status": "rejected"})
             return False
 
         order = r.json()
         order_id = order.get("id")
         status = order.get("status", "unknown")
         filled_qty = float(order.get("filled_qty", 0))
+
+        LAST_ORDER_INFO.update({
+            "order_id": order_id, "symbol": symbol, "side": str(side).lower(),
+            "requested_qty": int(qty), "status": status, "filled_qty": filled_qty,
+            "filled_avg_price": order.get("filled_avg_price"),
+        })
 
         # Not instantly filled -> poll until terminal status.
         if order_id and status not in TERMINAL_FILLED and status not in TERMINAL_DEAD:
@@ -1595,6 +1988,8 @@ def place_order(symbol, qty, side, reduce_only=False):
                     order = chk.json()
                     status = order.get("status", "unknown")
                     filled_qty = float(order.get("filled_qty", 0))
+                    LAST_ORDER_INFO.update({"status": status, "filled_qty": filled_qty,
+                                            "filled_avg_price": order.get("filled_avg_price")})
                     if status in TERMINAL_FILLED or status in TERMINAL_DEAD:
                         break
                 except Exception:
@@ -1602,11 +1997,13 @@ def place_order(symbol, qty, side, reduce_only=False):
 
         if filled_qty > 0 and status == "filled":
             print(f"   ✅ Filled: {int(filled_qty)} sh @ {order.get('filled_avg_price', '?')}")
+            LAST_ORDER_INFO["outcome"] = "filled"
             return True
 
         if filled_qty > 0:
             # Partial fill — some qty executed, so the exit did happen.
             print(f"   ⚠️ Partial fill: {int(filled_qty)}/{int(qty)} sh @ {order.get('filled_avg_price', '?')}")
+            LAST_ORDER_INFO["outcome"] = "filled"
             return True
 
         # A non-terminal status here means the order is still WORKING at the
@@ -1622,6 +2019,7 @@ def place_order(symbol, qty, side, reduce_only=False):
         if status in ("new", "accepted", "pending_new", "partially_filled"):
             print(f"   ⚠️ Order still working (status={status}) — leaving it live "
                   f"(not cancelling); it may fill shortly. Will reconcile next cycle.")
+            LAST_ORDER_INFO["outcome"] = "working"
             return False
 
         print(f"   ⚠️ Order not filled (status={status}). Cancelling.")
@@ -1630,9 +2028,11 @@ def place_order(symbol, qty, side, reduce_only=False):
                 requests.delete(f"{BASE_URL}/v2/orders/{order_id}", headers=HEADERS, timeout=10)
             except Exception:
                 pass
+        LAST_ORDER_INFO["outcome"] = "dead"
         return False
     except Exception as e:
         print(f"   Order error: {e}")
+        LAST_ORDER_INFO["outcome"] = "error"
     return False
 
 
@@ -1640,6 +2040,10 @@ def run_trading():
     """Main trading loop - runs continuously every LOOP_INTERVAL_MINUTES"""
     print("🚀 Starting V9 Trading Loop")
     print(f"   Checking every {LOOP_INTERVAL_MINUTES} minutes during market hours")
+    # Startup marker for the late-fill reconcile (2026-11-19). An exit order
+    # that is left live at the exchange fills AFTER its cycle, so the exit
+    # bookkeeping is completed on the NEXT cycle by reconcile_pending_exits().
+    print("🔎 Pending-exit reconcile enabled - late exit fills are reconciled on the next cycle")
     
     while True:
         time_info = get_current_time_info()
@@ -1791,6 +2195,19 @@ def do_trading_cycle():
     # Restore persisted per-position flags (partial_taken / peak_price)
     load_position_state(positions)
 
+    # === RECONCILE PENDING EXITS (late fills) ===
+    # An exit order left live by an earlier cycle may have filled since. The
+    # bookkeeping for it was skipped when the order was placed, so it is
+    # completed HERE - before any new exit is evaluated - otherwise the exit
+    # disappears with no journal row and no announcement (2026-11-19 AAPL
+    # REVERSE_SIGNAL, Alpaca order 77f266bd-1ad7-4188-ae5e-f2db118ec487).
+    reconcile_result = reconcile_pending_exits(positions)
+    reconciled_symbols = set(reconcile_result.get("symbols") or set())
+    if reconciled_symbols:
+        save_position_state(positions)
+    # Symbols with a still-live exit order must not get a second exit order.
+    live_exit_symbols = pending_exit_symbols()
+
     # === NEW: DAILY LOSS CHECK ===
     # Get today's P&L from account
     if account_ok:
@@ -1878,6 +2295,13 @@ def do_trading_cycle():
         # for THIS symbol - reused here so the signal-reversal exit needs no
         # second API round trip.
         if symbol in positions:
+            # A live exit order for this symbol is already in flight (or was
+            # just reconciled this cycle). Placing a second exit order would
+            # over-close the position once both fill.
+            if symbol in live_exit_symbols or symbol in reconciled_symbols:
+                print(f"   ⏸️ {symbol}: exit order already live/in flight - "
+                      f"skipping new exit evaluation this cycle")
+                continue
             exit_reason, exit_details = check_exit(symbol, positions[symbol], analysis)
             if exit_reason:
                 # Handle profit alerts (notify only, don't sell)
@@ -1928,7 +2352,11 @@ def do_trading_cycle():
                     # (market value -$271,792 on a $147,579 portfolio).
                     # Closing a short requires BUYING.
                     exit_side = "buy" if is_short_pos else "sell"
-                    if place_order_chunked(symbol, close_qty, exit_side, ref_price, reduce_only=True):
+                    if place_order_chunked(symbol, close_qty, exit_side, ref_price, reduce_only=True,
+                                           exit_reason=exit_reason, exit_detail=exit_details,
+                                           entry_price=entry_price, confidence=rec_conf,
+                                           is_short=is_short_pos,
+                                           is_partial=("PARTIAL_TAKE" in exit_reason)):
                         if "PARTIAL_TAKE" in exit_reason:
                             # Keep remaining position (qty must move TOWARD zero)
                             if is_short_pos:

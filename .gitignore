@@ -44,3 +44,6 @@ trading_analysis.md
 
 # Per-cycle equity snapshot - rewritten on every trading cycle (runtime state)
 equity_curve_v6.json
+
+# Pending exit orders - runtime state, rewritten on every exit/reconcile
+pending_exit_orders.json
