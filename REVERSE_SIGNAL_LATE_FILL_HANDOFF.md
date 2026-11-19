@@ -83,17 +83,67 @@ Scope: `trading_bot/auto_trade.py` + one new test file + this handoff.
 - [x] py_compile clean on auto_trade.py.
 
 ## LEFT
-- [ ] Commit + push to origin/main.
-- [ ] Restart bot (old PID 40552) and prove the new code is live.
+- [x] Commit + push to origin/main.
+- [x] Restart bot (old PID 40552) and prove the new code is live.
 
 ## COMMIT HASH
-(pending - written after the commit exists)
+**aa5da5e** — `trading bot: reconcile late exit fills (no more silent exits)`
+(pushed to origin/main: `9e45ca8..aa5da5e`)
+
+A follow-up commit records this handoff's own hash + the restart proof, same
+pattern as the REVERSE_SIGNAL handoff (see `git log -2`).
 
 ## NEW PID + START TIME
-(pending)
+- Old PID **40552** (started Thu Nov 19 10:31:19 2026) — stopped via
+  `launchctl kickstart -k gui/501/ai.nova.trading-bot`.
+- New PID **49422**, started **Thu Nov 19 15:28:18 2026**.
+- `auto_trade.py` mtime: **2026-11-19 15:27:12**
+- `ps -o lstart= -p 49422` -> **Thu Nov 19 15:28:18 2026**
+  -> the process start is LATER than the code mtime -> the NEW code is live ✔
+- The bot's first cycle after the restart ran clean at 10:28 ET: the BAC
+  REVERSE_SIGNAL exit (27 sh @ 48.70037) filled in-cycle and was announced +
+  journaled normally. `trades.err.log` was NOT touched by the new process
+  (mtime still 2026-10-24 14:42:04 - a 26-day-old error from a previous code
+  version, not from this restart).
 
 ## PROOF LINE
-(pending)
+`trades.log` line **16249** (fresh startup banner on line 16247):
+
+```
+🚀 Starting V9 Trading Loop
+   Checking every 30 minutes during market hours
+🔎 Pending-exit reconcile enabled - late exit fills are reconciled on the next cycle
+```
+
+The per-cycle reconcile line (printed only when there IS a pending exit order
+to reconcile) is:
+`🔎 Reconciling N pending exit order(s)...`
+and a completed late fill prints:
+`   ✅ Reconciled late fill: <SYM> <n> sh @ <price> (<REASON>)`
+
+## ALPACA ORDER ID USED AS THE RECONCILIATION TEST CASE
+**77f266bd-1ad7-4188-ae5e-f2db118ec487** — the real 2026-11-19 AAPL
+REVERSE_SIGNAL sell (5 sh, market, submitted 2026-11-19T14:31:40.262272Z,
+status filled, filled_qty 5, filled_avg_price 352.858).
+
+It is used verbatim as the order id in `test_late_fill_reconcile.py`
+(`REAL_ORDER_ID`) so the test stays traceable to the real incident. The
+reconcile code is driven by order id, so a synthetic id behaves identically;
+the test mocks GET /v2/orders/{id} and NEVER places a live order (one test
+even asserts the reconcile path never issues a DELETE against an order).
+
+## HOW TO VERIFY THE FIX LIVE
+If an exit order is ever left live again, the next cycle prints:
+```
+🔎 Reconciling 1 pending exit order(s)...
+   ✅ Reconciled late fill: AAPL 5 sh @ 352.858 (REVERSE_SIGNAL)
+   📚 Learning recorded / 📣 Telegram announce sent
+```
+and `trade_journal.json` gets a SELL row carrying `"order_id"` and
+`"late_fill": true`. Reconciling the same order again prints
+`Journal row already exists ... - not writing again` and
+`Telegram announce already sent ... - not repeating`.
+
 
 ## SCOPE LIMITS
 - Only `trading_bot/auto_trade.py`, `trading_bot/test_late_fill_reconcile.py`
