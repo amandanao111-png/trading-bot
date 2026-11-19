@@ -140,6 +140,26 @@
       "block_after_min": 45,
       "block_first_open_min": 45,
       "note": "ANT's first trade (Nasdaq, Thu Nov 19) - a fresh IPO can gap violently at the open, so the first 45 minutes of that session are blocked. Added beyond the requested event list because the Wed pricing print itself lands after the close; this is the window that actually carries the gap."
+    },
+    {
+      "name": "Initial + Continuing Jobless Claims",
+      "date": "2026-11-19",
+      "time_et": "08:30",
+      "impact": "medium",
+      "block_before_min": 30,
+      "block_after_min": 0,
+      "block_first_open_min": 45,
+      "note": "Weekly claims release, 08:30 ET - one hour BEFORE the 09:30 open, so the reaction lands at the open. Initial claims (prior print 236K per the Thursday preview) and continuing claims (1,838K) both land at 08:30 ET. VERIFY the consensus numbers before trading on them."
+    },
+    {
+      "name": "Philadelphia Fed Manufacturing Business Outlook Survey",
+      "date": "2026-11-19",
+      "time_et": "08:30",
+      "impact": "medium",
+      "block_before_min": 30,
+      "block_after_min": 0,
+      "block_first_open_min": 45,
+      "note": "November MBOS, released 08:30 ET (per the Philadelphia Fed release calendar) - also one hour before the open. Headline index plus the Prices Paid and New Orders sub-indexes move the rates complex. VERIFY the consensus."
     }
   ]
 }
