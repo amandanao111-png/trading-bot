@@ -298,6 +298,23 @@ PROFIT_ALERT_2 = 0.10      # Alert at 10%
 PROFIT_ALERT_3 = 0.15      # Alert at 15%
 ENABLE_PROFIT_ALERTS = True  # Enable profit alerts
 
+# === SIGNAL-REVERSAL EXIT (NEW - 2026-11-19) ===
+# A HELD LONG whose analyzer signal flips to SELL is closed: the thesis that
+# opened the position is gone, so there is no reason to keep riding it down.
+# ABBV sat in SELL territory for a full session with no rule that acted on it
+# while it drifted 0.33pp from its -2% HARD_STOP.
+#
+# The signal/confidence come from the CURRENT cycle's analyze_symbol() result
+# (already computed for the symbol in the main loop) - never a second API
+# round trip inside check_exit().
+#
+# REVERSE_SIGNAL is evaluated LAST in check_exit() so it can never pre-empt
+# HARD_STOP / PARTIAL_TAKE_50% / TAKE_PROFIT / TRAILING_STOP / RSI_EXIT /
+# MACD_EXIT.  Set REVERSE_SIGNAL_EXIT_ENABLED = False to disable the rule
+# without touching any code.
+REVERSE_SIGNAL_EXIT_ENABLED = True
+REVERSE_SIGNAL_MIN_CONFIDENCE = 50   # Only act on a SELL this confident
+
 # === MOMENTUM EXTENSION (NEW) ===
 TRAILING_STOP = True        # Enable trailing stop
 # TRAILING_START, TRAILING_DISTANCE, and PARTIAL_TAKE are configured above
@@ -1357,8 +1374,13 @@ def save_position_state(positions):
     except Exception as e:
         print(f"   ⚠️ position state save failed: {e}")
 
-def check_exit(symbol, position):
-    """Smart exit with ATR-based stops + trailing stop + profit alerts"""
+def check_exit(symbol, position, analysis=None):
+    """Smart exit with ATR-based stops + trailing stop + profit alerts
+
+    ``analysis`` is the CURRENT cycle's analyze_symbol() result for this
+    symbol (passed in from the main loop so the signal-reversal exit costs
+    no extra API call).  When it is None the REVERSE_SIGNAL rule is skipped.
+    """
     data = get_bars(symbol)
     close = None
     if data:
@@ -1452,6 +1474,20 @@ def check_exit(symbol, position):
         macd = Indicators.MACD(close)
         if macd["crossover"] == "BEARISH":
             return "MACD_EXIT", "Bearish cross"
+
+    # === SIGNAL-REVERSAL EXIT (lowest priority) ===
+    # Deliberately LAST: a hard stop / take profit / trailing stop / RSI or
+    # MACD exit always wins, so this can never pre-empt a protective exit.
+    # Only HELD LONGS are affected - a short that stays in SELL territory is
+    # working as intended and must not be closed by this rule.
+    if REVERSE_SIGNAL_EXIT_ENABLED and not is_short and analysis:
+        try:
+            _rev_signal = str(analysis.get("signal", "") or "").strip().upper()
+            _rev_conf = float(analysis.get("confidence", 0) or 0)
+        except (TypeError, ValueError):
+            _rev_signal, _rev_conf = "", 0.0
+        if _rev_signal == "SELL" and _rev_conf >= REVERSE_SIGNAL_MIN_CONFIDENCE:
+            return "REVERSE_SIGNAL", f"SELL signal @ {_rev_conf:.0f}% confidence"
 
     return None, None
 
@@ -1838,9 +1874,11 @@ def do_trading_cycle():
 
             print(f"{emoji} {symbol}: ${analysis['price']:.2f} | RSI:{analysis['rsi']:.0f} Stoch:{analysis['stoch_rsi']:.0f} | {analysis['trend'][:4]} | {s}({c}%) | vol {analysis.get('volume_ratio', 1.0):.2f}")
 
-        # Check exits
+        # Check exits.  ``analysis`` is this cycle's analyze_symbol() result
+        # for THIS symbol - reused here so the signal-reversal exit needs no
+        # second API round trip.
         if symbol in positions:
-            exit_reason, exit_details = check_exit(symbol, positions[symbol])
+            exit_reason, exit_details = check_exit(symbol, positions[symbol], analysis)
             if exit_reason:
                 # Handle profit alerts (notify only, don't sell)
                 if "PROFIT_ALERT" in exit_reason:
