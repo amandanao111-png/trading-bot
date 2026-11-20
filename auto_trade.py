@@ -1549,6 +1549,107 @@ def mark_journal_announced(order_id):
     return changed
 
 
+def resolve_buy_fill_price(signal_price, fill_info):
+    """Resolve the price a BUY journal row must carry.
+
+    Returns (price, filled_avg_price, fill_price).
+
+    The journal is the source of truth for open-position cost/P&L
+    (bot_status_digest.py, reconcile_fills.py), so `price` must be the
+    REAL fill price Alpaca charged — not the signal price the decision was
+    made on. 2026-11-20: the ABBV entry was journalled at the signal price
+    288.405 while Alpaca actually filled 2 sh @ 288.14, so every journal
+    derived P&L drifted (0.09% on a 2-share lot).
+
+    When no fill information is available (the order response carried no
+    filled_avg_price) the SIGNAL price is used as the fallback, so the row
+    is never written with a null/0 price.
+    """
+    fill = None
+    if isinstance(fill_info, dict):
+        for key in ("filled_avg_price", "fill_price"):
+            raw = fill_info.get(key)
+            try:
+                val = float(raw) if raw is not None else None
+            except (TypeError, ValueError):
+                val = None
+            if val is not None and val > 0:
+                fill = val
+                break
+    if fill is None:
+        try:
+            sig = float(signal_price) if signal_price is not None else None
+        except (TypeError, ValueError):
+            sig = None
+        return sig, None, None
+    return fill, fill, fill
+
+
+def build_buy_journal_row(symbol, qty, signal_price, signal, confidence, reasons,
+                           fill_info=None, order_id=None, timestamp=None,
+                           announced=True):
+    """Build the trade_journal.json BUY row for a filled entry.
+
+    Mirrors the SELL row shape (filled_avg_price / fill_price / announced)
+    and keeps the original decision price in `signal_price` so nothing is
+    lost when the fill price differs.
+    """
+    price, filled_avg_price, fill_price = resolve_buy_fill_price(signal_price, fill_info)
+    row = {
+        "timestamp": timestamp or datetime.now().isoformat(),
+        "type": "BUY",
+        "symbol": symbol,
+        "qty": qty,
+        "price": price,
+        "signal_price": signal_price,
+        "filled_avg_price": filled_avg_price,
+        "fill_price": fill_price,
+        "announced": bool(announced),
+        "signal": signal,
+        "confidence": confidence,
+        "reasons": list(reasons or []),
+        "pnl": 0,
+        "closed": False,
+    }
+    if order_id:
+        row["order_id"] = order_id
+    return row
+
+
+def record_buy_journal_row(symbol, qty, signal_price, signal, confidence, reasons,
+                           fill_info=None, order_id=None, announced=True):
+    """Append the BUY journal row for a filled entry and return the row.
+
+    `price` is the ACTUAL fill price (see resolve_buy_fill_price); the
+    signal price is kept in `signal_price`. Falls back to the signal price
+    when the fill price is unknown, so the row is never null/0.
+    """
+    row = build_buy_journal_row(symbol, qty, signal_price, signal, confidence,
+                                reasons, fill_info=fill_info, order_id=order_id,
+                                announced=announced)
+    before = len(_journal_rows())
+    try:
+        record_trade("BUY", symbol, qty, row["price"], signal, confidence,
+                     list(reasons or []))
+    except Exception as e:
+        print(f"   ⚠️ Learning record failed: {e}")
+        return None
+    rows = _journal_rows()
+    if len(rows) > before:
+        # record_trade() appended the row; enrich it with the fill fields.
+        new = rows[before]
+        new["price"] = row["price"]
+        new["signal_price"] = row["signal_price"]
+        new["filled_avg_price"] = row["filled_avg_price"]
+        new["fill_price"] = row["fill_price"]
+        new["announced"] = row["announced"]
+        if order_id:
+            new["order_id"] = order_id
+        _write_journal_rows(rows)
+        return new
+    return None
+
+
 def reconcile_pending_exits(positions=None):
     """Reconcile exit orders that an earlier cycle left live.
 
@@ -2561,16 +2662,26 @@ def do_trading_cycle():
                     # the gates) — see HEARTBEAT.md trade-reporting rule.
                     _tier = analysis.get('tier', '')
                     _reasons = ", ".join(analysis.get('reasons', []) or ['n/a'])
-                    announce_trade(
+                    _announced = announce_trade(
                         f"🟢 *Entry - {symbol}*\n"
                         f"{qty} sh @ ${analysis['price']:.2f} · {s} ({c}%)"
                         f"{' · tier ' + str(_tier) if _tier else ''}\n"
                         f"Why: {_reasons}"
                     )
                     
-                    # Record trade for learning
+                    # Record trade for learning. The journal row must carry
+                    # the REAL fill price (what Alpaca charged), not the
+                    # signal price the decision was made on — the journal
+                    # is the source of truth for open-position P&L.
                     try:
-                        record_trade("BUY", symbol, qty, analysis['price'], s, c, analysis.get('reasons', []))
+                        _info = LAST_ORDER_INFO or {}
+                        record_buy_journal_row(
+                            symbol, qty, analysis['price'], s, c,
+                            analysis.get('reasons', []),
+                            fill_info=_info,
+                            order_id=_info.get("order_id"),
+                            announced=(_announced is not False),
+                        )
                         print(f"   📚 Learning recorded")
                     except Exception as e:
                         print(f"   ⚠️ Learning record failed: {e}")

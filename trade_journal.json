@@ -3130,8 +3130,8 @@
       "High volume: 2.6x",
       "Above VWAP"
     ],
-    "pnl": 0,
-    "closed": false
+    "pnl": 4.430000000000007,
+    "closed": true
   },
   {
     "timestamp": "2026-11-11T17:28:50.615883",
@@ -3145,8 +3145,8 @@
       "Trend: SIDEWAYS (mean-reversion baseline)",
       "Above VWAP"
     ],
-    "pnl": 0,
-    "closed": false
+    "pnl": 10.335000000000015,
+    "closed": true
   },
   {
     "timestamp": "2026-11-12T14:55:21.732659",
@@ -3161,5 +3161,207 @@
     ],
     "pnl": -72.68999999999991,
     "closed": false
+  },
+  {
+    "timestamp": "2026-11-12T15:55:53.393642",
+    "type": "BUY",
+    "symbol": "QQQ",
+    "qty": 3,
+    "price": 687.8301,
+    "signal": "BUY",
+    "confidence": 40,
+    "reasons": [
+      "Trend: BULL",
+      "High volume: 3.9x",
+      "Above VWAP"
+    ],
+    "pnl": -47.22000000000003,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-11-12T16:26:19.589718",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 53,
+    "price": 50.845,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 10.335000000000015,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-11-13T15:10:15.022140",
+    "type": "SELL",
+    "symbol": "AAPL",
+    "qty": 1,
+    "price": 358.83,
+    "signal": "RSI_EXIT",
+    "confidence": 50,
+    "reasons": [
+      "RSI_EXIT"
+    ],
+    "pnl": 4.430000000000007,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-11-13T15:40:37.567200",
+    "type": "SELL",
+    "symbol": "QQQ",
+    "qty": 3,
+    "price": 673.66,
+    "signal": "HARD_STOP",
+    "confidence": 50,
+    "reasons": [
+      "HARD_STOP"
+    ],
+    "pnl": -47.22000000000003,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-11-17T15:52:18.616084",
+    "type": "BUY",
+    "symbol": "SLV",
+    "qty": 62,
+    "price": 43.13,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": -131.09000999999978,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-11-18T14:55:40.050113",
+    "type": "SELL",
+    "symbol": "SLV",
+    "qty": 62,
+    "price": 40.85,
+    "signal": "HARD_STOP",
+    "confidence": 50,
+    "reasons": [
+      "HARD_STOP"
+    ],
+    "pnl": -131.09000999999978,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-11-18T16:26:36.724116",
+    "type": "BUY",
+    "symbol": "AAPL",
+    "qty": 5,
+    "price": 352.865,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "RSI oversold",
+      "Trend: SIDEWAYS (mean-reversion baseline)",
+      "Below VWAP"
+    ],
+    "pnl": -0.03500000000002501,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-11-18T16:26:43.363979",
+    "type": "BUY",
+    "symbol": "ABBV",
+    "qty": 2,
+    "price": 288.11,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "RSI oversold",
+      "Trend: SIDEWAYS (mean-reversion baseline)",
+      "Below VWAP"
+    ],
+    "pnl": -14.139999999999986,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-11-18T17:57:36.650195",
+    "type": "BUY",
+    "symbol": "BAC",
+    "qty": 27,
+    "price": 49.035,
+    "signal": "BUY",
+    "confidence": 35,
+    "reasons": [
+      "RSI overbought",
+      "Trend: SIDEWAYS (mean-reversion baseline)",
+      "High volume: 1.7x",
+      "Above VWAP"
+    ],
+    "pnl": -9.563399999999966,
+    "closed": true
+  },
+  {
+    "timestamp": "2026-11-19T15:03:17.818596",
+    "type": "SELL",
+    "symbol": "ABBV",
+    "qty": 2,
+    "price": 281.7,
+    "signal": "HARD_STOP",
+    "confidence": 50,
+    "reasons": [
+      "HARD_STOP"
+    ],
+    "pnl": -14.139999999999986,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-11-19T15:28:44.956415",
+    "type": "SELL",
+    "symbol": "BAC",
+    "qty": 27,
+    "price": 48.6858,
+    "signal": "REVERSE_SIGNAL",
+    "confidence": 50,
+    "reasons": [
+      "REVERSE_SIGNAL"
+    ],
+    "pnl": -9.563399999999966,
+    "closed": false
+  },
+  {
+    "timestamp": "2026-11-19T15:59:09.010307",
+    "type": "SELL",
+    "symbol": "AAPL",
+    "qty": 5,
+    "price": 352.858,
+    "signal": "REVERSE_SIGNAL",
+    "confidence": 50,
+    "reasons": [
+      "REVERSE_SIGNAL"
+    ],
+    "pnl": -0.03500000000002501,
+    "closed": false,
+    "order_id": "77f266bd-1ad7-4188-ae5e-f2db118ec487",
+    "filled_avg_price": 352.858,
+    "exit_reason": "REVERSE_SIGNAL",
+    "late_fill": true,
+    "announced": true
+  },
+  {
+    "timestamp": "2026-11-20T17:33:58.559677",
+    "type": "BUY",
+    "symbol": "ABBV",
+    "qty": 2,
+    "price": 288.14,
+    "signal": "BUY",
+    "confidence": 45,
+    "reasons": [
+      "Trend: BULL",
+      "Above VWAP"
+    ],
+    "pnl": 0,
+    "closed": false,
+    "filled_avg_price": 288.14,
+    "fill_price": 288.14,
+    "announced": true,
+    "signal_price": 288.405
   }
 ]
