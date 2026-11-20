@@ -98,8 +98,34 @@ backfill + this handoff. **No other automation, cron or channel was touched.**
       fix commits.
 
 ## COMMIT
-- Commit: **PENDING** (filled in below after the commit was created)
-- Push: **PENDING**
+- Commit: **c0b62c8** — `trading bot: journal BUY rows at the real fill price, not the signal price`
+  (full: `c0b62c8b68b943f51d3bfdec3c12fd91c38052a8`)
+- Push: **PENDING** (`45c8a60..c0b62c8` -> `origin/main`) — filled in below.
 
 ## RESTART PROOF
-- PENDING
+- Launch method (unchanged): LaunchAgent **`ai.nova.trading-bot`**
+  (`~/Library/LaunchAgents/ai.nova.trading-bot.plist`) ->
+  `/bin/bash /Users/amandaai/.openclaw/workspace/trading_bot/run_bot.sh` ->
+  `python -u auto_trade.py` (stdout -> `trades.log`).
+  Restarted with exactly the command used by the previous restart:
+  `launchctl kickstart -k gui/501/ai.nova.trading-bot`
+- Old PID **49422**, started **Thu Nov 19 15:28:18 2026** — stopped.
+- New PID **2021**, started **Fri Nov 20 18:14:38 2026**
+  (`ps -o lstart= -p 2021`).
+- `auto_trade.py` mtime: **2026-11-20 18:12:32** -> the new process started
+  **LATER** than the code mtime -> the **NEW code is live** ✔
+- `auto_trade.lock` now holds **2021** (the flock-based single-instance lock
+  was released by the old process and re-taken by the new one) ✔
+- New `trades.log` cycle (13:14 ET, market OPEN):
+  - `Positions: ['ABBV'] (1/15)`  <- the open ABBV position survived ✔
+  - `📊 Scanned 15/19 symbols | volume gate: 15 pass, 0 rejected`  ✔
+  - `💤 No signals` -> no order placed, so no second ABBV position ✔
+- **No duplicate ABBV BUY row**: the journal still holds **214 rows** (the
+  same count as before the restart) and exactly **one** ABBV BUY row for
+  2026-11-20.
+- **Position state survived**: `position_state.json` still holds
+  `{"ABBV": {"peak_price": 288.405}}` ✔
+- **Alpaca (read-only `GET /v2/positions`)**:
+  `POSITIONS: [('ABBV', '2', '288.14')]` -> exactly ONE position, 2 shares,
+  **avg_entry_price 288.14** — Alpaca's own cost basis now matches the
+  journalled price exactly (it did not before the backfill: 288.405).
